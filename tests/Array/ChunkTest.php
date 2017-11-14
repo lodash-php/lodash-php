@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the lodash-php project.
+ * This file is part of the SolidWorx Lodash-PHP project.
  *
- * @author     pierre
+ * @author     Pierre du Plessis <open-source@solidworx.co>
  * @copyright  Copyright (c) 2017
  */
 
