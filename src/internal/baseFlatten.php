@@ -1,0 +1,51 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * This file is part of the SolidWorx Lodash-PHP project.
+ *
+ * @author     Pierre du Plessis <open-source@solidworx.co>
+ * @copyright  Copyright (c) 2017
+ */
+
+namespace _\internal;
+
+/**
+ * The base implementation of `flatten` with support for restricting flattening.
+ *
+ * @private
+ *
+ * @param array    $array     The array to flatten.
+ * @param int      $depth     The maximum recursion depth.
+ * @param callable $predicate The function invoked per iteration [isFlattenable].
+ * @param bool     $isStrict  Restrict to values that pass `predicate` checks.
+ * @param array    $result    The initial result value.
+ *
+ * @return array Returns the new flattened array.
+ */
+function baseFlatten(?array $array, int $depth, ?callable $predicate, bool $isStrict, ?array $result)
+{
+    $result = $result ?? [];
+
+    if ($array === null) {
+        return $result;
+    }
+
+    $predicate = $predicate ?? '_\internal\isFlattenable';
+
+    foreach ($array as $value) {
+        if ($depth > 0 && $predicate($value)) {
+            if ($depth > 1) {
+                // Recursively flatten arrays (susceptible to call stack limits).
+                baseFlatten($value, $depth - 1, $predicate, $isStrict, $result);
+            } else {
+                $result = \array_merge($result, $value);
+            }
+        } else if (!$isStrict) {
+            $result[count($result)] = $value;
+        }
+    }
+
+    return $result;
+}
