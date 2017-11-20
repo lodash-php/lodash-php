@@ -16,8 +16,10 @@ class DifferenceWithTest extends TestCase
 {
     public function testDifferenceWith()
     {
-        $objects = [[ 'x' => 1, 'y' => 2 ], [ 'x' => 2, 'y' => 1 ]];
+        $objects = [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1]];
 
-        $this->assertSame([[ 'x' => 2, 'y' => 1 ]], differenceWith($objects, [[ 'x' => 1, 'y' => 2 ]], '_\isEqual'));
+        $this->assertSame([['x' => 2, 'y' => 1]], differenceWith($objects, [['x' => 1, 'y' => 2]], '_\isEqual'));
+        $this->assertSame([], differenceWith([]));
+        $this->assertSame([1, 2], differenceWith([1, 2], [3, 4]));
     }
 }

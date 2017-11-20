@@ -16,6 +16,8 @@ class DifferenceByTest extends TestCase
 {
     public function testChunk()
     {
+        $this->assertSame([], differenceBy([]));
+        $this->assertSame([1, 2], differenceBy([1, 2], [3, 4]));
         $this->assertSame([1.2], differenceBy([2.1, 1.2], [2.3, 3.4], 'floor'));
     }
 }

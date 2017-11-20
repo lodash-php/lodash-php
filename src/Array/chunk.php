@@ -23,12 +23,13 @@ namespace _;
  *
  * @return array Returns the new array of chunks.
  * @example
- *
+ * <code>
  * chunk(['a', 'b', 'c', 'd'], 2)
  * // => [['a', 'b'], ['c', 'd']]
  *
  * chunk(['a', 'b', 'c', 'd'], 3)
  * // => [['a', 'b', 'c'], ['d']]
+ * </code>
  */
 function chunk(?array $array, int $number): array
 {
