@@ -66,11 +66,13 @@ function random($lower = null, $upper = null, $floating = null)
         $upper = $temp;
     }
 
-    if ($floating || 0 === $lower % 1 || 0 === $upper % 1) {
+    $floating = $floating || (\is_float($lower) || \is_float($upper));
+
+    if ($floating || $lower % 1 || $upper % 1) {
         $randMax = \mt_getrandmax();
 
         return $lower + \abs($upper - $lower) * \mt_rand(0, $randMax) / $randMax;
     }
 
-    return \rand($lower, $upper);
+    return \rand((int) $lower, (int) $upper);
 }
