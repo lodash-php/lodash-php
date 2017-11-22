@@ -9,13 +9,34 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
-use function _\template;
 use PHPUnit\Framework\TestCase;
+use function _\template;
 
 class TemplateTest extends TestCase
 {
     public function testTemplate()
     {
-        $this->assertSame(null, template());
+        $compiled = template('hello <%= user %>!');
+        $this->assertSame('hello fred!', $compiled(['user' => 'fred']));
+
+        $compiled = template('<b><%- value %></b>');
+        $this->assertSame('<b>&lt;script&gt;</b>', $compiled(['value' => '<script>']));
+
+        $compiled = template('<% foreach ($users as $user) { %><li><%- user %></li><% }%>');
+        $this->assertSame('<li>fred</li><li>barney</li>', $compiled(['users' => ['fred', 'barney']]));
+
+        $compiled = template('<% print("hello " . $user)%>!');
+        $this->assertSame('hello barney!', $compiled(['user' => 'barney']));
+
+        $compiled = template('<%= "\<%- value %\>" %>');
+        $this->assertSame('<%- value %>', $compiled(['value' => 'ignored']));
+
+        $compiled = template('<% all($users, function($user) { %><li><%- user %></li><% })%>', ['imports' => ['_\each' => 'all']]);
+        $this->assertSame('<li>fred</li><li>barney</li>', $compiled(['users' => ['fred', 'barney']]));
+
+        \_::$templateSettings['interpolate'] = '{{([\s\S]+?)}}';
+
+        $compiled = template('hello {{ user }}!');
+        $this->assertSame('hello mustache!', $compiled(['user' => 'mustache']));
     }
 }
