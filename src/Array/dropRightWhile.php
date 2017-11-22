@@ -34,7 +34,7 @@ namespace _;
  * // => objects for ['barney']
  * </code>
  */
-function dropRightWhile(array $array = null, callable $predicate = null): array
+function dropRightWhile(array $array, callable $predicate): array
 {
     \end($array);
     $length = \count($array);
