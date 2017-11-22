@@ -51,7 +51,7 @@ namespace _;
  */
 function inRange(float $number, float $start = 0, float $end = 0): bool
 {
-    if (0 === $end) {
+    if (0 === $end || 0.0 === $end) {
         $end = $start;
         $start = 0;
     }

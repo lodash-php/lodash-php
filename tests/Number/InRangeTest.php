@@ -26,5 +26,6 @@ class InRangeTest extends TestCase
         $this->assertTrue(inRange(1.2, 2));
         $this->assertFalse(inRange(5.2, 4));
         $this->assertTrue(inRange(-3, -2, -6));
+        $this->assertTrue(inRange(4, 12));
     }
 }
