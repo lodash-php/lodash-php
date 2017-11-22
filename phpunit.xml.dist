@@ -21,6 +21,7 @@
             <directory>src</directory>
             <exclude>
                 <directory>src/internal</directory>
+                <file>src/bootstrap.php</file>
             </exclude>
         </whitelist>
     </filter>
