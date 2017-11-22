@@ -14,6 +14,8 @@ namespace _;
 /**
  * Creates a slice of `array` with `n` elements dropped from the beginning.
  *
+ * **NOTE:** This function will reorder and reset the array indices
+ *
  * @category Array
  *
  * @param array $array The array to query.
