@@ -23,7 +23,7 @@ namespace _;
  *
  * @return array the slice of `array`.
  * @example
- *
+ * <code>
  * $users = [
  *   [ 'user' => 'barney',  'active' => true ],
  *   [ 'user' => 'fred',    'active' => true ],
@@ -32,6 +32,7 @@ namespace _;
  *
  * dropWhile($users, function($user) { return $user['active']; } )
  * // => objects for ['pebbles']
+ * </code>
  */
 function dropWhile(array $array, callable $predicate): array
 {
