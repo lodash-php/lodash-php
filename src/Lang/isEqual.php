@@ -34,7 +34,7 @@ use SebastianBergmann\Comparator\Factory;
  * <code>
  *
  * $object = [ 'a' => 1]
- * $other = [ 'a' => '1' ]
+ * $other = ['a' => '1']
  *
  * isEqual($object, $other)
  * // => true
