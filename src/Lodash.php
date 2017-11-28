@@ -43,4 +43,16 @@ final class _
             '_\escape' => '__e',
         ],
     ];
+
+    /**
+     * @param string $method
+     * @param array  $args
+     *
+     * @return mixed
+     * @throws Exception
+     */
+    public static function __callStatic(string $method, array $args)
+    {
+        return ("_\\$method")(...$args);
+    }
 }
