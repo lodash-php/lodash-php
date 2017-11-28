@@ -16,7 +16,8 @@
         ]
     },
     "require": {
-        "sebastian/comparator": "^2.1"
+        "sebastian/comparator": "^2.1",
+        "symfony/property-access": "^2.7 | ^3.4 | ^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.4"
