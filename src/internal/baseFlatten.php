@@ -24,7 +24,7 @@ namespace _\internal;
  *
  * @return array Returns the new flattened array.
  */
-function baseFlatten(?array $array, int $depth, callable $predicate = null, bool $isStrict = null, array $result = null): array
+function baseFlatten(?array $array, float $depth, callable $predicate = null, bool $isStrict = null, array $result = null): array
 {
     $result = $result ?? [];
 
@@ -38,7 +38,7 @@ function baseFlatten(?array $array, int $depth, callable $predicate = null, bool
         if ($depth > 0 && $predicate($value)) {
             if ($depth > 1) {
                 // Recursively flatten arrays (susceptible to call stack limits).
-                baseFlatten($value, $depth - 1, $predicate, $isStrict, $result);
+                $result = baseFlatten($value, $depth - 1, $predicate, $isStrict, $result);
             } else {
                 $result = \array_merge($result, $value);
             }
