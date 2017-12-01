@@ -17,5 +17,6 @@ class FromPairsTest extends TestCase
     public function testFromPairs()
     {
         $this->assertEquals((object) ['a' => 1, 'b' => 2], fromPairs([['a', 1], ['b', 2]]));
+        $this->assertEquals(new \stdClass(), fromPairs([]));
     }
 }

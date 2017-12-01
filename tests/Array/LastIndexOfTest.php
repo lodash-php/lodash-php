@@ -18,5 +18,6 @@ class LastIndexOfTest extends TestCase
     {
         $this->assertSame(3, lastIndexOf([1, 2, 1, 2], 2));
         $this->assertSame(1, lastIndexOf([1, 2, 1, 2], 2, 2));
+        $this->assertSame(-1, lastIndexOf([1, 2, 1, 2], 12));
     }
 }

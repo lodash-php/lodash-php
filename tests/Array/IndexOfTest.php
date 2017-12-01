@@ -18,5 +18,6 @@ class IndexOfTest extends TestCase
     {
         $this->assertSame(1, indexOf([1, 2, 1, 2], 2));
         $this->assertSame(3, indexOf([1, 2, 1, 2], 2, 2));
+        $this->assertSame(3, indexOf([1, 2, 1, 2], 2, -1));
     }
 }

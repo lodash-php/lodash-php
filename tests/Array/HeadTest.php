@@ -9,6 +9,7 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
+use function _\first;
 use function _\head;
 use PHPUnit\Framework\TestCase;
 
@@ -18,5 +19,6 @@ class HeadTest extends TestCase
     {
         $this->assertSame(1, head([1, 2, 3]));
         $this->assertSame(null, head([]));
+        $this->assertSame(1, first([1, 2, 3])); // Test the alias
     }
 }

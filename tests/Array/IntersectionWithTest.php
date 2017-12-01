@@ -20,5 +20,6 @@ class IntersectionWithTest extends TestCase
         $others = [['x' => 1, 'y' => 1], ['x' => 1, 'y' => 2]];
 
         $this->assertSame([['x' => 1, 'y' => 2]], intersectionWith($objects, $others, '_::isEqual'));
+        $this->assertSame([['x' => 1, 'y' => 2]], intersectionWith($objects, $others));
     }
 }
