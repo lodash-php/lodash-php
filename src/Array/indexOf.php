@@ -40,7 +40,7 @@ function indexOf(array $array, $value, int $fromIndex = null): int
     $index = 0;
 
     if (null !== $fromIndex) {
-        $index = $fromIndex > 0 ? $fromIndex : \count($array) - 1;
+        $index = $fromIndex >= 0 ? $fromIndex : \count($array) - 1;
         if ($fromIndex < 0) {
             $array = \array_reverse($array, false);
             $inc = false;
