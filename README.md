@@ -38,6 +38,14 @@ _::each([1, 2, 3], function (int $item) {
 # Methods
 
 ```
+- [Array](#array)
+- [Collection](#collection)
+- [Date](#date)
+- [Lang](#lang)
+- [Number](#number)
+- [String](#string)
+- [Util](#util)
+
 ## Array
 
 ### chunk

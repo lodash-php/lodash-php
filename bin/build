@@ -107,6 +107,12 @@ _::each([1, 2, 3], function (int \$item) {
 README;
 
 foreach ($readme as $category => $functions) {
+    $content .= "- [$category](#".strtolower($category).")\n";
+}
+
+$content .= PHP_EOL;
+
+foreach ($readme as $category => $functions) {
     $content .= "## $category\n\n";
 
     ksort($functions, SORT_ASC);
