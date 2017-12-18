@@ -34,6 +34,7 @@ Lodash-PHP also comes with a global `_` class that can be used globally.
 _::each([1, 2, 3], function (int $item) {
     var_dump($item);
 });
+```
 
 # Methods
 
