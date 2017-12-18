@@ -7,7 +7,7 @@
         "utilities",
         "php-library",
         "utility-library",
-        "php-utility",
+        "php-utility"
     ],
     "type": "library",
     "license": "MIT",
