@@ -1,6 +1,14 @@
 {
     "name": "solidworx/lodash-php",
     "description": "A port of Lodash to PHP",
+    "keywords": [
+        "lodash",
+        "utility",
+        "utilities",
+        "php-library",
+        "utility-library",
+        "php-utility",
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,8 +24,9 @@
         ]
     },
     "require": {
+        "php": "^7.1",
         "sebastian/comparator": "^2.1",
-        "symfony/property-access": "^2.7 | ^3.4 | ^4.0"
+        "symfony/property-access": "^2.7 | ^3.0 | ^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.4",
