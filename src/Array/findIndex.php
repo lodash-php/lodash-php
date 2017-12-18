@@ -23,7 +23,6 @@ use function _\internal\baseIteratee;
  * @param int      $fromIndex The index to search from.
  *
  * @return int the index of the found element, else `-1`.
- * @see      find, findKey, findLast, findLastKey, findLastIndex
  * @example
  * <code>
  * $users = [

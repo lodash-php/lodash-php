@@ -23,7 +23,6 @@ namespace _;
  * @param int|int[] $indexes The indexes of elements to remove.
  *
  * @return array the new array of removed elements.
- * @see      pull, pullAll, pullAllBy, pullAllWith, remove, reject
  * @example
  * <code>
  * $array = ['a', 'b', 'c', 'd']

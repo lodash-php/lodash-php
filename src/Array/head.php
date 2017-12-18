@@ -21,7 +21,6 @@ namespace _;
  *
  * @return mixed Returns the first element of `array`.
  *
- * @see      last
  * @example
  * <code>
  * head([1, 2, 3])

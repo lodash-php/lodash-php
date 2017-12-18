@@ -25,7 +25,6 @@ namespace _;
  *
  * @return string Returns the modified string.
  *
- * @see      truncate, trim
  * @example
  * <code>
  * replace('Hi Fred', 'Fred', 'Barney')

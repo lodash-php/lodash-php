@@ -18,7 +18,7 @@ namespace _;
  *
  * @param array $array The array to query.
  *
- * @returns mixed Returns the last element of `array`.
+ * @return mixed Returns the last element of `array`.
  * @example
  * <code>
  * last([1, 2, 3])

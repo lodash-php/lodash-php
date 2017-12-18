@@ -22,7 +22,6 @@ use function _\internal\baseFlatten;
  * @param int   $depth The maximum recursion depth.
  *
  * @return array the new flattened array.
- * @see      flatMap, flatMapDeep, flatMapDepth, flattenDeep
  * @example
  * <code>
  * $array = [1, [2, [3, [4]], 5]]

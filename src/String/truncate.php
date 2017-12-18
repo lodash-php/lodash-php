@@ -27,15 +27,14 @@ const DEFAULT_TRUNC_OMISSION = '...';
  *
  * @category String
  *
- * @param    {string} [string=''] The string to truncate.
+ * @param    string $string The string to truncate.
  * @param    array $options The options object.
- * @param    {number} [options.length=30] The maximum string length.
- * @param    {string} [options.omission='...'] The string to indicate text is omitted.
- * @param    {RegExp|string} [options.separator] The separator pattern to truncate to.
+ *                           length = 30 The maximum string length.
+ *                           omission = '...' The string to indicate text is omitted.
+ *                           separator The separator pattern to truncate to.
  *
- * @returns string Returns the truncated string.
+ * @return string Returns the truncated string.
  *
- * @see      replace
  * @example
  * <code>
  * truncate('hi-diddly-ho there, neighborino')

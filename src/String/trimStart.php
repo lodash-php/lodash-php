@@ -17,8 +17,9 @@ namespace _;
  * @param string $string The string to trim.
  * @param string $chars  The characters to trim.
  *
+ * @category String
+ *
  * @return string Returns the trimmed string.
- * @see trim, trimEnd
  * @example
  * <code>
  * trimStart('  abc  ')

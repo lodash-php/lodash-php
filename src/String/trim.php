@@ -20,7 +20,6 @@ namespace _;
  * @param string $chars  The characters to trim.
  *
  * @return string Returns the trimmed string.
- * @see      trimEnd, trimStart
  * @example
  * <code>
  * trim('  abc  ')

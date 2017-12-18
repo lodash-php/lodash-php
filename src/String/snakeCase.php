@@ -18,7 +18,6 @@ namespace _;
  * @category String
  * @param string $string The string to convert.
  * @return string Returns the snake cased string.
- * @see camelCase, lowerCase, kebabCase, startCase, upperCase, upperFirst
  * @example
  *
  * snakeCase('Foo Bar')

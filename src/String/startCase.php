@@ -20,7 +20,6 @@ namespace _;
  * @param string $string The string to convert.
  *
  * @return string Returns the start cased string.
- * @see      camelCase, lowerCase, kebabCase, snakeCase, upperCase, upperFirst
  * @example
  * <code>
  * startCase('--foo-bar--')

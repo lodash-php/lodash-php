@@ -20,13 +20,13 @@ namespace _;
  * property are iterated like arrays. To avoid this behavior use `forIn`
  * or `forOwn` for object iteration.
  *
- * @category Collection
+ * @category     Collection
  *
  * @param array|object $collection The collection to iterate over.
  * @param callable     $iteratee   The function invoked per iteration.
  *
  * @return array|object Returns `collection`.
- * @see      forEachRight, forIn, forInRight, forOwn, forOwnRight
+ * @related forEachRight, forIn, forInRight, forOwn, forOwnRight
  * @example
  * <code>
  * each([1, 2], function ($value) { echo $value; })

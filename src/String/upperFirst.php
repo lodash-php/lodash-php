@@ -19,7 +19,6 @@ namespace _;
  * @param string $string The string to convert.
  *
  * @return string Returns the converted string.
- * @see      camelCase, kebabCase, lowerCase, snakeCase, startCase, upperCase
  * @example
  * <code>
  * upperFirst('fred')

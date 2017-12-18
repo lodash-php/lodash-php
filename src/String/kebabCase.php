@@ -20,7 +20,6 @@ namespace _;
  * @param string $string The string to convert.
  *
  * @return string Returns the kebab cased string.
- * @see      camelCase, lowerCase, snakeCase, startCase, upperCase, upperFirst
  * @example
  * <code>
  * kebabCase('Foo Bar')

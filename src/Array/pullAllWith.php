@@ -27,7 +27,6 @@ use function _\internal\basePullAll;
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array `array`.
- * @see      pull, pullAll, pullAllBy, pullAt, remove, reject
  * @example
  * <code>
  * $array = [[ 'x' => 1, 'y' => 2 ], [ 'x' => 3, 'y' => 4 ], [ 'x' => 5, 'y' => 6 ]]

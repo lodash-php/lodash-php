@@ -20,7 +20,6 @@ namespace _;
  *
  * @return string Returns the camel cased string.
  *
- * @see      lowerCase, kebabCase, snakeCase, startCase, upperCase, upperFirst
  * @example
  * <code>
  * camelCase('Foo Bar')

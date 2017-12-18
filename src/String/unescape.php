@@ -21,7 +21,6 @@ namespace _;
  * @param string $string The string to unescape.
  *
  * @return string Returns the unescaped string.
- * @see      escape, escapeRegExp
  * @example
  * <code>
  * unescape('fred, barney, &amp; pebbles')

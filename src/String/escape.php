@@ -15,8 +15,6 @@ namespace _;
  * Converts the characters "&", "<", ">", '"', and "'" in `string` to their
  * corresponding HTML entities.
  *
- * **Note:** No other characters are escaped. To escape additional
- * characters use a third-party library like [_he_](https://mths.be/he).
  *
  * Though the ">" character is escaped for symmetry, characters like
  * ">" and "/" don't need escaping in HTML and have no special meaning
@@ -33,7 +31,6 @@ namespace _;
  * @param string $string The string to escape.
  *
  * @return string Returns the escaped string.
- * @see      escapeRegExp, unescape
  * @example
  * <code>
  * escape('fred, barney, & pebbles')

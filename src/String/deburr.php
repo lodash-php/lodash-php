@@ -93,7 +93,7 @@ const rsCombo = '#['.rsComboRange.']#u';
  *
  * @param string $string The string to deburr.
  *
- * @returns string Returns the deburred string.
+ * @return string Returns the deburred string.
  *
  * @example
  *

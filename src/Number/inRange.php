@@ -24,7 +24,6 @@ namespace _;
  * @param float $end   The end of the range.
  *
  * @return boolean Returns `true` if `number` is in the range, else `false`.
- * @see      range, rangeRight
  * @example
  * <code>
  * inRange(3, 2, 4)

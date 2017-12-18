@@ -25,7 +25,6 @@ namespace _;
  *
  * @return int|float Returns the random number.
  *
- * @see      uniqueId
  * @example
  *
  * random(0, 5)

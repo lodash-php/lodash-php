@@ -28,7 +28,6 @@ use function _\internal\basePullAll;
  * @param callable $iteratee The iteratee invoked per element.
  *
  * @return array `array`.
- * @see      pull, pullAll, pullAllWith, pullAt, remove, reject
  * @example
  *
  * $array = [[ 'x' => 1 ], [ 'x' => 2 ], [ 'x' => 3 ], [ 'x' => 1 ]]

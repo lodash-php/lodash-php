@@ -21,11 +21,10 @@ namespace _;
  *
  * @category Array
  *
- * @param array $array The array to inspect.
- * @param mixed... $values The values to exclude.
+ * @param array   $array  The array to inspect.
+ * @param mixed[] $values The values to exclude.
  *
- * @returns array Returns the new array of filtered values.
- * @see      union, unionBy, unionWith, without, xor, xorBy, xorWith,
+ * @return array Returns the new array of filtered values.
  *
  * @example
  * <code>

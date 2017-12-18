@@ -16,6 +16,8 @@ namespace _;
  *
  * @return int Returns the timestamp.
  *
+ * @category Date
+ *
  * @example
  * <code>
  * now();

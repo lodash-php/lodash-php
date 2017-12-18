@@ -26,7 +26,6 @@ const reRegExpChar = '/([\\^$.*+?()[\]{}|])/';
  * @param string $string The string to escape.
  *
  * @return string Returns the escaped string.
- * @see      escape, escapeRegExp, unescape
  * @example
  * <code>
  * escapeRegExp('[lodash](https://lodash.com/)')

@@ -25,7 +25,6 @@ namespace _;
  * @param callable $predicate The function invoked per iteration.
  *
  * @return array the new array of removed elements.
- * @see      pull, pullAll, pullAllBy, pullAllWith, pullAt, reject, filter
  * @example
  *
  * $array = [1, 2, 3, 4]

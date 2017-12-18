@@ -24,7 +24,7 @@ use function _\internal\baseFlatten;
  * @category Array
  *
  * @param array    $array      The array to inspect.
- * @param array... $values The values to exclude.
+ * @param array[] $values The values to exclude.
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array Returns the new array of filtered values.

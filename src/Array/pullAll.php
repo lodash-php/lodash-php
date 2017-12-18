@@ -22,7 +22,6 @@ namespace _;
  * @param array $values The values to remove.
  *
  * @return array `array`.
- * @see      pull, pullAllBy, pullAllWith, pullAt, remove, reject
  * @example
  * <code>
  * $array = ['a', 'b', 'c', 'a', 'b', 'c']

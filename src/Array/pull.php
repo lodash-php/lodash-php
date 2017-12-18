@@ -24,8 +24,7 @@ namespace _;
  * @param array   $array  The array to modify.
  * @param mixed[] $values The values to remove.
  *
- * @return array.
- * @see      pullAll, pullAllBy, pullAllWith, pullAt, remove, reject
+ * @return array
  * @example
  * <code>
  * $array = ['a', 'b', 'c', 'a', 'b', 'c']

@@ -20,8 +20,7 @@ namespace _;
  * @param string $target   The string to search for.
  * @param int    $position The position to search up to.
  *
- * @returns boolean Returns `true` if `string` ends with `target`, else `false`.
- * @see      includes, startsWith
+ * @return boolean Returns `true` if `string` ends with `target`, else `false`.
  * @example
  * <code>
  * endsWith('abc', 'c')

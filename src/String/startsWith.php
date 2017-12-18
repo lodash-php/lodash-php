@@ -21,7 +21,6 @@ namespace _;
  * @param int    $position The position to search from.
  *
  * @return boolean Returns `true` if `string` starts with `target`, else `false`.
- * @see      endsWith, includes
  * @example
  * <code>
  * startsWith('abc', 'a')

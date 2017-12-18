@@ -21,7 +21,6 @@ const reQuotes = "/['\x{2019}]/u";
  * @param string $string The string to convert.
  *
  * @return string Returns the lower cased string.
- * @see      camelCase, kebabCase, snakeCase, startCase, upperCase, upperFirst
  * @example
  * <code>
  * lowerCase('--Foo-Bar--')

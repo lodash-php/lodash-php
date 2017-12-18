@@ -16,8 +16,7 @@ namespace _;
  *
  * @category String
  * @param string $string The string to convert.
- * @return string Returns the upper cased string.
- * @see camelCase, kebabCase, lowerCase, snakeCase, startCase, upperFirst
+ * @return string Returns the upper cased string.s
  * @example
  * <code>
  * upperCase('--foo-bar')
