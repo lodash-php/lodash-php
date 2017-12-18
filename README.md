@@ -37,8 +37,6 @@ _::each([1, 2, 3], function (int $item) {
 ```
 
 # Methods
-
-```
 - [Array](#array)
 - [Collection](#collection)
 - [Date](#date)
