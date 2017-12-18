@@ -1,0 +1,118 @@
+#!/usr/bin/env php
+<?php
+
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+$sources = dirname(__DIR__).'/src';
+$factory = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
+
+$readme = [];
+
+/** @var SplFileInfo $file */
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($sources, RecursiveDirectoryIterator::SKIP_DOTS)) as $file) {
+    $parts = explode('/', $file->getPath());
+    $package = end($parts);
+
+    if ('internal' === $package) {
+        continue;
+    }
+
+    $function = $file->getBasename('.php');
+
+    if ('bootstrap' === $function || 'Lodash' === $function) {
+        continue;
+    }
+
+    $reflection = new ReflectionFunction("_\\$function");
+
+    $docblock = $factory->create($reflection->getDocComment());
+
+    $category = (string) $docblock->getTagsByName('category')[0];
+
+    $readme[$category][$function] = '';
+
+    $readme[$category][$function] .= "### $function\n\n";
+    $readme[$category][$function] .= $docblock->getSummary().PHP_EOL.PHP_EOL;
+    $readme[$category][$function] .= $docblock->getDescription().PHP_EOL.PHP_EOL;
+
+    $readme[$category][$function] .= "**Arguments:**\n";
+
+    foreach ($docblock->getTagsByName('param') as $param) {
+        $readme[$category][$function] .= $param->render().PHP_EOL;
+    }
+
+    $readme[$category][$function] .= PHP_EOL;
+
+    $readme[$category][$function] .= "**Return:**\n";
+
+    $readme[$category][$function] .= $docblock->getTagsByName('return')[0]->render();
+
+    $readme[$category][$function] .= PHP_EOL.PHP_EOL;
+
+    if ($docblock->hasTag('example')) {
+
+        $example = str_replace(['<code>', '</code>'], '', $docblock->getTagsByName('example')[0] ?? '');
+
+        if ($example) {
+            $readme[$category][$function] .= "Example:\n```php\n<?php\n use function _\\$function;\n";
+            $readme[$category][$function] .= "$example\n```\n";
+        }
+    }
+}
+
+ksort($readme, SORT_ASC);
+
+$content = <<<README
+# Lodash-PHP
+
+Lodash-PHP is a port of the [Lodash JS library](https://lodash.com/) to PHP. It is a set of easy to use utility functions for everyday PHP projects.
+
+Lodash-PHP tries to mimick lodash.js as close as possible
+
+# Installation
+
+Install Lodash-PHP through composer:
+
+```bash
+$ composer require solidworx/lodash-php
+
+# Usage
+
+Each method in Lodash-PHP is a separate function that can be imported and used on it's own.
+
+```php
+<?php
+
+use function _\each;
+
+each([1, 2, 3], function (int \$item) {
+    var_dump(\$item);
+});
+```
+
+Lodash-PHP also comes with a `_` class that can be used globally.
+
+```php
+<?php
+
+_::each([1, 2, 3], function (int \$item) {
+    var_dump(\$item);
+});
+
+# Methods
+
+```
+
+README;
+
+foreach ($readme as $category => $functions) {
+    $content .= "## $category\n\n";
+
+    ksort($functions, SORT_ASC);
+
+    foreach ($functions as $function) {
+        $content .= $function;
+    }
+}
+
+file_put_contents(dirname(__DIR__).'/README.md', $content);

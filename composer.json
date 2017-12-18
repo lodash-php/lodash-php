@@ -20,6 +20,7 @@
         "symfony/property-access": "^2.7 | ^3.4 | ^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "^6.4",
+        "phpdocumentor/reflection-docblock": "^4.2"
     }
 }
