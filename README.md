@@ -10,6 +10,7 @@ Install Lodash-PHP through composer:
 
 ```bash
 $ composer require solidworx/lodash-php
+```
 
 # Usage
 
@@ -18,14 +19,14 @@ Each method in Lodash-PHP is a separate function that can be imported and used o
 ```php
 <?php
 
-use function _ach;
+use function _\each;
 
 each([1, 2, 3], function (int $item) {
     var_dump($item);
 });
 ```
 
-Lodash-PHP also comes with a `_` class that can be used globally.
+Lodash-PHP also comes with a global `_` class that can be used globally.
 
 ```php
 <?php
@@ -47,10 +48,15 @@ If `array` can't be split evenly, the final chunk will be the remaining
 elements.
 
 **Arguments:**
+
 @param array $array array The array to process.
+
 @param int $number [size=1] The length of each chunk
 
+
+
 **Return:**
+
 @return array Returns the new array of chunks.
 
 Example:
@@ -73,9 +79,13 @@ Creates an array with all falsey values removed. The values `false`, `null`,
 
 
 **Arguments:**
+
 @param array $array The array to compact.
 
+
+
 **Return:**
+
 @return array Returns the new array of filtered values.
 
 Example:
@@ -95,10 +105,15 @@ and/or values.
 
 
 **Arguments:**
+
 @param array $array The array to concatenate.
+
 @param mixed $values The values to concatenate.
 
+
+
 **Return:**
+
 @return array Returns the new concatenated array.
 
 Example:
@@ -126,10 +141,15 @@ determined by the first array.
 **Note:** Unlike `pullAll`, this method returns a new array.
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param array $values The values to exclude.
 
+
+
 **Return:**
+
 @return array Returns the new array of filtered values.
 
 Example:
@@ -152,11 +172,17 @@ determined by the first array. The iteratee is invoked with one argument:
 **Note:** Unlike `pullAllBy`, this method returns a new array.
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param array $values The values to exclude.
+
 @param callable $ iteratee The iteratee invoked per element.
 
+
+
 **Return:**
+
 @return array Returns the new array of filtered values.
 
 Example:
@@ -176,11 +202,17 @@ is invoked with two arguments: (arrVal, othVal).
 **Note:** Unlike `pullAllWith`, this method returns a new array.
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param array[] $values The values to exclude.
+
 @param callable $comparator The comparator invoked per element.
 
+
+
 **Return:**
+
 @return array Returns the new array of filtered values.
 
 Example:
@@ -201,10 +233,15 @@ Creates a slice of `array` with `n` elements dropped from the beginning.
 **NOTE:** This function will reorder and reset the array indices
 
 **Arguments:**
+
 @param array $array The array to query.
+
 @param int $n The number of elements to drop.
 
+
+
 **Return:**
+
 @return array the slice of `array`.
 
 Example:
@@ -232,10 +269,15 @@ Creates a slice of `array` with `n` elements dropped from the end.
 **NOTE:** This function will reorder and reset the array indices
 
 **Arguments:**
+
 @param array $array The array to query.
+
 @param int $n The number of elements to drop.
 
+
+
 **Return:**
+
 @return array the slice of `array`.
 
 Example:
@@ -264,10 +306,15 @@ Elements are dropped until `predicate` returns falsey. The predicate is
 invoked with three arguments: (value, index, array).
 
 **Arguments:**
+
 @param array $array The array to query.
+
 @param callable $predicate The function invoked per iteration.
 
+
+
 **Return:**
+
 @return array the slice of `array`.
 
 Example:
@@ -293,10 +340,15 @@ Elements are dropped until `predicate` returns falsey. The predicate is
 invoked with three arguments: (value, index, array).
 
 **Arguments:**
+
 @param array $array The array to query.
+
 @param callable $predicate The function invoked per iteration.
 
+
+
 **Return:**
+
 @return array the slice of `array`.
 
 Example:
@@ -321,11 +373,17 @@ This method is like `find` except that it returns the index of the first element
 
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param callable $predicate The function invoked per iteration.
+
 @param int $fromIndex The index to search from.
 
+
+
 **Return:**
+
 @return int the index of the found element, else `-1`.
 
 Example:
@@ -363,11 +421,17 @@ of `collection` from right to left.
 
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param mixed $predicate The function invoked per iteration.
+
 @param int $fromIndex The index to search from.
 
+
+
 **Return:**
+
 @return int the index of the found element, else `-1`.
 
 Example:
@@ -392,9 +456,13 @@ Flattens `array` a single level deep.
 
 
 **Arguments:**
+
 @param array $array The array to flatten.
 
+
+
 **Return:**
+
 @return array the new flattened array.
 
 Example:
@@ -411,9 +479,13 @@ Recursively flattens `array`.
 
 
 **Arguments:**
+
 @param array $array The array to flatten.
 
+
+
 **Return:**
+
 @return array Returns the new flattened array.
 
 Example:
@@ -432,10 +504,15 @@ Recursively flatten `array` up to `depth` times.
 
 
 **Arguments:**
+
 @param array $array The array to flatten.
+
 @param int $depth The maximum recursion depth.
 
+
+
 **Return:**
+
 @return array the new flattened array.
 
 Example:
@@ -460,9 +537,13 @@ from key-value `pairs`.
 
 
 **Arguments:**
+
 @param array $pairs The key-value pairs.
 
+
+
 **Return:**
+
 @return object the new object.
 
 Example:
@@ -484,9 +565,13 @@ Gets the first element of `array`.
 
 
 **Arguments:**
+
 @param array $array The array to query.
 
+
+
 **Return:**
+
 @return mixed Returns the first element of `array`.
 
 Example:
@@ -511,11 +596,17 @@ offset from the end of `array`.
 
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param mixed $value The value to search for.
+
 @param int $fromIndex The index to search from.
 
+
+
 **Return:**
+
 @return int the index of the matched value, else `-1`.
 
 Example:
@@ -538,9 +629,13 @@ Gets all but the last element of `array`.
 
 
 **Arguments:**
+
 @param array $array The array to query.
 
+
+
 **Return:**
+
 @return array the slice of `array`.
 
 Example:
@@ -560,9 +655,13 @@ determined by the first array.
 
 
 **Arguments:**
+
 @param array[] $arrays
 
+
+
 **Return:**
+
 @return array the new array of intersecting values.
 
 Example:
@@ -583,10 +682,15 @@ determined by the first array. The iteratee is invoked with one argument:
 
 
 **Arguments:**
+
 @param array[] $arrays
+
 @param callable $iteratee The iteratee invoked per element.
 
+
+
 **Return:**
+
 @return array the new array of intersecting values.
 
 Example:
@@ -612,10 +716,15 @@ invoked with two arguments: (arrVal, othVal).
 
 
 **Arguments:**
+
 @param array[] $arrays
+
 @param callable $comparator The comparator invoked per element.
 
+
+
 **Return:**
+
 @return array the new array of intersecting values.
 
 Example:
@@ -637,9 +746,13 @@ Gets the last element of `array`.
 
 
 **Arguments:**
+
 @param array $array The array to query.
 
+
+
 **Return:**
+
 @return mixed Returns the last element of `array`.
 
 Example:
@@ -659,11 +772,17 @@ This method is like `indexOf` except that it iterates over elements of
 
 
 **Arguments:**
+
 @param array $array The array to inspect.
+
 @param mixed $value The value to search for.
+
 @param int $fromIndex The index to search from.
 
+
+
 **Return:**
+
 @return int the index of the matched value, else `-1`.
 
 Example:
@@ -687,10 +806,15 @@ element from the end is returned.
 
 
 **Arguments:**
+
 @param array $array The array to query.
+
 @param int $n The index of the element to return.
 
+
+
 **Return:**
+
 @return mixed Returns the nth element of `array`.
 
 Example:
@@ -715,10 +839,15 @@ for equality comparisons.
 to remove elements from an array by predicate.
 
 **Arguments:**
+
 @param array $array The array to modify.
+
 @param array $values The values to remove.
 
+
+
 **Return:**
+
 @return array
 
 Example:
@@ -740,10 +869,15 @@ This method is like `pull` except that it accepts an array of values to remove.
 **Note:** Unlike `difference`, this method mutates `array`.
 
 **Arguments:**
+
 @param array $array The array to modify.
+
 @param array $values The values to remove.
 
+
+
 **Return:**
+
 @return array `array`.
 
 Example:
@@ -767,11 +901,17 @@ by which they're compared. The iteratee is invoked with one argument: (value).
 **Note:** Unlike `differenceBy`, this method mutates `array`.
 
 **Arguments:**
+
 @param array $array The array to modify.
+
 @param array $values The values to remove.
+
 @param callable $iteratee The iteratee invoked per element.
 
+
+
 **Return:**
+
 @return array `array`.
 
 Example:
@@ -793,11 +933,17 @@ invoked with two arguments: (arrVal, othVal).
 **Note:** Unlike `differenceWith`, this method mutates `array`.
 
 **Arguments:**
+
 @param array $array The array to modify.
+
 @param array $values The values to remove.
+
 @param callable $comparator The comparator invoked per element.
 
+
+
 **Return:**
+
 @return array `array`.
 
 Example:
@@ -820,10 +966,15 @@ array of removed elements.
 **Note:** Unlike `at`, this method mutates `array`.
 
 **Arguments:**
+
 @param array $array The array to modify.
+
 @param int|int[] $indexes The indexes of elements to remove.
 
+
+
 **Return:**
+
 @return array the new array of removed elements.
 
 Example:
@@ -851,10 +1002,15 @@ with three arguments: (value, index, array).
 to pull elements from an array by value.
 
 **Arguments:**
+
 @param array $array The array to modify.
+
 @param callable $predicate The function invoked per iteration.
 
+
+
 **Return:**
+
 @return array the new array of removed elements.
 
 Example:
@@ -877,11 +1033,17 @@ Creates a slice of `array` from `start` up to, but not including, `end`.
 
 
 **Arguments:**
+
 @param array $array The array to slice.
+
 @param int $start The start position.
+
 @param int $end The end position.
 
+
+
 **Return:**
+
 @return array the slice of `array`.
 
 ## Collection
@@ -898,10 +1060,15 @@ property are iterated like arrays. To avoid this behavior use `forIn`
 or `forOwn` for object iteration.
 
 **Arguments:**
+
 @param array|object $collection The collection to iterate over.
+
 @param callable $iteratee The function invoked per iteration.
 
+
+
 **Return:**
+
 @return array|object Returns `collection`.
 
 Example:
@@ -932,10 +1099,15 @@ The guarded methods are:
 `template`, `trim`, `trimEnd`, `trimStart`, and `words`
 
 **Arguments:**
+
 @param array|object $collection The collection to iterate over.
+
 @param callable|string|array $iteratee The function invoked per iteration.
 
+
+
 **Return:**
+
 @return array Returns the new mapped array.
 
 Example:
@@ -973,10 +1145,15 @@ equal elements. The iteratees are invoked with one argument: (value).
 
 
 **Arguments:**
+
 @param array|object $collection The collection to iterate over.
+
 @param callable|callable[] $iteratees The iteratees to sort by.
 
+
+
 **Return:**
+
 @return array Returns the new sorted array.
 
 Example:
@@ -1008,7 +1185,10 @@ Gets the timestamp of the number of milliseconds that have elapsed since the Uni
 
 **Arguments:**
 
+
+
 **Return:**
+
 @return int Returns the timestamp.
 
 Example:
@@ -1033,10 +1213,15 @@ strings, typed arrays, resources, DOM Nodes. objects are compared
 by their own, not inherited, enumerable properties.
 
 **Arguments:**
+
 @param mixed $value The value to compare.
+
 @param mixed $other The other value to compare.
 
+
+
 **Return:**
+
 @return bool Returns `true` if the values are equivalent, else `false`.
 
 Example:
@@ -1062,9 +1247,13 @@ Checks if `value` is an `\Exception`, `\ParseError`, \Error`, \Throwable`, \Soap
 
 
 **Arguments:**
+
 @param mixed $value The value to check.
 
+
+
 **Return:**
+
 @return bool Returns `true` if `value` is an error object, else `false`.
 
 Example:
@@ -1087,11 +1276,17 @@ Clamps `number` within the inclusive `lower` and `upper` bounds.
 
 
 **Arguments:**
+
 @param int $ number The number to clamp.
+
 @param int $ lower The lower bound.
+
 @param int $ upper The upper bound.
 
+
+
 **Return:**
+
 @return int Returns the clamped number.
 
 Example:
@@ -1115,11 +1310,17 @@ If `start` is greater than `end` the params are swapped to support
 negative ranges.
 
 **Arguments:**
+
 @param float $ number The number to check.
+
 @param float $start The start of the range.
+
 @param float $end The end of the range.
 
+
+
 **Return:**
+
 @return bool Returns `true` if `number` is in the range, else `false`.
 
 Example:
@@ -1158,11 +1359,17 @@ is returned. If `floating` is `true`, or either `lower` or `upper` are
 floats, a floating-point number is returned instead of an integer.
 
 **Arguments:**
+
 @param int|float $lower The lower bound.
+
 @param int|float $upper The upper bound.
+
 @param bool $floating Specify returning a floating-point number.
 
+
+
 **Return:**
+
 @return int|float Returns the random number.
 
 Example:
@@ -1190,9 +1397,13 @@ Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the camel cased string.
 
 Example:
@@ -1218,9 +1429,13 @@ to lower case.
 
 
 **Arguments:**
+
 @param string $string The string to capitalize.
 
+
+
 **Return:**
+
 @return string Returns the capitalized string.
 
 Example:
@@ -1243,9 +1458,13 @@ letters to basic Latin letters and removing
 
 
 **Arguments:**
+
 @param string $string The string to deburr.
 
+
+
 **Return:**
+
 @return string Returns the deburred string.
 
 Example:
@@ -1262,11 +1481,17 @@ Checks if `string` ends with the given target string.
 
 
 **Arguments:**
+
 @param string $string The string to inspect.
+
 @param string $target The string to search for.
+
 @param int $position The position to search up to.
 
+
+
 **Return:**
+
 @return bool Returns `true` if `string` ends with `target`, else `false`.
 
 Example:
@@ -1300,9 +1525,13 @@ When working with HTML you should always
 XSS vectors.
 
 **Arguments:**
+
 @param string $string The string to escape.
 
+
+
 **Return:**
+
 @return string Returns the escaped string.
 
 Example:
@@ -1322,9 +1551,13 @@ Escapes the `RegExp` special characters "^", "$", "\", ".", "*", "+",
 
 
 **Arguments:**
+
 @param string $string The string to escape.
 
+
+
 **Return:**
+
 @return string Returns the escaped string.
 
 Example:
@@ -1344,9 +1577,13 @@ Converts `string` to
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the kebab cased string.
 
 Example:
@@ -1371,9 +1608,13 @@ Converts `string`, as space separated words, to lower case.
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the lower cased string.
 
 Example:
@@ -1398,9 +1639,13 @@ Converts the first character of `string` to lower case.
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the converted string.
 
 Example:
@@ -1422,11 +1667,17 @@ Pads `string` on the left and right sides if it's shorter than `length`.
 Padding characters are truncated if they can't be evenly divided by `length`.
 
 **Arguments:**
+
 @param string $string The string to pad.
+
 @param int $length The padding length.
+
 @param string $chars The string used as padding.
 
+
+
 **Return:**
+
 @return string Returns the padded string.
 
 Example:
@@ -1452,11 +1703,17 @@ characters are truncated if they exceed `length`.
 
 
 **Arguments:**
+
 @param string $string The string to pad.
+
 @param int $length The padding length.
+
 @param string $chars The string used as padding.
 
+
+
 **Return:**
+
 @return string Returns the padded string.
 
 Example:
@@ -1482,11 +1739,17 @@ characters are truncated if they exceed `length`.
 
 
 **Arguments:**
+
 @param string $string ='' The string to pad.
+
 @param int $length The padding length.
+
 @param string $chars The string used as padding.
 
+
+
 **Return:**
+
 @return string Returns the padded string.
 
 Example:
@@ -1514,10 +1777,15 @@ hexadecimal, in which case a `radix` of `16` is used.
 [ES5 implementation](https://es5.github.io/#x15.1.2.2) of `parseInt`.
 
 **Arguments:**
+
 @param int|float|string $string The string to convert.
+
 @param int $radix The radix to interpret `string` by.
 
+
+
 **Return:**
+
 @return int Returns the converted integer.
 
 Example:
@@ -1536,10 +1804,15 @@ Repeats the given string `n` times.
 
 
 **Arguments:**
+
 @param string $string The string to repeat.
+
 @param int $n The number of times to repeat the string.
 
+
+
 **Return:**
+
 @return string Returns the repeated string.
 
 Example:
@@ -1565,11 +1838,17 @@ Replaces matches for `pattern` in `string` with `replacement`.
 [`String#replace`](https://mdn.io/String/replace).
 
 **Arguments:**
+
 @param string $string The string to modify.
+
 @param string $pattern The pattern to replace.
+
 @param callable|string $ replacement The match replacement.
 
+
+
 **Return:**
+
 @return string Returns the modified string.
 
 Example:
@@ -1589,9 +1868,13 @@ Converts `string` to
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the snake cased string.
 
 Example:
@@ -1615,11 +1898,17 @@ Splits `string` by `separator`.
 [`String#split`](https://mdn.io/String/split).
 
 **Arguments:**
+
 @param string $ string The string to split.
+
 @param string $separator The separator pattern to split by.
+
 @param int $limit The length to truncate results to.
 
+
+
 **Return:**
+
 @return array Returns the string segments.
 
 Example:
@@ -1639,9 +1928,13 @@ Converts `string` to
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the start cased string.
 
 Example:
@@ -1666,11 +1959,17 @@ Checks if `string` starts with the given target string.
 
 
 **Arguments:**
+
 @param string $string The string to inspect.
+
 @param string $target The string to search for.
+
 @param int $position The position to search from.
 
+
+
 **Return:**
+
 @return bool Returns `true` if `string` starts with `target`, else `false`.
 
 Example:
@@ -1699,14 +1998,19 @@ object is given, it takes precedence over `$templateSettings` values.
 
 
 **Arguments:**
+
 @param string $string The template string.
+
 @param array $options The options array.
 RegExp $options['escape'] = _::$templateSettings['escape'] The HTML "escape" delimiter.
 RegExp $options['evaluate'] = _::$templateSettings['evaluate'] The "evaluate" delimiter.
 array  $options['imports'] = _::$templateSettings['imports'] An object to import into the template as free variables.
 RegExp $options['interpolate'] = _::$templateSettings['interpolate'] The "interpolate" delimiter.
 
+
+
 **Return:**
+
 @return callable Returns the compiled template function.
 
 Example:
@@ -1762,9 +2066,13 @@ Converts `string`, as a whole, to lower case
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the lower cased string.
 
 Example:
@@ -1789,9 +2097,13 @@ Converts `string`, as a whole, to upper case
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the upper cased string.
 
 Example:
@@ -1815,10 +2127,15 @@ Removes leading and trailing whitespace or specified characters from `string`.
 
 
 **Arguments:**
+
 @param string $string The string to trim.
+
 @param string $chars The characters to trim.
 
+
+
 **Return:**
+
 @return string Returns the trimmed string.
 
 Example:
@@ -1840,10 +2157,15 @@ Removes trailing whitespace or specified characters from `string`.
 
 
 **Arguments:**
+
 @param string $string The string to trim.
+
 @param string $chars The characters to trim.
 
+
+
 **Return:**
+
 @return string Returns the trimmed string.
 
 Example:
@@ -1863,10 +2185,15 @@ Removes leading whitespace or specified characters from `string`.
 
 
 **Arguments:**
+
 @param string $string The string to trim.
+
 @param string $chars The characters to trim.
 
+
+
 **Return:**
+
 @return string Returns the trimmed string.
 
 Example:
@@ -1889,13 +2216,18 @@ The last characters of the truncated string are replaced with the omission
 string which defaults to "...".
 
 **Arguments:**
+
 @param string $string The string to truncate.
+
 @param array $options The options object.
 length = 30 The maximum string length.
 omission = '...' The string to indicate text is omitted.
 separator The separator pattern to truncate to.
 
+
+
 **Return:**
+
 @return string Returns the truncated string.
 
 Example:
@@ -1933,9 +2265,13 @@ their corresponding characters.
 
 
 **Arguments:**
+
 @param string $string The string to unescape.
 
+
+
 **Return:**
+
 @return string Returns the unescaped string.
 
 Example:
@@ -1954,9 +2290,13 @@ Converts `string`, as space separated words, to upper case.
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the upper cased string.s
 
 Example:
@@ -1981,9 +2321,13 @@ Converts the first character of `string` to upper case.
 
 
 **Arguments:**
+
 @param string $string The string to convert.
 
+
+
 **Return:**
+
 @return string Returns the converted string.
 
 Example:
@@ -2005,10 +2349,15 @@ Splits `string` into an array of its words.
 
 
 **Arguments:**
+
 @param string $string The string to inspect.
+
 @param string $pattern The pattern to match words.
 
+
+
 **Return:**
+
 @return array Returns the words of `string`.
 
 Example:
@@ -2033,10 +2382,15 @@ object. Any additional arguments are provided to `func` when it's invoked.
 
 
 **Arguments:**
+
 @param callable $func The function to attempt.
+
 @param array $args The arguments to invoke `func` with.
 
+
+
 **Return:**
+
 @return mixed|\Throwable Returns the `func` result or error object.
 
 Example:
@@ -2061,9 +2415,13 @@ This method returns the first argument it receives.
 
 
 **Arguments:**
+
 @param mixed $value Any value.
 
+
+
 **Return:**
+
 @return mixed Returns `value`.
 
 Example:
@@ -2084,9 +2442,13 @@ Creates a function that returns the value at `path` of a given object.
 
 
 **Arguments:**
+
 @param array|string $ path The path of the property to get.
 
+
+
 **Return:**
+
 @return callable Returns the new accessor function.
 
 Example:

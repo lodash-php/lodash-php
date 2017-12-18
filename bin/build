@@ -35,15 +35,15 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($sources, 
     $readme[$category][$function] .= $docblock->getSummary().PHP_EOL.PHP_EOL;
     $readme[$category][$function] .= $docblock->getDescription().PHP_EOL.PHP_EOL;
 
-    $readme[$category][$function] .= "**Arguments:**\n";
+    $readme[$category][$function] .= "**Arguments:**\n\n";
 
     foreach ($docblock->getTagsByName('param') as $param) {
-        $readme[$category][$function] .= $param->render().PHP_EOL;
+        $readme[$category][$function] .= $param->render().PHP_EOL.PHP_EOL;
     }
 
-    $readme[$category][$function] .= PHP_EOL;
+    $readme[$category][$function] .= PHP_EOL.PHP_EOL;
 
-    $readme[$category][$function] .= "**Return:**\n";
+    $readme[$category][$function] .= "**Return:**\n\n";
 
     $readme[$category][$function] .= $docblock->getTagsByName('return')[0]->render();
 
@@ -75,6 +75,7 @@ Install Lodash-PHP through composer:
 
 ```bash
 $ composer require solidworx/lodash-php
+```
 
 # Usage
 
@@ -83,14 +84,14 @@ Each method in Lodash-PHP is a separate function that can be imported and used o
 ```php
 <?php
 
-use function _\each;
+use function _\\each;
 
 each([1, 2, 3], function (int \$item) {
     var_dump(\$item);
 });
 ```
 
-Lodash-PHP also comes with a `_` class that can be used globally.
+Lodash-PHP also comes with a global `_` class that can be used globally.
 
 ```php
 <?php
