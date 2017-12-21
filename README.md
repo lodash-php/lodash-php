@@ -9,7 +9,7 @@ Lodash-PHP tries to mimick lodash.js as close as possible
 Install Lodash-PHP through composer:
 
 ```bash
-$ composer require solidworx/lodash-php
+$ composer require lodash-php/lodash-php
 ```
 
 # Usage
@@ -1053,6 +1053,200 @@ Creates a slice of `array` from `start` up to, but not including, `end`.
 
 @return array the slice of `array`.
 
+### tail
+
+Gets all but the first element of `array`.
+
+
+
+**Arguments:**
+
+@param array $array The array to query.
+
+
+
+**Return:**
+
+@return array the slice of `array`.
+
+Example:
+```php
+<?php
+ use function _\tail;
+
+tail([1, 2, 3])
+// => [2, 3]
+
+```
+### take
+
+Creates a slice of `array` with `n` elements taken from the beginning.
+
+
+
+**Arguments:**
+
+@param array $array The array to query.
+
+@param int $n The number of elements to take.
+
+
+
+**Return:**
+
+@return array the slice of `array`.
+
+Example:
+```php
+<?php
+ use function _\take;
+
+take([1, 2, 3])
+// => [1]
+
+take([1, 2, 3], 2)
+// => [1, 2]
+
+take([1, 2, 3], 5)
+// => [1, 2, 3]
+
+take([1, 2, 3], 0)
+// => []
+
+```
+### takeRight
+
+Creates a slice of `array` with `n` elements taken from the end.
+
+
+
+**Arguments:**
+
+@param array $array The array to query.
+
+@param int $n The number of elements to take.
+
+
+
+**Return:**
+
+@return array the slice of `array`.
+
+Example:
+```php
+<?php
+ use function _\takeRight;
+
+takeRight([1, 2, 3])
+// => [3]
+
+takeRight([1, 2, 3], 2)
+// => [2, 3]
+
+takeRight([1, 2, 3], 5)
+// => [1, 2, 3]
+
+takeRight([1, 2, 3], 0)
+// => []
+
+```
+### takeRightWhile
+
+Creates a slice of `array` with elements taken from the end. Elements are
+taken until `predicate` returns falsey. The predicate is invoked with
+three arguments: (value, index, array).
+
+
+
+**Arguments:**
+
+@param array $array The array to query.
+
+@param callable $predicate The function invoked per iteration.
+
+
+
+**Return:**
+
+@return array the slice of `array`.
+
+Example:
+```php
+<?php
+ use function _\takeRightWhile;
+
+$users = [
+  [ 'user' => 'barney',  'active' => false ],
+  [ 'user' => 'fred',    'active' => true ],
+  [ 'user' => 'pebbles', 'active' => true ]
+];
+
+takeRightWhile($users, function($value) { return $value['active']; })
+// => objects for ['fred', 'pebbles']
+
+```
+### takeWhile
+
+Creates a slice of `array` with elements taken from the beginning. Elements
+are taken until `predicate` returns falsey. The predicate is invoked with
+three arguments: (value, index, array).
+
+
+
+**Arguments:**
+
+@param array $array The array to query.
+
+@param mixed $predicate The function invoked per iteration.
+
+
+
+**Return:**
+
+@return array the slice of `array`.
+
+Example:
+```php
+<?php
+ use function _\takeWhile;
+
+$users = [
+  [ 'user' => 'barney',  'active' => true ],
+  [ 'user' => 'fred',    'active' => true ],
+  [ 'user' => 'pebbles', 'active' => false ]
+]
+
+takeWhile($users, function($value) { return $value['active']; })
+// => objects for ['barney', 'fred']
+
+```
+### union
+
+Creates an array of unique values, in order, from all given arrays using
+[`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+for equality comparisons.
+
+
+
+**Arguments:**
+
+@param array[] $arrays The arrays to inspect.
+
+
+
+**Return:**
+
+@return array the new array of combined values.
+
+Example:
+```php
+<?php
+ use function _\union;
+
+union([2], [1, 2])
+// => [2, 1]
+
+```
 ## Collection
 
 ### each
