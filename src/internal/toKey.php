@@ -16,7 +16,7 @@ namespace _\internal;
  *
  * @param mixed value The value to inspect.
  *
- * @returns string Returns the key.
+ * @return string Returns the key.
  */
 function toKey($value): string
 {

@@ -16,10 +16,10 @@ namespace _\internal;
  *
  * @private
  *
- * @param {string} The string to inspect.
- * @returns {Array} Returns the words of `string`.
+ * @param string The string to inspect.
+ * @return array Returns the words of `string`.
  */
-function unicodeWords(string $string)
+function unicodeWords(string $string): array
 {
     $regex = '#'.\implode('|', [
             rsUpper.'?'.rsLower.'+'.rsOptContrLower.'(?='.\implode('|', [rsBreak, rsUpper, '$']).')',

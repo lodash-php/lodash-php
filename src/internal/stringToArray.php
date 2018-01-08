@@ -18,7 +18,7 @@ namespace _\internal;
  *
  * @param string $string The string to convert.
  *
- * @returns array Returns the converted array.
+ * @return array Returns the converted array.
  */
 function stringToArray(string $string): array
 {

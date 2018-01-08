@@ -18,7 +18,7 @@ namespace _\internal;
  *
  * @param string $string The string inspect.
  *
- * @returns int Returns the string size.
+ * @return int Returns the string size.
  */
 function unicodeSize($string): int
 {

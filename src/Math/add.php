@@ -21,7 +21,7 @@ use function _\internal\createMathOperation;
  * @param int|float|string $augend The first number in an addition.
  * @param int|float|string $addend The second number in an addition.
  *
- * @returns int|float Returns the total.
+ * @return int|float Returns the total.
  *
  * @example
  * <code>
