@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace _\internal;
 
-function overRest(callable $func, $start, callable $transform)
+function overRest(callable $func, $start, callable $transform): callable
 {
     $start = max($start ?? -1, 0);
 
@@ -31,6 +31,6 @@ function overRest(callable $func, $start, callable $transform)
         }
         $otherArgs[$start] = $transform($array);
 
-        return $func(...$otherArgs);
+        return $func(...$otherArgs[$start]);
     };
 }

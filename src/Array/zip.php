@@ -31,5 +31,5 @@ use function _\internal\baseRest;
  */
 function zip(array ...$arrays): array
 {
-    return baseRest('\_\unzip')(...$arrays);
+    return baseRest('\_\unzip')($arrays);
 }

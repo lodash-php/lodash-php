@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace _\internal;
 
-function baseRest(callable $func, $start = null)
+function baseRest(callable $func, $start = null): callable
 {
     return overRest($func, $start, '\_\identity');
 }
