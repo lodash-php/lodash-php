@@ -27,11 +27,11 @@ use function _\internal\baseUniq;
  * @param mixed $iteratee The iteratee invoked per element.
  *
  * @return array the new duplicate free array.
- * @see      uniq, uniqWith
  * @example
- *
+ * <code>
  * uniqBy([2.1, 1.2, 2.3], 'floor')
  * // => [2.1, 1.2]
+ * </code>
  */
 function uniqBy(array $array, $iteratee): array
 {
