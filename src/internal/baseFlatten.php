@@ -32,7 +32,7 @@ function baseFlatten(?array $array, float $depth, callable $predicate = null, bo
         return $result;
     }
 
-    $predicate = $predicate ?? '_\internal\isFlattenable';
+    $predicate = $predicate ?? '\_\internal\isFlattenable';
 
     foreach ($array as $value) {
         if ($depth > 0 && $predicate($value)) {
@@ -43,7 +43,7 @@ function baseFlatten(?array $array, float $depth, callable $predicate = null, bo
                 $result = \array_merge($result, $value);
             }
         } else if (!$isStrict) {
-            $result[count($result)] = $value;
+            $result[\count($result)] = $value;
         }
     }
 
