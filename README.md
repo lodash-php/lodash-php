@@ -41,6 +41,7 @@ _::each([1, 2, 3], function (int $item) {
 - [Collection](#collection)
 - [Date](#date)
 - [Lang](#lang)
+- [Math](#math)
 - [Number](#number)
 - [String](#string)
 - [Util](#util)
@@ -1247,6 +1248,282 @@ union([2], [1, 2])
 // => [2, 1]
 
 ```
+### unionBy
+
+This method is like `union` except that it accepts `iteratee` which is
+invoked for each element of each `arrays` to generate the criterion by
+which uniqueness is computed. Result values are chosen from the first
+array in which the value occurs. The iteratee is invoked with one argument:
+(value).
+
+
+
+**Arguments:**
+
+@param array[] $arrays The arrays to inspect.
+
+@param callable $iteratee The iteratee invoked per element.
+
+
+
+**Return:**
+
+@return array the new array of combined values.
+
+Example:
+```php
+<?php
+ use function _\unionBy;
+
+unionBy([2.1], [1.2, 2.3], 'floor')
+// => [2.1, 1.2]
+
+// The `_::property` iteratee shorthand.
+unionBy([['x' => 1]], [['x' => 2], ['x' => 1]], 'x');
+// => [['x' => 1], ['x' => 2]]
+
+```
+### unionWith
+
+This method is like `union` except that it accepts `comparator` which
+is invoked to compare elements of `arrays`. Result values are chosen from
+the first array in which the value occurs. The comparator is invoked
+with two arguments: (arrVal, othVal).
+
+
+
+**Arguments:**
+
+@param array[] $arrays The arrays to inspect.
+
+@param callable $comparator The comparator invoked per element.
+
+
+
+**Return:**
+
+@return array the new array of combined values.
+
+Example:
+```php
+<?php
+ use function _\unionWith;
+$objects = [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1]]
+$others = [['x' => 1, 'y' => 1], ['x' => 1, 'y' => 2]]
+
+unionWith($objects, $others, '_::isEqual')
+// => [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1], ['x' => 1, 'y' => 1]]
+```
+### uniq
+
+Creates a duplicate-free version of an array, using
+[`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+for equality comparisons, in which only the first occurrence of each element
+is kept. The order of result values is determined by the order they occur
+in the array.
+
+
+
+**Arguments:**
+
+@param array $array The array to inspect.
+
+
+
+**Return:**
+
+@return array the new duplicate free array.
+
+Example:
+```php
+<?php
+ use function _\uniq;
+
+uniq([2, 1, 2])
+// => [2, 1]s
+
+```
+### uniqBy
+
+This method is like `uniq` except that it accepts `iteratee` which is
+invoked for each element in `array` to generate the criterion by which
+uniqueness is computed. The order of result values is determined by the
+order they occur in the array. The iteratee is invoked with one argument:
+(value).
+
+
+
+**Arguments:**
+
+@param array $array The array to inspect.
+
+@param mixed $iteratee The iteratee invoked per element.
+
+
+
+**Return:**
+
+@return array the new duplicate free array.
+
+Example:
+```php
+<?php
+ use function _\uniqBy;
+
+uniqBy([2.1, 1.2, 2.3], 'floor')
+// => [2.1, 1.2]
+
+```
+### uniqWith
+
+This method is like `uniq` except that it accepts `comparator` which
+is invoked to compare elements of `array`. The order of result values is
+determined by the order they occur in the array.The comparator is invoked
+with two arguments: (arrVal, othVal).
+
+
+
+**Arguments:**
+
+@param array $array The array to inspect.
+
+@param callable $comparator The comparator invoked per element.
+
+
+
+**Return:**
+
+@return array the new duplicate free array.
+
+Example:
+```php
+<?php
+ use function _\uniqWith;
+
+$objects = [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1], ['x' => 1, 'y' => 2]]
+
+uniqWith($objects, '_::isEqual')
+// => [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1]]
+
+```
+### unzip
+
+This method is like `zip` except that it accepts an array of grouped
+elements and creates an array regrouping the elements to their pre-zip
+configuration.
+
+
+
+**Arguments:**
+
+@param array $array The array of grouped elements to process.
+
+
+
+**Return:**
+
+@return array the new array of regrouped elements.
+
+Example:
+```php
+<?php
+ use function _\unzip;
+
+$zipped = zip(['a', 'b'], [1, 2], [true, false])
+// => [['a', 1, true], ['b', 2, false]]
+
+unzip($zipped)
+// => [['a', 'b'], [1, 2], [true, false]]
+
+```
+### unzipWith
+
+This method is like `unzip` except that it accepts `iteratee` to specify
+how regrouped values should be combined. The iteratee is invoked with the
+elements of each group: (.
+
+..group).
+
+**Arguments:**
+
+@param array $array The array of grouped elements to process.
+
+@param callable $iteratee The function to combine regrouped values.
+
+
+
+**Return:**
+
+@return array the new array of regrouped elements.
+
+Example:
+```php
+<?php
+ use function _\unzipWith;
+
+$zipped = zip([1, 2], [10, 20], [100, 200])
+// => [[1, 10, 100], [2, 20, 200]]
+
+unzipWith(zipped, '_::add')
+// => [3, 30, 300]
+
+```
+### without
+
+Creates an array excluding all given values using
+[`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+for equality comparisons.
+
+**Note:** Unlike `pull`, this method returns a new array.
+
+**Arguments:**
+
+@param array $array The array to inspect.
+
+@param array $values The values to exclude.
+
+
+
+**Return:**
+
+@return array the new array of filtered values.
+
+Example:
+```php
+<?php
+ use function _\without;
+
+without([2, 1, 2, 3], 1, 2)
+// => [3]
+
+```
+### zip
+
+Creates an array of grouped elements, the first of which contains the
+first elements of the given arrays, the second of which contains the
+second elements of the given arrays, and so on.
+
+
+
+**Arguments:**
+
+@param array[] $arrays The arrays to process.
+
+
+
+**Return:**
+
+@return array the new array of grouped elements.
+
+Example:
+```php
+<?php
+ use function _\zip;
+
+zip(['a', 'b'], [1, 2], [true, false])
+// => [['a', 1, true], ['b', 2, false]]
+
+```
 ## Collection
 
 ### each
@@ -1467,6 +1744,35 @@ isError(new \Exception())
 
 isError(\Exception::Class)
 // => false
+```
+## Math
+
+### add
+
+Adds two numbers.
+
+
+
+**Arguments:**
+
+@param int|float|string $augend The first number in an addition.
+
+@param int|float|string $addend The second number in an addition.
+
+
+
+**Return:**
+
+@return int|float Returns the total.
+
+Example:
+```php
+<?php
+ use function _\add;
+
+add(6, 4);
+// => 10
+
 ```
 ## Number
 
