@@ -25,7 +25,11 @@ namespace _;
  * @example
  * <code>
  * zipObject(['a', 'b'], [1, 2])
- * // => { 'a': 1, 'b': 2 }
+ * /* => object(stdClass)#210 (2) {
+ * ["a"] => int(1)
+ * ["b"] => int(2)
+ * }
+ * *\/
  * </code>
  */
 function zipObject(array $props = [], array $values = [])
