@@ -17,6 +17,8 @@ namespace _;
  * @param mixed $value The value to compare.
  * @param mixed $other The other value to compare.
  *
+ * @category Lang
+ *
  * @return boolean Returns `true` if the values are equivalent, else `false`.
  * @example
  * <code>

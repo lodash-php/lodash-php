@@ -28,10 +28,10 @@ namespace _;
  * @param callable $func     The function to have its output memoized.
  * @param callable $resolver The function to resolve the cache key.
  *
- * @returns callable Returns the new memoized function.
+ * @return callable Returns the new memoized function.
  *
  * @example
- *
+ * <code>
  * $object = ['a' => 1, 'b' => 2];
  * $other = ['c' => 3, 'd' => 4];
  *
@@ -50,6 +50,7 @@ namespace _;
  * $values->cache->set($object, ['a', 'b']);
  * $values($object);
  * // => ['a', 'b']
+ * </code>
  */
 function memoize(callable $func = null, callable $resolver = null)
 {
