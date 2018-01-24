@@ -23,6 +23,10 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($sources, 
         continue;
     }
 
+    if (!\is_callable("_\\$function")) {
+        continue;
+    }
+
     $reflection = new ReflectionFunction("_\\$function");
 
     $docblock = $factory->create($reflection->getDocComment());
