@@ -40,6 +40,7 @@ _::each([1, 2, 3], function (int $item) {
 - [Array](#array)
 - [Collection](#collection)
 - [Date](#date)
+- [Function](#function)
 - [Lang](#lang)
 - [Math](#math)
 - [Number](#number)
@@ -1524,6 +1525,107 @@ zip(['a', 'b'], [1, 2], [true, false])
 // => [['a', 1, true], ['b', 2, false]]
 
 ```
+### zipObject
+
+This method is like `fromPairs` except that it accepts two arrays,
+one of property identifiers and one of corresponding values.
+
+
+
+**Arguments:**
+
+@param array $props The property identifiers.
+
+@param array $values The property values.
+
+
+
+**Return:**
+
+@return object the new object.
+
+Example:
+```php
+<?php
+ use function _\zipObject;
+
+zipObject(['a', 'b'], [1, 2])
+/* => object(stdClass)#210 (2) {
+["a"] => int(1)
+["b"] => int(2)
+}
+*\/
+
+```
+### zipObjectDeep
+
+This method is like `zipObject` except that it supports property paths.
+
+
+
+**Arguments:**
+
+@param array $props The property identifiers.
+
+@param array $values The property values.
+
+
+
+**Return:**
+
+@return object the new object.
+
+Example:
+```php
+<?php
+ use function _\zipObjectDeep;
+
+zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2])
+/* => class stdClass#20 (1) {
+ public $a => class stdClass#19 (1) {
+     public $b =>
+         array(2) {
+             [0] => class stdClass#17 (1) {
+                     public $c => int(1)
+                 }
+            [1] => class stdClass#18 (1) {
+                 public $d => int(2)
+                 }
+         }
+     }
+ }
+*\/
+
+```
+### zipWith
+
+This method is like `zip` except that it accepts `iteratee` to specify
+how grouped values should be combined. The iteratee is invoked with the
+elements of each group: (.
+
+..group).
+
+**Arguments:**
+
+@param array[] $arrays The arrays to process.
+
+@param callable $iteratee The function to combine grouped values.
+
+
+
+**Return:**
+
+@return array the new array of grouped elements.
+
+Example:
+```php
+<?php
+ use function _\zipWith;
+
+zipWith([1, 2], [10, 20], [100, 200], function($a, $b, $c) { return $a + $b + $c; })
+// => [111, 222]
+
+```
 ## Collection
 
 ### each
@@ -1678,8 +1780,102 @@ now();
 // => 1511180325735
 
 ```
+## Function
+
+### memoize
+
+Creates a function that memoizes the result of `func`. If `resolver` is
+provided, it determines the cache key for storing the result based on the
+arguments provided to the memoized function. By default, the first argument
+provided to the memoized function is used as the map cache key
+
+**Note:** The cache is exposed as the `cache` property on the memoized
+function. Its creation may be customized by replacing the `_.memoize.Cache`
+constructor with one whose instances implement the
+[`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+method interface of `clear`, `delete`, `get`, `has`, and `set`.
+
+**Arguments:**
+
+@param callable $func The function to have its output memoized.
+
+@param callable $resolver The function to resolve the cache key.
+
+
+
+**Return:**
+
+@return callable Returns the new memoized function.
+
+Example:
+```php
+<?php
+ use function _\memoize;
+
+$object = ['a' => 1, 'b' => 2];
+$other = ['c' => 3, 'd' => 4];
+
+$values = memoize('_\values');
+$values($object);
+// => [1, 2]
+
+$values($other);
+// => [3, 4]
+
+$object['a'] = 2;
+$values($object);
+// => [1, 2]
+
+// Modify the result cache.
+$values->cache->set($object, ['a', 'b']);
+$values($object);
+// => ['a', 'b']
+
+```
 ## Lang
 
+### eq
+
+Performs a comparison between two values to determine if they are equivalent.
+
+
+
+**Arguments:**
+
+@param mixed $value The value to compare.
+
+@param mixed $other The other value to compare.
+
+
+
+**Return:**
+
+@return bool Returns `true` if the values are equivalent, else `false`.
+
+Example:
+```php
+<?php
+ use function _\eq;
+
+$object = (object) ['a' => 1];
+$other = (object) ['a' => 1];
+
+eq($object, $object);
+// => true
+
+eq($object, $other);
+// => false
+
+eq('a', 'a');
+// => true
+
+eq(['a'], (object) ['a']);
+// => false
+
+eq(INF, INF);
+// => true
+
+```
 ### isEqual
 
 Performs a deep comparison between two values to determine if they are
