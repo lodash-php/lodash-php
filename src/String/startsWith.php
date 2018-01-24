@@ -40,7 +40,7 @@ function startsWith(string $string, string $target, int $position = null): bool
 
     if ($position < 0) {
         $position = 0;
-    } else if ($position > $length) {
+    } elseif ($position > $length) {
         $position = $length;
     }
 

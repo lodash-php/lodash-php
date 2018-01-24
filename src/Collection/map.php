@@ -61,9 +61,9 @@ function map($collection, $iteratee): array
 
     if (\is_array($collection)) {
         $values = $collection;
-    } else if ($collection instanceof \Traversable) {
+    } elseif ($collection instanceof \Traversable) {
         $values = \iterator_to_array($collection);
-    } else if (\is_object($collection)) {
+    } elseif (\is_object($collection)) {
         $values = \get_object_vars($collection);
     }
 

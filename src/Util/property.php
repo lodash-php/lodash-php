@@ -42,7 +42,6 @@ function property($path): callable
         ->getPropertyAccessor();
 
     return function ($value, $index = 0, $collection = []) use ($path, $propertyAccess) {
-
         $path = \implode('.', (array) $path);
 
         if (\is_array($value)) {

@@ -107,8 +107,7 @@ function template(string $string, array $options = []): callable
     ]);
 
     $string = \preg_replace_callback('#'.$reDelimiters.'#u', function ($matches) use (&$options) {
-        list(
-            ,
+        list(,
             $escapeValue,
             $interpolateValue,
             $esTemplateValue,
@@ -143,8 +142,7 @@ function template(string $string, array $options = []): callable
 
     $imports = $options['imports'] ?? [];
 
-    return new class($string, $imports)
-    {
+    return new class($string, $imports) {
         public $source;
 
         private $imports;
@@ -162,7 +160,7 @@ function template(string $string, array $options = []): callable
             foreach ($this->imports as $import => $alias) {
                 if (\class_exists($import)) {
                     $imports .= "use $import as $alias;";
-                } else if (\function_exists($import)) {
+                } elseif (\function_exists($import)) {
                     $imports .= "use function $import as $alias;";
                 }
             }

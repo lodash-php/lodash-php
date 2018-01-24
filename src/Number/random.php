@@ -45,7 +45,7 @@ function random($lower = null, $upper = null, $floating = null)
         if (\is_bool($upper)) {
             $floating = $upper;
             $upper = null;
-        } else if (\is_bool($lower)) {
+        } elseif (\is_bool($lower)) {
             $floating = $lower;
             $lower = null;
         }
@@ -54,7 +54,7 @@ function random($lower = null, $upper = null, $floating = null)
     if (null === $lower && null === $upper) {
         $lower = 0;
         $upper = 1;
-    } else if (null === $upper) {
+    } elseif (null === $upper) {
         $upper = $lower;
         $lower = 0;
     }

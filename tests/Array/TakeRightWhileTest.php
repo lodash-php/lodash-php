@@ -22,6 +22,8 @@ class TakeRightWhileTest extends TestCase
             ['user' => 'pebbles', 'active' => true],
         ];
 
-        $this->assertSame([['user' => 'fred', 'active' => true], ['user' => 'pebbles', 'active' => true]], takeRightWhile($users, function ($value) { return $value['active']; }));
+        $this->assertSame([['user' => 'fred', 'active' => true], ['user' => 'pebbles', 'active' => true]], takeRightWhile($users, function ($value) {
+            return $value['active'];
+        }));
     }
 }

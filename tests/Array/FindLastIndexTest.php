@@ -22,8 +22,12 @@ class FindLastIndexTest extends TestCase
             ['user' => 'pebbles', 'active' => false],
         ];
 
-        $this->assertSame(2, findLastIndex($users, function ($user) { return $user['user'] === 'pebbles'; }));
-        $this->assertSame(-1, findLastIndex($users, function ($user) { return $user['user'] === 'wilma'; }));
+        $this->assertSame(2, findLastIndex($users, function ($user) {
+            return $user['user'] === 'pebbles';
+        }));
+        $this->assertSame(-1, findLastIndex($users, function ($user) {
+            return $user['user'] === 'wilma';
+        }));
         $this->assertSame(1, findLastIndex($users, ['user' => 'fred'], -1));
     }
 }

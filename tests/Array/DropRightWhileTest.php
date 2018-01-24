@@ -22,6 +22,8 @@ class DropRightWhileTest extends TestCase
             ['user' => 'pebbles', 'active' => true],
         ];
 
-        $this->assertSame([[ 'user' => 'barney',  'active' => false ]], dropRightWhile($users, function($user) { return $user['active']; }));
+        $this->assertSame([[ 'user' => 'barney',  'active' => false ]], dropRightWhile($users, function ($user) {
+            return $user['active'];
+        }));
     }
 }

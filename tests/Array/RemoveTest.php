@@ -17,7 +17,9 @@ class RemoveTest extends TestCase
     public function testRemove()
     {
         $array = [1, 2, 3, 4];
-        $evens = remove($array, function ($n) { return $n % 2 === 0; });
+        $evens = remove($array, function ($n) {
+            return $n % 2 === 0;
+        });
         $this->assertSame([1, 3], $array);
         $this->assertSame([2, 4], $evens);
     }

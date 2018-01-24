@@ -42,7 +42,7 @@ function baseFlatten(?array $array, float $depth, callable $predicate = null, bo
             } else {
                 $result = \array_merge($result, $value);
             }
-        } else if (!$isStrict) {
+        } elseif (!$isStrict) {
             $result[\count($result)] = $value;
         }
     }

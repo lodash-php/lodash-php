@@ -45,7 +45,7 @@ function baseUniq(array $array, callable $iteratee = null, callable $comparator 
             }
 
             $result[] = $value;
-        } else if (!$includes($result, $computed, $comparator)) {
+        } elseif (!$includes($result, $computed, $comparator)) {
             if ($seen !== $result) {
                 $seen[] = $computed;
             }

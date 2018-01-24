@@ -35,7 +35,6 @@ use function _\internal\arrayMap;
  */
 function unzipWith(array $array, callable $iteratee): array
 {
-
     if (!\count($array)) {
         return [];
     }

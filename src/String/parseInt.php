@@ -36,7 +36,7 @@ function parseInt($string, int $radix = null): int
 {
     if (null === $radix) {
         $radix = 10;
-    } else if ($radix) {
+    } elseif ($radix) {
         $radix = +$radix;
     }
 

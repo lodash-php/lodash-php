@@ -22,6 +22,8 @@ class TakeWhileTest extends TestCase
             ['user' => 'pebbles', 'active' => false],
         ];
 
-        $this->assertSame([['user' => 'barney', 'active' => true], ['user' => 'fred', 'active' => true]], takeWhile($users, function ($value) { return $value['active']; }));
+        $this->assertSame([['user' => 'barney', 'active' => true], ['user' => 'fred', 'active' => true]], takeWhile($users, function ($value) {
+            return $value['active'];
+        }));
     }
 }

@@ -85,6 +85,9 @@ class EqTest extends TestCase
             [
                 $date, $date,
             ],
+            [
+                INF, INF
+            ]
         ];
     }
 }

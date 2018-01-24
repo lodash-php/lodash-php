@@ -22,7 +22,9 @@ class FindIndexTest extends TestCase
             ['user' => 'pebbles', 'active' => true],
         ];
 
-        $this->assertSame(2, findIndex($users, function ($user) { return $user['user'] === 'pebbles'; }));
+        $this->assertSame(2, findIndex($users, function ($user) {
+            return $user['user'] === 'pebbles';
+        }));
         $this->assertSame(1, findIndex($users, ['user' => 'fred', 'active' => false]));
         $this->assertSame(0, findIndex($users, ['active', false]));
         $this->assertSame(2, findIndex($users, 'active'));

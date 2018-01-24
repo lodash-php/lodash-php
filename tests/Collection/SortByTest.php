@@ -23,7 +23,9 @@ class SortByTest extends TestCase
             ['user' => 'barney', 'age' => 34],
         ];
 
-        $this->assertSame([['user' => 'barney', 'age' => 36], ['user' => 'barney', 'age' => 34], ['user' => 'fred', 'age' => 48], ['user' => 'fred', 'age' => 40]], sortBy($users, function ($o) { return $o['user']; }));
+        $this->assertSame([['user' => 'barney', 'age' => 36], ['user' => 'barney', 'age' => 34], ['user' => 'fred', 'age' => 48], ['user' => 'fred', 'age' => 40]], sortBy($users, function ($o) {
+            return $o['user'];
+        }));
         $this->assertSame([['user' => 'barney', 'age' => 34], ['user' => 'barney', 'age' => 36], ['user' => 'fred', 'age' => 40], ['user' => 'fred', 'age' => 48]], sortBy($users, ['user', 'age']));
         $this->assertSame([], sortBy(null, []));
     }

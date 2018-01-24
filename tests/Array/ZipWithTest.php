@@ -16,6 +16,8 @@ class ZipWithTest extends TestCase
 {
     public function testZipWith()
     {
-        $this->assertSame([111, 222], zipWith([1, 2], [10, 20], [100, 200], function($a, $b, $c) { return $a + $b + $c; }));
+        $this->assertSame([111, 222], zipWith([1, 2], [10, 20], [100, 200], function ($a, $b, $c) {
+            return $a + $b + $c;
+        }));
     }
 }

@@ -19,11 +19,15 @@ class EachTest extends TestCase
         $testFunc = new \stdClass();
 
         $testFunc->total = 0;
-        each([1, 2], function ($value) use ($testFunc) { $testFunc->total += $value; });
+        each([1, 2], function ($value) use ($testFunc) {
+            $testFunc->total += $value;
+        });
         $this->assertSame(3, $testFunc->total);
 
         $testFunc->total = 0;
-        each((object) ['a' => 1, 'b' => 2], function ($value) use ($testFunc) { $testFunc->total += $value; });
+        each((object) ['a' => 1, 'b' => 2], function ($value) use ($testFunc) {
+            $testFunc->total += $value;
+        });
         $this->assertSame(3, $testFunc->total);
     }
 }

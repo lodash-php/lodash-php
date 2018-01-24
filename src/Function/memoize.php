@@ -54,8 +54,7 @@ namespace _;
  */
 function memoize(callable $func = null, callable $resolver = null)
 {
-    $memoized = new class ($func, $resolver ?? null)
-    {
+    $memoized = new class($func, $resolver ?? null) {
         /**
          * @var CacheInterface
          */
