@@ -20,6 +20,8 @@
     "autoload": {
         "files": [
             "src/internal/unicode.php",
+            "src/internal/Traits/CacheDataTrait.php",
+            "src/CacheInterface.php",
             "src/bootstrap.php"
         ]
     },

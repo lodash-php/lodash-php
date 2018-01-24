@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace _\internal;
 
 /** Used to match property names within property paths. */
-const reIsDeepProp = '/\.|\[(?:[^[\]]*|(["\'])(?:(?!\1)[^\\]|\\.)*?\1)\]/';
+const reIsDeepProp = '#\.|\[(?:[^[\]]*|(["\'])(?:(?!\1)[^\\\\]|\\.)*?\1)\]#';
 const reIsPlainProp = '/^\w*$/';
 
 /**
@@ -29,7 +29,7 @@ function isKey($value, $object = []): bool
         return false;
     }
 
-    if (\is_scalar($value)) {
+    if (\is_numeric($value)) {
         return true;
     }
 
