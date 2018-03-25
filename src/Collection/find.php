@@ -53,10 +53,6 @@ use function _\internal\baseIteratee;
  */
 function find(iterable $collection, $predicate = null, int $fromIndex = 0)
 {
-    if (null === $predicate) {
-        $predicate = '_\identity';
-    }
-
     $iteratee = baseIteratee($predicate);
 
     foreach (\array_slice($collection, $fromIndex) as $key => $value) {

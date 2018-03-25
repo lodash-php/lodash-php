@@ -30,10 +30,6 @@ use function _\internal\baseIteratee;
  */
 function findLast(iterable $collection, $predicate = null, int $fromIndex = 0)
 {
-    if (null === $predicate) {
-        $predicate = '_\identity';
-    }
-
     $iteratee = baseIteratee($predicate);
 
     foreach (\array_slice(\array_reverse($collection, true), $fromIndex) as $key => $value) {

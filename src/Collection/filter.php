@@ -51,10 +51,6 @@ use function _\internal\baseIteratee;
  */
 function filter(iterable $array, $predicate = null): array
 {
-    if (null === $predicate) {
-        $predicate = '_\identity';
-    }
-
     $iteratee = baseIteratee($predicate);
 
     $result = \array_filter(
