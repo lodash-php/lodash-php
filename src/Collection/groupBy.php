@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace _;
 
+use function _\internal\createAggregator;
+
 /**
  * Creates an array composed of keys generated from the results of running
  * each element of `collection` through `iteratee`. The order of grouped values

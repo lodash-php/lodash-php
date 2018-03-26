@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace _;
 
+use function _\internal\createAggregator;
+
 /**
  * Creates an array composed of keys generated from the results of running
  * each element of `collection` through `iteratee`. The corresponding value of
@@ -33,27 +35,15 @@ namespace _;
  * // => ['3' => 2, '5' => 1]
  * </code>
  */
-function countBy(iterable $collection, callable $iteratee = null): array
+function countBy(iterable $collection, callable $iteratee): array
 {
-    if (!$iteratee) {
-        $iteratee = '_\identity';
-    }
-
-    $result = [];
-
-    foreach ($collection as $value) {
-        if (!\is_scalar($value)) {
-            continue;
+    return createAggregator(function ($result, $key, $value) {
+        if (!isset($result[$value])) {
+            $result[$value] = 0;
         }
 
-        $computed = $iteratee($value);
+        $result[$value]++;
 
-        if (!isset($result[$computed])) {
-            $result[$computed] = 0;
-        };
-
-        $result[$computed]++;
-    }
-
-    return $result;
+        return $result;
+    })($collection, $iteratee);
 }
