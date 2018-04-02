@@ -61,11 +61,15 @@ function sortBy($collection, $iteratees)
     $result = $collection;
 
     foreach ($iteratees as $callable) {
-        usort($result, function ($a, $b) use ($callable) {
-            $iteratee = baseIteratee($callable);
+        if (\is_callable($callable)) {
+            usort($result, $callable);
+        } else {
+            usort($result, function ($a, $b) use ($callable) {
+                $iteratee = baseIteratee($callable);
 
-            return $iteratee($a) <=> $iteratee($b);
-        });
+                return $iteratee($a, $b) <=> $iteratee($b, $a);
+            });
+        }
     }
 
     return $result;
