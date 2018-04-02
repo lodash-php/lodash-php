@@ -43,7 +43,7 @@ function unzip(array $array): array
     $length = 0;
     $array = \array_filter($array, function ($group) use (&$length) {
         if (\is_array($group)) {
-            $length = max(\count($group), $length);
+            $length = \max(\count($group), $length);
 
             return true;
         }
