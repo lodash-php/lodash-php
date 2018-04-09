@@ -25,8 +25,8 @@ use function _\internal\baseIteratee;
  *
  * @category Array
  *
- * @param array    $array     The array to iterate over.
- * @param callable $predicate The function invoked per iteration.
+ * @param iterable $collection The array to iterate over.
+ * @param callable $predicate  The function invoked per iteration.
  *
  * @return bool `true` if all elements pass the predicate check, else `false`.
  * @example
@@ -53,12 +53,12 @@ use function _\internal\baseIteratee;
  *
  * </code>
  */
-function every(array $array, $predicate): bool
+function every(iterable $collection, $predicate): bool
 {
     $iteratee = baseIteratee($predicate);
 
-    foreach ($array as $key => $value) {
-        if (!$iteratee($value, $key, $array)) {
+    foreach ($collection as $key => $value) {
+        if (!$iteratee($value, $key, $collection)) {
             return false;
         }
     }
