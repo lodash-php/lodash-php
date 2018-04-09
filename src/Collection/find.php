@@ -26,7 +26,6 @@ use function _\internal\baseIteratee;
  *
  * @return mixed Returns the matched element, else `null`.
  *
- * @see      findIndex, findKey, findLast, findLastIndex, findLastKey
  * @example
  * <code>
  * $users = [

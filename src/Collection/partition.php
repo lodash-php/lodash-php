@@ -25,7 +25,6 @@ use function _\internal\createAggregator;
  * @param callable $predicate  The function invoked per iteration.
  *
  * @return array the array of grouped elements.
- * @see      groupBy, keyBy
  * @example
  *
  * $users = [
