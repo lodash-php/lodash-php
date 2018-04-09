@@ -35,7 +35,7 @@ use function _\internal\createAggregator;
  * // => ['3' => ['one', 'two'], '5' => ['three']]
  * </code>
  */
-function groupBy(iterable $collection, callable $iteratee): array
+function groupBy(iterable $collection, $iteratee): array
 {
     return createAggregator(function ($result, $value, $key) {
         if (!isset($result[$key])) {
