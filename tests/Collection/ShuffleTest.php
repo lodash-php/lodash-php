@@ -17,6 +17,6 @@ class ShuffleTest extends TestCase
     public function testShuffle()
     {
         $this->assertNotSame([1, 2, 3, 4], shuffle([1, 2, 3, 4]));
-        $this->assertSame([1, 2, 3, 4], \array_values(shuffle([1, 2, 3, 4])));
+        $this->assertSame([], \array_diff([1, 2, 3, 4], shuffle([1, 2, 3, 4])));
     }
 }
