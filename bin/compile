@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+
+// compiles all lodash functions into a single file
+
+declare(strict_types=1);
+
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+function getCode(SplFileInfo $file): string
+{
+    $code = php_strip_whitespace($file->getRealPath());
+    $code = preg_replace(['#\<\?php#', '#declare\(strict_types=1\);#'], '', $code, 1);
+    $code = preg_replace('#namespace ([a-zA-Z\\\/-_0-9]+);\s?(.*)#', 'namespace $1 { $2 }', $code);
+
+    return $code;
+}
+
+$code = <<<CODE
+<?php
+
+// Auto-generated file
+
+
+CODE;
+
+$code .= '  namespace {'.str_replace("\n", '', getCode(new SplFileInfo(dirname(__DIR__).'/src/Lodash.php'))).' }';
+
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator(dirname(__DIR__).'/src', RecursiveDirectoryIterator::SKIP_DOTS)) as $file) {
+    if (in_array($file->getBasename(), ['bootstrap.php', 'lodash.php', 'compiled.php', 'Lodash.php'], true)) {
+        continue;
+    }
+
+    $code .= getCode($file);
+}
+
+file_put_contents(dirname(__DIR__).'/src/compiled.php', $code);
+
