@@ -41,7 +41,7 @@ use function _\internal\baseSet;
  * *\/
  * </code>
  */
-function zipObjectDeep(array $props = [], array $values = []): object
+function zipObjectDeep(array $props = [], array $values = []): \stdClass
 {
     $result = new \stdClass;
     $index = -1;
