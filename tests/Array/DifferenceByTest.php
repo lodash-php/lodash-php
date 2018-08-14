@@ -14,7 +14,7 @@ use function _\differenceBy;
 
 class DifferenceByTest extends TestCase
 {
-    public function testChunk()
+    public function testDifferenceBy()
     {
         $this->assertSame([], differenceBy([]));
         $this->assertSame([1, 2], differenceBy([1, 2], [3, 4]));
