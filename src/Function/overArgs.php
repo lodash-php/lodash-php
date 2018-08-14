@@ -52,7 +52,7 @@ use function _\internal\baseUnary;
 function overArgs(callable $func, array $transforms): callable
 {
     return baseRest(function ($func, $transforms) {
-        $transforms = (count($transforms) == 1 && \is_array($transforms[0]))
+        $transforms = (\count($transforms) == 1 && \is_array($transforms[0]))
             ? arrayMap($transforms[0], baseUnary('\_\internal\baseIteratee'))
             : arrayMap(baseFlatten($transforms, 1), baseUnary('\_\internal\baseIteratee'));
 
