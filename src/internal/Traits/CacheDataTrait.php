@@ -13,7 +13,7 @@ namespace _\internal\Traits;
 
 trait CacheDataTrait
 {
-    private $__data__;
+    private $__data__ = [];
 
     private $size;
 

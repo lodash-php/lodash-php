@@ -106,7 +106,7 @@ function template(string $string, array $options = []): callable
         ($options['evaluate'] ?? reNoMatch),
     ]);
 
-    $string = \preg_replace_callback('#'.$reDelimiters.'#u', function ($matches) use (&$options) {
+    $string = \preg_replace_callback('#'.$reDelimiters.'#u', function ($matches) {
         list(,
             $escapeValue,
             $interpolateValue,
