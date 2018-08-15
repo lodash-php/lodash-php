@@ -34,3 +34,4 @@ install:
 
 script:
     - vendor/bin/phpunit
+    - vendor/bin/phpstan analyse ./src -c phpstan.neon --level=1
