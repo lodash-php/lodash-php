@@ -2,3 +2,4 @@ parameters:
     bootstrap: %rootDir%/../../../src/bootstrap.php
     excludes_analyse:
         - %rootDir%/../../../src/compiled.php
+        - %rootDir%/../../../src/internal/memoizeCapped.php # Exclude internal function due to dynamic class usage
