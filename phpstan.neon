@@ -1,0 +1,7 @@
+includes:
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+    bootstrap: %rootDir%/../../../src/bootstrap.php
+    excludes_analyse:
+        - %rootDir%/../../../src/compiled.php
