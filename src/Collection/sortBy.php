@@ -21,8 +21,8 @@ use function _\internal\baseIteratee;
  *
  * @category Collection
  *
- * @param array|object           $collection The collection to iterate over.
- * @param    callable|callable[] $iteratees  The iteratees to sort by.
+ * @param array|object|null   $collection The collection to iterate over.
+ * @param callable|callable[] $iteratees  The iteratees to sort by.
  *
  * @return array Returns the new sorted array.
  * @example
@@ -41,7 +41,7 @@ use function _\internal\baseIteratee;
  * // => [['user' => 'barney', 'age' => 34], ['user' => 'barney', 'age' => 36], ['user' => 'fred', 'age' => 40], ['user' => 'fred', 'age' => 48]]
  * </code>
  */
-function sortBy($collection, $iteratees)
+function sortBy($collection, $iteratees): array
 {
     if (null === $collection) {
         return [];

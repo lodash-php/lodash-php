@@ -20,8 +20,8 @@ namespace _;
  * @category Number
  *
  * @param float $number The number to check.
- * @param float $start The start of the range.
- * @param float $end   The end of the range.
+ * @param float $start  The start of the range.
+ * @param float $end    The end of the range.
  *
  * @return boolean Returns `true` if `number` is in the range, else `false`.
  *
@@ -51,7 +51,7 @@ namespace _;
  */
 function inRange(float $number, float $start = 0, float $end = 0): bool
 {
-    if (0 === $end || 0.0 === $end) {
+    if (0.0 === $end) {
         $end = $start;
         $start = 0;
     }

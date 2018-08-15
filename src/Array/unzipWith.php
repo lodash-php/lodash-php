@@ -40,7 +40,7 @@ function unzipWith(array $array, callable $iteratee): array
     }
 
     $result = unzip($array);
-    if (null === $iteratee) {
+    if (!is_callable($iteratee)) {
         return $result;
     }
 

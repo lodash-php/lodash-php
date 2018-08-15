@@ -45,11 +45,11 @@ function baseIntersection($arrays, ?callable $iteratee, $comparator = null)
             $othIndex = $othLength;
             while (--$othIndex) {
                 $cache = $caches[$othIndex];
-                if (!($cache ? isset($cache[$computed]) : $includes($arrays[$othIndex], $computed, $comparator))) {
+                if (!(!empty($cache) ? isset($cache[$computed]) : $includes($arrays[$othIndex], $computed, $comparator))) {
                     continue 2;
                 }
             }
-            if ($seen) {
+            if (empty($seen)) {
                 $seen[] = $computed;
             }
 

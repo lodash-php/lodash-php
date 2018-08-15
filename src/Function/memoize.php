@@ -87,7 +87,7 @@ function memoize(callable $func = null, callable $resolver = null)
             }
 
             $result = ($this->func)(...$args);
-            $this->cache = $this->cache->set($key, $result) ?: $this->cache;
+            $this->cache = $this->cache->set($key, $result);
 
             return $result;
         }
