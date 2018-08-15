@@ -16,9 +16,9 @@ namespace _;
  *
  * @category Number
  *
- * @param    int number The number to clamp.
- * @param    int lower The lower bound.
- * @param    int upper The upper bound.
+ * @param int $number The number to clamp.
+ * @param int $lower  The lower bound.
+ * @param int $upper  The upper bound.
  *
  * @return int Returns the clamped number.
  *

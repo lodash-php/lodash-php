@@ -19,7 +19,7 @@ namespace _;
  *
  * @category String
  *
- * @param string string The string to split.
+ * @param string $string The string to split.
  * @param string $separator The separator pattern to split by.
  * @param int    $limit     The length to truncate results to.
  *

@@ -22,7 +22,7 @@ use function _\internal\baseUniq;
  *
  * @category Array
  *
- * @param array[]  $arrays     The arrays to inspect.
+ * @param array    ...$arrays  The arrays to inspect.
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array the new array of combined values.
@@ -34,7 +34,7 @@ use function _\internal\baseUniq;
  * unionWith($objects, $others, '_::isEqual')
  * // => [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1], ['x' => 1, 'y' => 1]]
  */
-function unionWith(... $arrays): array
+function unionWith(array ... $arrays): array
 {
     return baseUniq(baseFlatten($arrays, 1, '\is_array', true), null, \array_pop($arrays));
 }

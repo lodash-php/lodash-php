@@ -21,7 +21,8 @@ use function _\internal\baseSet;
  * @param array $props  The property identifiers.
  * @param array $values The property values.
  *
- * @return object the new object.
+ * @return \stdClass the new object.
+ *
  * @example
  * <code>
  * zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2])

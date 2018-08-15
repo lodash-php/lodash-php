@@ -17,8 +17,9 @@ namespace _;
  *
  * @category Array
  *
- * @param  array $array  The array to concatenate.
- * @param  mixed $values The values to concatenate.
+ * @param  array $array The array to concatenate.
+ * @param  array<int, mixed> $values The values to concatenate.
+ *
  * @return array Returns the new concatenated array.
  *
  * @example

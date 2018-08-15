@@ -24,8 +24,8 @@ use function _\internal\baseUniq;
  *
  * @category Array
  *
- * @param array[]  $arrays   The arrays to inspect.
- * @param callable $iteratee The iteratee invoked per element.
+ * @param array    ...$arrays The arrays to inspect.
+ * @param callable $iteratee  The iteratee invoked per element.
  *
  * @return array the new array of combined values.
  *
@@ -39,7 +39,7 @@ use function _\internal\baseUniq;
  * // => [['x' => 1], ['x' => 2]]
  * </code>
  */
-function unionBy(...$arrays): array
+function unionBy(array ...$arrays): array
 {
     return baseUniq(baseFlatten($arrays, 1, '\is_array', true), baseIteratee(\array_pop($arrays)));
 }

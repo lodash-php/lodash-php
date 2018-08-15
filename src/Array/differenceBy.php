@@ -24,9 +24,9 @@ use function _\internal\baseFlatten;
  *
  * @category Array
  *
- * @param array $array  The array to inspect.
- * @param array $values The values to exclude.
- * @param callable iteratee The iteratee invoked per element.
+ * @param array $array     The array to inspect.
+ * @param array ...$values The values to exclude.
+ * @param callable $iteratee The iteratee invoked per element.
  *
  * @return array Returns the new array of filtered values.
  *
@@ -35,7 +35,7 @@ use function _\internal\baseFlatten;
  * differenceBy([2.1, 1.2], [2.3, 3.4], 'floor')
  * // => [1.2]
  */
-function differenceBy(array $array, ...$values): array
+function differenceBy(array $array, array ...$values): array
 {
     if (!$array) {
         return [];

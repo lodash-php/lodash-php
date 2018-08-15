@@ -24,7 +24,7 @@ use function _\internal\baseFlatten;
  * @category Array
  *
  * @param array    $array      The array to inspect.
- * @param array[] $values The values to exclude.
+ * @param array ...$values The values to exclude.
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array Returns the new array of filtered values.
@@ -36,7 +36,7 @@ use function _\internal\baseFlatten;
  * // => [[ 'x' => 2, 'y' => 1 ]]
  * </code>
  */
-function differenceWith(array $array, ...$values): array
+function differenceWith(array $array, array ...$values): array
 {
     if (!$array) {
         return [];

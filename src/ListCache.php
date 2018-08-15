@@ -15,8 +15,8 @@ use _\internal\Traits\CacheDataTrait;
 use function _\internal\assocIndexOf;
 
 /**
- * @property $__data__  array
- * @property $size      int
+ * @property array $__data__
+ * @property int   $size
  */
 final class ListCache implements CacheInterface
 {

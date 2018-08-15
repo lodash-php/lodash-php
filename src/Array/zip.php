@@ -20,7 +20,7 @@ use function _\internal\baseRest;
  *
  * @category Array
  *
- * @param array[] $arrays The arrays to process.
+ * @param array ...$arrays The arrays to process.
  *
  * @return array the new array of grouped elements.
  * @example

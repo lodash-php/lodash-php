@@ -19,7 +19,7 @@ use function _\internal\baseFlatten;
  *
  * @category Collection
  *
- * @param iterable collection The collection to iterate over.
+ * @param iterable $collection The collection to iterate over.
  * @param callable $iteratee The function invoked per iteration.
  * @param int      $depth    The maximum recursion depth.
  *

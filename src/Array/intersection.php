@@ -19,13 +19,15 @@ namespace _;
  *
  * @category Array
  *
- * @param array[] $arrays
+ * @param array ...$arrays
  *
  * @return array the new array of intersecting values.
- * @example
  *
+ * @example
+ * <code>
  * intersection([2, 1], [2, 3])
  * // => [2]
+ * </code>
  */
 function intersection(array ...$arrays): array
 {

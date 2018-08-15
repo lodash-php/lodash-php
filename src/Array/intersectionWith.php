@@ -21,10 +21,11 @@ use function _\internal\baseIntersection;
  *
  * @category Array
  *
- * @param array[]  $arrays
+ * @param array    ...$arrays
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array the new array of intersecting values.
+ *
  * @example
  * <code>
  * $objects = [[ 'x' => 1, 'y' => 2 ], [ 'x' => 2, 'y' => 1 ]]

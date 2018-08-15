@@ -19,7 +19,8 @@ namespace _;
  *
  * @param array $pairs The key-value pairs.
  *
- * @return object the new object.
+ * @return \stdClass the new object.
+ *
  * @example
  * <code>
  * fromPairs([['a', 1], ['b', 2]])

@@ -24,7 +24,7 @@ namespace _\internal;
  *
  * @return array Returns the new flattened array.
  */
-function baseFlatten(?array $array, float $depth, callable $predicate = null, bool $isStrict = null, array $result = null): array
+function baseFlatten(?array $array, int $depth, callable $predicate = null, bool $isStrict = null, array $result = null): array
 {
     $result = $result ?? [];
 

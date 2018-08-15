@@ -19,9 +19,9 @@ namespace _;
  *
  * @category String
  *
- * @param string $string  The string to modify.
- * @param string $pattern The pattern to replace.
- * @param    callable|string replacement The match replacement.
+ * @param string          $string      The string to modify.
+ * @param string          $pattern     The pattern to replace.
+ * @param callable|string $replacement The match replacement.
  *
  * @return string Returns the modified string.
  *

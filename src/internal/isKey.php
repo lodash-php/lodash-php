@@ -18,7 +18,7 @@ const reIsPlainProp = '/^\w*$/';
 /**
  * Checks if `value` is a property name and not a property path.
  *
- * @param mixed value The value to check.
+ * @param mixed        $value  The value to check.
  * @param object|array $object The object to query keys on.
  *
  * @return boolean Returns `true` if `value` is a property name, else `false`.

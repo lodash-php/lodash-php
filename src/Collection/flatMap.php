@@ -20,10 +20,11 @@ use function _\internal\baseFlatten;
  *
  * @category Collection
  *
- * @param iterable collection The collection to iterate over.
+ * @param iterable $collection The collection to iterate over.
  * @param callable $iteratee The function invoked per iteration.
  *
  * @return array the new flattened array.
+ *
  * @example
  * <code>
  * function duplicate($n) {

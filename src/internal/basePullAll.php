@@ -13,7 +13,7 @@ namespace _\internal;
 
 function basePullAll(&$array, array $values, ?callable $iteratee, callable $comparator = null)
 {
-    $indexOf = $comparator ? '_\internal\baseIndexOfWith' : '_\indexOf';
+    $indexOf = $comparator ? '_\\internal\\baseIndexOfWith' : '_\\indexOf';
 
     $seen = $array;
 

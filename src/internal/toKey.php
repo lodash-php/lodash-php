@@ -14,7 +14,7 @@ namespace _\internal;
 /**
  * Converts `value` to a string key if it's not a string.
  *
- * @param mixed value The value to inspect.
+ * @param mixed $value The value to inspect.
  *
  * @return string Returns the key.
  */

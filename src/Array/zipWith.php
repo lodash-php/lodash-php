@@ -18,7 +18,7 @@ namespace _;
  *
  * @category Array
  *
- * @param array[]  $arrays   The arrays to process.
+ * @param array  ...$arrays   The arrays to process.
  * @param callable $iteratee The function to combine grouped values.
  *
  * @return array the new array of grouped elements.
@@ -28,7 +28,7 @@ namespace _;
  * // => [111, 222]
  * </code>
  */
-function zipWith(...$arrays): array
+function zipWith(array ...$arrays): array
 {
     $iteratee = \is_callable(\end($arrays)) ? \array_pop($arrays) : null;
 

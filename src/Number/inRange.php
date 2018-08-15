@@ -19,11 +19,12 @@ namespace _;
  *
  * @category Number
  *
- * @param float number The number to check.
+ * @param float $number The number to check.
  * @param float $start The start of the range.
  * @param float $end   The end of the range.
  *
  * @return boolean Returns `true` if `number` is in the range, else `false`.
+ *
  * @example
  * <code>
  * inRange(3, 2, 4)

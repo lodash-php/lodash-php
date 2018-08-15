@@ -16,7 +16,7 @@ namespace _\internal;
  *
  * @private
  *
- * @param string string The string to inspect.
+ * @param string $string The string to inspect.
  *
  * @return int Returns the string size.
  */
