@@ -33,5 +33,6 @@ install:
   - composer update -n "$COMPOSER_OPTIONS"
 
 script:
+    - vendor/bin/php-cs-fixer fix --dry-run -v
     - vendor/bin/phpunit
     - vendor/bin/phpstan analyse ./src -c phpstan.neon --level=4
