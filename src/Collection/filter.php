@@ -26,6 +26,7 @@ use function _\internal\baseIteratee;
  * @param callable $predicate The function invoked per iteration.
  *
  * @return array the new filtered array.
+ *
  * @example
  * <code>
  * $users = [
@@ -54,7 +55,7 @@ function filter(iterable $array, $predicate = null): array
     $iteratee = baseIteratee($predicate);
 
     $result = \array_filter(
-        $array,
+        \is_array($array) ? $array : \iterator_to_array($array),
         function ($value, $key) use ($array, $iteratee) {
             return $iteratee($value, $key, $array);
         },

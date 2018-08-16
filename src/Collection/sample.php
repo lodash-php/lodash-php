@@ -19,6 +19,7 @@ namespace _;
  * @param array $array The array to sample.
  *
  * @return mixed Returns the random element.
+ *
  * @example
  * <code>
  * sample([1, 2, 3, 4])

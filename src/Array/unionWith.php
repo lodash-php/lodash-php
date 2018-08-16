@@ -26,15 +26,26 @@ use function _\internal\baseUniq;
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array the new array of combined values.
- * @example
  *
+ * @throws \InvalidArgumentException
+ *
+ * @example
+ * <code>
  * $objects = [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1]]
  * $others = [['x' => 1, 'y' => 1], ['x' => 1, 'y' => 2]]
  *
  * unionWith($objects, $others, '_::isEqual')
  * // => [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1], ['x' => 1, 'y' => 1]]
+ * </code>
  */
 function unionWith(array ... $arrays): array
 {
-    return baseUniq(baseFlatten($arrays, 1, '\is_array', true), null, \array_pop($arrays));
+    /** @var callable $comparator */
+    $comparator = \array_pop($arrays);
+
+    if (!\is_callable($comparator)) {
+        throw new \InvalidArgumentException(__FUNCTION__.' expects the last value passed to be callable');
+    }
+
+    return baseUniq(baseFlatten($arrays, 1, '\is_array', true), null, $comparator);
 }

@@ -20,10 +20,11 @@ use function _\internal\arrayMap;
  *
  * @category Array
  *
- * @param array    $array    The array of grouped elements to process.
- * @param callable $iteratee The function to combine regrouped values.
+ * @param array         $array    The array of grouped elements to process.
+ * @param callable|null $iteratee The function to combine regrouped values.
  *
  * @return array the new array of regrouped elements.
+ *
  * @example
  * <code>
  * $zipped = zip([1, 2], [10, 20], [100, 200])
@@ -33,7 +34,7 @@ use function _\internal\arrayMap;
  * // => [3, 30, 300]
  * </code>
  */
-function unzipWith(array $array, callable $iteratee): array
+function unzipWith(array $array, ?callable $iteratee = null): array
 {
     if (!\count($array)) {
         return [];

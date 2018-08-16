@@ -55,10 +55,10 @@ use function _\internal\baseIteratee;
 function reduce(iterable $collection, $iteratee, $accumulator = null)
 {
     $func = function (iterable $array, $iteratee, $accumulator, $initAccum = null) {
-        $length = count($array);
+        $length = \count(\is_array($array) ? $array : \iterator_to_array($array));
 
         if ($initAccum && $length) {
-            $accumulator = current($array);
+            $accumulator = \current($array);
         }
         foreach ($array as $key => $value) {
             $accumulator = $iteratee($accumulator, $value, $key, $array);

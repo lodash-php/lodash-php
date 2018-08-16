@@ -58,7 +58,7 @@ function sortBy($collection, $iteratees): array
         $iteratees = [$iteratees[0]];
     }*/
 
-    $result = $collection;
+    $result = \is_object($collection) ? \get_object_vars($collection) : $collection;
 
     foreach ($iteratees as $callable) {
         usort($result, function ($a, $b) use ($callable) {

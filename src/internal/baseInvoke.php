@@ -19,5 +19,5 @@ function baseInvoke($object, $path, $args)
     $object = parent($object, $path);
     $func = null === $object ? $object : [$object, toKey(last($path))];
 
-    return null === $func ? null : $func($object, ...$args);
+    return \is_callable($func) ? $func($object, ...$args) : null;
 }

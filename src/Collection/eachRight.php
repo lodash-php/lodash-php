@@ -17,8 +17,8 @@ namespace _;
  *
  * @category Collection
  *
- * @param array|object $collection The collection to iterate over.
- * @param callable     $iteratee   The function invoked per iteration.
+ * @param array|iterable|object $collection The collection to iterate over.
+ * @param callable              $iteratee   The function invoked per iteration.
  *
  * @return array|object Returns `collection`.
  * @example
@@ -29,11 +29,7 @@ namespace _;
  */
 function eachRight($collection, callable $iteratee)
 {
-    $values = $collection;
-
-    if (\is_object($collection)) {
-        $values = \get_object_vars($collection);
-    }
+    $values = \is_object($collection) ? \get_object_vars($collection) : $collection;
 
     foreach (\array_reverse($values, true) as $index => $value) {
         if (false === $iteratee($value, $index, $collection)) {

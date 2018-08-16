@@ -22,11 +22,11 @@ namespace _;
  *
  * @category     Collection
  *
- * @param array|object $collection The collection to iterate over.
- * @param callable     $iteratee   The function invoked per iteration.
+ * @param array|iterable|object $collection The collection to iterate over.
+ * @param callable              $iteratee   The function invoked per iteration.
  *
  * @return array|object Returns `collection`.
- * @related forEachRight, forIn, forInRight, forOwn, forOwnRight
+ *
  * @example
  * <code>
  * each([1, 2], function ($value) { echo $value; })
@@ -38,12 +38,9 @@ namespace _;
  */
 function each($collection, callable $iteratee)
 {
-    $values = $collection;
+    $values = \is_object($collection) ? \get_object_vars($collection) : $collection;
 
-    if (\is_object($collection)) {
-        $values = \get_object_vars($collection);
-    }
-
+    /** @var array $values */
     foreach ($values as $index => $value) {
         if (false === $iteratee($value, $index, $collection)) {
             break;

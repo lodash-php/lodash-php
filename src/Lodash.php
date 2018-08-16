@@ -53,6 +53,10 @@ final class _
      */
     public static function __callStatic(string $method, array $args)
     {
+        if (!\is_callable("_\\$method")) {
+            throw new \InvalidArgumentException("Function _::$method is not valid");
+        }
+
         return ("_\\$method")(...$args);
     }
 }

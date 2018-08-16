@@ -20,7 +20,7 @@ namespace _\internal;
  *
  * @return int Returns the string size.
  */
-function unicodeSize($string): int
+function unicodeSize(string $string): int
 {
-    return \preg_match_all(reUnicode, $string);
+    return \preg_match_all(reUnicode, $string) ?: 0;
 }

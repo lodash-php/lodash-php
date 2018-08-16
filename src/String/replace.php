@@ -42,7 +42,7 @@ function replace(string $string, string $pattern, $replacement = ''): string
     };
 
     if (\preg_match(reRegExpChar, $pattern)) {
-        if (!is_callable($replacement)) {
+        if (!\is_callable($replacement)) {
             return \preg_replace($pattern, $replacement, $string);
         }
 

@@ -25,8 +25,8 @@ namespace _;
  *
  * @category Function
  *
- * @param callable $func     The function to have its output memoized.
- * @param callable $resolver The function to resolve the cache key.
+ * @param callable      $func     The function to have its output memoized.
+ * @param callable|null $resolver The function to resolve the cache key.
  *
  * @return callable Returns the new memoized function.
  *
@@ -52,9 +52,10 @@ namespace _;
  * // => ['a', 'b']
  * </code>
  */
-function memoize(callable $func = null, callable $resolver = null)
+function memoize(callable $func, callable $resolver = null)
 {
     $memoized = new class($func, $resolver ?? null) {
+
         /**
          * @var CacheInterface
          */
