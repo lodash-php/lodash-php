@@ -17,9 +17,9 @@ namespace _;
  *
  * @category Function
  *
- * @param callable     $function The function to bind.
- * @param object|mixed $object   The `object` binding of `func`.
- * @param mixed[]      $partials The arguments to be partially applied.
+ * @param callable          $function The function to bind.
+ * @param object|mixed      $object   The `object` binding of `func`.
+ * @param array<int, mixed> $partials The arguments to be partially applied.
  *
  * @return callable Returns the new bound function.
  * @example

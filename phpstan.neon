@@ -7,3 +7,4 @@ parameters:
     ignoreErrors:
         - '#PHPDoc tag \@param references unknown parameter \$(comparator|iteratee)#'
         - "#Callable '.*internal.*' invoked with \\d+ parameters, [\\d-]+ required.#"
+        - "#Parameter \\#\\d+ \\$callable of static method Closure::fromCallable\\(\\) expects callable, array\\(object, string\\) given.#"
