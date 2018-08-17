@@ -20,9 +20,9 @@ namespace _;
  *
  * @category Function
  *
- * @param object|mixed $object   The object to invoke the method on.
- * @param string       $function The name of the method.
- * @param mixed[]      $partials The arguments to be partially applied.
+ * @param object            $object   The object to invoke the method on.
+ * @param string            $function The name of the method.
+ * @param array<int, mixed> $partials The arguments to be partially applied.
  *
  * @return callable Returns the new bound function.
  * @example
