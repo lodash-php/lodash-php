@@ -18,6 +18,8 @@ class PickByTest extends TestCase
     {
         $object = (object) ['a' => 1, 'b' => '2', 'c' => 3];
 
-        $this->assertEquals((object) ['a' => 1, 'c' => 3], pickBy($object, function ($value) { return \is_int($value); }));
+        $this->assertEquals((object) ['a' => 1, 'c' => 3], pickBy($object, function ($value) {
+            return \is_int($value);
+        }));
     }
 }

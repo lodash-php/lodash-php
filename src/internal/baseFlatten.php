@@ -16,15 +16,15 @@ namespace _\internal;
  *
  * @private
  *
- * @param array    $array     The array to flatten.
- * @param int      $depth     The maximum recursion depth.
- * @param callable $predicate The function invoked per iteration [isFlattenable].
- * @param bool     $isStrict  Restrict to values that pass `predicate` checks.
- * @param array    $result    The initial result value.
+ * @param array|null    $array     The array to flatten.
+ * @param int           $depth     The maximum recursion depth.
+ * @param callable|null $predicate The function invoked per iteration [isFlattenable].
+ * @param bool|null     $isStrict  Restrict to values that pass `predicate` checks.
+ * @param array|null    $result    The initial result value.
  *
  * @return array Returns the new flattened array.
  */
-function baseFlatten(?array $array, float $depth, callable $predicate = null, bool $isStrict = null, array $result = null): array
+function baseFlatten(?array $array, int $depth, callable $predicate = null, bool $isStrict = null, array $result = null): array
 {
     $result = $result ?? [];
 
@@ -32,7 +32,7 @@ function baseFlatten(?array $array, float $depth, callable $predicate = null, bo
         return $result;
     }
 
-    $predicate = $predicate ?? '\_\internal\isFlattenable';
+    $predicate = $predicate ?? '_\internal\isFlattenable';
 
     foreach ($array as $value) {
         if ($depth > 0 && $predicate($value)) {

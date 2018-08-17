@@ -42,5 +42,7 @@ function partition(iterable $collection, $predicate = null): array
         $result[$key ? 0 : 1][] = $value;
 
         return $result;
-    }, function () { return [[], []]; })($collection, $predicate);
+    }, function () {
+        return [[], []];
+    })($collection, $predicate);
 }

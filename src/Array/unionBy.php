@@ -24,8 +24,8 @@ use function _\internal\baseUniq;
  *
  * @category Array
  *
- * @param array[]  $arrays   The arrays to inspect.
- * @param callable $iteratee The iteratee invoked per element.
+ * @param array<int, mixed>    ...$arrays The arrays to inspect.
+ * @param callable $iteratee  The iteratee invoked per element.
  *
  * @return array the new array of combined values.
  *

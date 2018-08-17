@@ -54,7 +54,7 @@ function find(iterable $collection, $predicate = null, int $fromIndex = 0)
 {
     $iteratee = baseIteratee($predicate);
 
-    foreach (\array_slice($collection, $fromIndex) as $key => $value) {
+    foreach (\array_slice(\is_array($collection) ? $collection : \iterator_to_array($collection), $fromIndex) as $key => $value) {
         if ($iteratee($value, $key, $collection)) {
             return $value;
         }

@@ -19,9 +19,9 @@ namespace _;
  *
  * @category Number
  *
- * @param    int|float $lower    The lower bound.
- * @param    int|float $upper    The upper bound.
- * @param    bool      $floating Specify returning a floating-point number.
+ * @param int|float|bool $lower    The lower bound.
+ * @param int|float|bool $upper    The upper bound.
+ * @param bool|null      $floating Specify returning a floating-point number.
  *
  * @return int|float Returns the random number.
  *

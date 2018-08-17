@@ -16,7 +16,7 @@ namespace _;
  *
  * @category Math
  *
- * @param array array The array to iterate over.
+ * @param array|null $array The array to iterate over.
  *
  * @return int|null Returns the maximum value.
  * @example

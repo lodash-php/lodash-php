@@ -21,7 +21,7 @@ use function _\internal\baseOrderBy;
  *
  * @category Collection
  *
- * @param iterable                    $collection The collection to iterate over.
+ * @param iterable|null               $collection The collection to iterate over.
  * @param array[]|callable[]|string[] $iteratee   The iteratee(s) to sort by.
  * @param string[]                    $orders     The sort orders of `iteratees`.
  *
@@ -40,11 +40,11 @@ use function _\internal\baseOrderBy;
  * // => [['user' => 'barney', 'age' => 36], ['user' => 'barney', 'age' => 34], ['user' => 'fred', 'age' => 48], ['user' => 'fred', 'age' => 40]]
  * </code>
  */
-function orderBy(?iterable $collection, $iteratee, $orders): array
+function orderBy(?iterable $collection, array $iteratee, array $orders): array
 {
     if (null === $collection) {
         return [];
     }
 
-    return baseOrderBy($collection, (array) $iteratee, (array) $orders);
+    return baseOrderBy($collection, $iteratee, $orders);
 }

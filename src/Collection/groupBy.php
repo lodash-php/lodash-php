@@ -22,7 +22,7 @@ use function _\internal\createAggregator;
  *
  * @category Collection
  *
- * @param iterable collection The collection to iterate over.
+ * @param iterable $collection The collection to iterate over.
  * @param callable $iteratee The iteratee to transform keys.
  *
  * @return array Returns the composed aggregate object.

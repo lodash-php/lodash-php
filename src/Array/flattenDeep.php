@@ -29,5 +29,5 @@ use function _\internal\baseFlatten;
  */
 function flattenDeep(array $array): array
 {
-    return baseFlatten($array, INF);
+    return baseFlatten($array, PHP_INT_MAX);
 }

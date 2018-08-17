@@ -19,7 +19,7 @@ use function _\internal\baseFlatten;
  *
  * @category Collection
  *
- * @param iterable collection The collection to iterate over.
+ * @param iterable $collection The collection to iterate over.
  * @param callable $iteratee The function invoked per iteration.
  * @param int      $depth    The maximum recursion depth.
  *
@@ -34,7 +34,7 @@ use function _\internal\baseFlatten;
  * // => [[1, 1], [2, 2]]
  * </code>
  */
-function flatMapDepth(iterable $collection, callable $iteratee = null, int $depth = 1): array
+function flatMapDepth(iterable $collection, callable $iteratee, int $depth = 1): array
 {
     return baseFlatten(map($collection, $iteratee), $depth);
 }

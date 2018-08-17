@@ -106,7 +106,7 @@ function template(string $string, array $options = []): callable
         ($options['evaluate'] ?? reNoMatch),
     ]);
 
-    $string = \preg_replace_callback('#'.$reDelimiters.'#u', function ($matches) use (&$options) {
+    $string = \preg_replace_callback('#'.$reDelimiters.'#u', function ($matches) {
         list(,
             $escapeValue,
             $interpolateValue,
@@ -165,7 +165,12 @@ function template(string $string, array $options = []): callable
                 }
             }
 
+            /** @var string $file */
             $file = \tempnam(\sys_get_temp_dir(), 'lodashphp');
+
+            if (!$file) {
+                throw new \RuntimeException('Unable to create temporary file for template');
+            }
 
             \file_put_contents($file, "<?php namespace __template; $imports (function() { extract(".\var_export($arguments, true).'); ?>'.$this->source.'<?php })()?>');
 

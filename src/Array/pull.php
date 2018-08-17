@@ -21,10 +21,11 @@ namespace _;
  *
  * @category Array
  *
- * @param array   $array  The array to modify.
- * @param mixed[] $values The values to remove.
+ * @param array $array The array to modify.
+ * @param array<int, string> $values The values to remove.
  *
  * @return array
+ *
  * @example
  * <code>
  * $array = ['a', 'b', 'c', 'a', 'b', 'c']

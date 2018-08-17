@@ -18,7 +18,7 @@ namespace _;
  * @category Util
  *
  * @param callable $func The function to attempt.
- * @param mixed[]  $args The arguments to invoke `func` with.
+ * @param array<int, mixed>  $args The arguments to invoke `func` with.
  *
  * @return mixed|\Throwable Returns the `func` result or error object.
  *

@@ -20,10 +20,11 @@ use function _\internal\baseFlatten;
  *
  * @category Collection
  *
- * @param iterable collection The collection to iterate over.
+ * @param iterable $collection The collection to iterate over.
  * @param callable $iteratee The function invoked per iteration.
  *
  * @return array the new flattened array.
+ *
  * @example
  * <code>
  * function duplicate($n) {
@@ -34,7 +35,7 @@ use function _\internal\baseFlatten;
  * // => [1, 1, 2, 2]
  * </code>
  */
-function flatMap(iterable $collection, callable $iteratee = null): array
+function flatMap(iterable $collection, callable $iteratee): array
 {
     return baseFlatten(map($collection, $iteratee), 1);
 }

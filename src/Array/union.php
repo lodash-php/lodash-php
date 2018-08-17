@@ -18,7 +18,7 @@ namespace _;
  *
  * @category Array
  *
- * @param array[] $arrays The arrays to inspect.
+ * @param array ...$arrays The arrays to inspect.
  *
  * @return array the new array of combined values.
  *

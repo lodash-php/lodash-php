@@ -16,7 +16,8 @@ namespace _\internal;
  *
  * @private
  *
- * @param string The string to inspect.
+ * @param string $string The string to inspect.
+ *
  * @return array Returns the words of `string`.
  */
 function unicodeWords(string $string): array

@@ -17,8 +17,7 @@ class SizeTest extends TestCase
     public function testSize()
     {
         $this->assertSame(3, size([1, 2, 3]));
-        $this->assertSame(2, size(new class
-        {
+        $this->assertSame(2, size(new class {
             public $a = 1;
 
             public $b = 2;
@@ -26,9 +25,11 @@ class SizeTest extends TestCase
             private $c = 3;
         }));
 
-        $this->assertSame(12, size(new class implements \Countable
-        {
-            public function count() { return 12; }
+        $this->assertSame(12, size(new class implements \Countable {
+            public function count()
+            {
+                return 12;
+            }
         }));
 
         $this->assertSame(4, size(new \ArrayIterator([1, 2, 3, 4])));

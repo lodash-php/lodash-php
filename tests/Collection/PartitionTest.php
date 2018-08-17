@@ -32,6 +32,8 @@ class PartitionTest extends TestCase
             ],
         ];
 
-        $this->assertSame($result, partition($users, function ($user) { return $user['active']; }));
+        $this->assertSame($result, partition($users, function ($user) {
+            return $user['active'];
+        }));
     }
 }

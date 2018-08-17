@@ -19,7 +19,7 @@ namespace _;
  *
  * @category String
  *
- * @param string string The string to split.
+ * @param string $string The string to split.
  * @param string $separator The separator pattern to split by.
  * @param int    $limit     The length to truncate results to.
  *
@@ -30,12 +30,13 @@ namespace _;
  * // => ['a', 'b']
  * </code>
  */
-function split(string $string, string $separator, int $limit = null): array
+function split(string $string, string $separator, int $limit = 0): array
 {
     if (\preg_match(reRegExpChar, $separator)) {
-        return \preg_split($separator, $string, $limit ?? -1, PREG_SPLIT_DELIM_CAPTURE);
+        return \preg_split($separator, $string, $limit ?? -1, PREG_SPLIT_DELIM_CAPTURE) ?: [];
     }
 
+    /** @var array $result */
     $result = \explode($separator, $string);
 
     if ($limit > 0) {

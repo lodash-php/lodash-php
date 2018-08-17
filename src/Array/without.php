@@ -22,8 +22,8 @@ use function _\internal\baseRest;
  *
  * @category Array
  *
- * @param array   $array  The array to inspect.
- * @param mixed[] $values The values to exclude.
+ * @param array $array The array to inspect.
+ * @param array<int, mixed> $values The values to exclude.
  *
  * @return array the new array of filtered values.
  * @example

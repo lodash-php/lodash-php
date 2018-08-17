@@ -19,9 +19,9 @@ namespace _;
  *
  * @category String
  *
- * @param string $string  The string to modify.
- * @param string $pattern The pattern to replace.
- * @param    callable|string replacement The match replacement.
+ * @param string          $string      The string to modify.
+ * @param string          $pattern     The pattern to replace.
+ * @param callable|string $replacement The match replacement.
  *
  * @return string Returns the modified string.
  *
@@ -31,23 +31,23 @@ namespace _;
  * // => 'Hi Barney'
  * </code>
  */
-function replace(string $string, string $pattern, $replacement = ''): string
+function replace(string $string, string $pattern, $replacement = null): string
 {
     $callback = function (array $matches) use ($replacement): ?string {
         if (!\array_filter($matches)) {
             return null;
         }
 
-        return $replacement(...$matches);
+        return \is_callable($replacement) ? $replacement(...$matches) : null;
     };
 
     if (\preg_match(reRegExpChar, $pattern)) {
-        if (!is_callable($replacement)) {
-            return \preg_replace($pattern, $replacement, $string);
+        if (!\is_callable($replacement)) {
+            return \preg_replace($pattern, \is_string($replacement) || \is_array($replacement) ? $replacement : '', $string);
         }
 
         return \preg_replace_callback($pattern, $callback, $string);
     }
 
-    return \str_replace($pattern, $replacement, $string);
+    return \str_replace($pattern, \is_string($replacement) || \is_array($replacement) ? $replacement : '', $string);
 }

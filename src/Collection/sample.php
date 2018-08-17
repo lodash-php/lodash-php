@@ -19,6 +19,7 @@ namespace _;
  * @param array $array The array to sample.
  *
  * @return mixed Returns the random element.
+ *
  * @example
  * <code>
  * sample([1, 2, 3, 4])
@@ -27,5 +28,8 @@ namespace _;
  */
 function sample(array $array)
 {
-    return $array[\array_rand($array, 1)];
+    /** @var string|int $key */
+    $key = \array_rand($array, 1);
+
+    return $array[$key];
 }

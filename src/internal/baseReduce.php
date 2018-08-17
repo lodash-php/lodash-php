@@ -13,7 +13,7 @@ namespace _\internal;
 
 function baseReduce(iterable $array, $iteratee, $accumulator, $initAccum = null)
 {
-    $length = \count($array);
+    $length = \is_array($array) || $array instanceof \Countable ? \count($array) : 0;
 
     if ($initAccum && $length) {
         $accumulator = \current($array);

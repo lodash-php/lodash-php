@@ -11,9 +11,7 @@ declare(strict_types=1);
 
 namespace _\internal;
 
-use function _\{slice, get};
-
 function parent($object, $path)
 {
-    return count($path) < 2 ? $object : get($object, slice($path, 0, -1));
+    return count($path) < 2 ? $object : null;
 }

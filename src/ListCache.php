@@ -14,6 +14,10 @@ namespace _;
 use _\internal\Traits\CacheDataTrait;
 use function _\internal\assocIndexOf;
 
+/**
+ * @property array $__data__
+ * @property int   $size
+ */
 final class ListCache implements CacheInterface
 {
     use CacheDataTrait;
@@ -71,7 +75,7 @@ final class ListCache implements CacheInterface
 
         $lastIndex = \count($this->__data__) - 1;
         if ($index === $lastIndex) {
-            \array_pop($data);
+            \array_pop($this->__data__);
         } else {
             \array_splice($this->__data__, $index, 1);
         }

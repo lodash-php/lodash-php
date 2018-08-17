@@ -18,7 +18,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
  *
  * @category Util
  *
- * @param array|string path The path of the property to get.
+ * @param array|string $path The path of the property to get.
  *
  * @return callable Returns the new accessor function.
  * @example

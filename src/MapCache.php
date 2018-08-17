@@ -13,6 +13,10 @@ namespace _;
 
 use _\internal\Traits\CacheDataTrait;
 
+/**
+ * @property array $__data__
+ * @property int   $size
+ */
 final class MapCache implements CacheInterface
 {
     use CacheDataTrait;

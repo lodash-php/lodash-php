@@ -13,7 +13,7 @@ namespace _\internal;
 
 function basePick($object, $paths): \stdClass
 {
-    return basePickBy($object, $paths, function($value, $path) use ($object) {
+    return basePickBy($object, $paths, function ($value, $path) use ($object) {
         return property_exists($object, $path) || method_exists($object, 'get'.(ucfirst($path)));
     });
 }

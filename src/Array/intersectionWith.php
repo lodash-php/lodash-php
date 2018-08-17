@@ -21,10 +21,11 @@ use function _\internal\baseIntersection;
  *
  * @category Array
  *
- * @param array[]  $arrays
+ * @param array    ...$arrays
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array the new array of intersecting values.
+ *
  * @example
  * <code>
  * $objects = [[ 'x' => 1, 'y' => 2 ], [ 'x' => 2, 'y' => 1 ]]
@@ -37,7 +38,7 @@ use function _\internal\baseIntersection;
 function intersectionWith(...$arrays /*, callable $comparator = null*/): array
 {
     $copy = $arrays;
-    $comparator = array_pop($arrays);
+    $comparator = \array_pop($arrays);
 
     if (!\is_callable($comparator)) {
         $arrays = $copy;

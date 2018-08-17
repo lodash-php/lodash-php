@@ -16,6 +16,8 @@ class FindLastTest extends TestCase
 {
     public function testFindLast()
     {
-        $this->assertSame(3, findLast([1, 2, 3, 4], function ($n) { return $n % 2 == 1; }));
+        $this->assertSame(3, findLast([1, 2, 3, 4], function ($n) {
+            return $n % 2 == 1;
+        }));
     }
 }

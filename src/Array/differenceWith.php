@@ -23,11 +23,14 @@ use function _\internal\baseFlatten;
  *
  * @category Array
  *
- * @param array    $array      The array to inspect.
- * @param array[] $values The values to exclude.
+ * @param array<int, mixed>    $array      The array to inspect.
+ * @param array    ...$values  The values to exclude.
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array Returns the new array of filtered values.
+ *
+ * @throws \InvalidArgumentException
+ *
  * @example
  * <code>
  * $objects = [[ 'x' => 1, 'y' => 2 ], [ 'x' => 2, 'y' => 1 ]]
@@ -46,6 +49,7 @@ function differenceWith(array $array, ...$values): array
         return difference($array, ...$values);
     }
 
+    /** @var callable $comparator */
     $comparator = \array_pop($values);
 
     $values = baseFlatten($values, 1, 'is_array', true, null);

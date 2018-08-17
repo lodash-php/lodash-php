@@ -29,7 +29,7 @@ namespace _;
  * // => [2, 1]s
  * </code>
  */
-function uniq(array $array = null): array
+function uniq(array $array = []): array
 {
     return \array_unique($array);
 }
