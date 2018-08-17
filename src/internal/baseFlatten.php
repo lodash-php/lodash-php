@@ -40,7 +40,7 @@ function baseFlatten(?array $array, int $depth, callable $predicate = null, bool
                 // Recursively flatten arrays (susceptible to call stack limits).
                 $result = baseFlatten($value, $depth - 1, $predicate, $isStrict, $result);
             } else {
-                $result = \array_merge($result, $value);
+                arrayPush($result, $value);
             }
         } elseif (!$isStrict) {
             $result[\count($result)] = $value;
