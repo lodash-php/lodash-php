@@ -168,7 +168,7 @@ function template(string $string, array $options = []): callable
             /** @var string $file */
             $file = \tempnam(\sys_get_temp_dir(), 'lodashphp');
 
-            if ($file) {
+            if (!$file) {
                 throw new \RuntimeException('Unable to create temporary file for template');
             }
 

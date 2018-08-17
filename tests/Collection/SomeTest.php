@@ -21,7 +21,9 @@ class SomeTest extends TestCase
             ['user' => 'fred', 'active' => false],
         ];
 
-        $this->assertTrue(some([null, 0, 'yes', false], function ($value) { return \is_bool($value); }));
+        $this->assertTrue(some([null, 0, 'yes', false], function ($value) {
+            return \is_bool($value);
+        }));
         $this->assertFalse(some($users, ['user' => 'barney', 'active' => false]));
         $this->assertTrue(some($users, ['active', false]));
         $this->assertTrue(some($users, 'active'));

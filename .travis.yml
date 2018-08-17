@@ -35,4 +35,4 @@ install:
 script:
     - vendor/bin/php-cs-fixer fix --dry-run -v
     - vendor/bin/phpunit
-    - vendor/bin/phpstan analyse ./src -c phpstan.neon --level=4
+    - vendor/bin/phpstan analyse ./src -c phpstan.neon --level=max

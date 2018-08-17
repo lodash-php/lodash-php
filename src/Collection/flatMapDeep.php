@@ -33,7 +33,7 @@ use function _\internal\baseFlatten;
  * // => [1, 1, 2, 2]
  * </code>
  */
-function flatMapDeep(iterable $collection, callable $iteratee = null): array
+function flatMapDeep(iterable $collection, callable $iteratee): array
 {
     return baseFlatten(map($collection, $iteratee), \PHP_INT_MAX);
 }

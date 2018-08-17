@@ -38,7 +38,7 @@ use function _\internal\baseIntersection;
 function intersectionWith(...$arrays /*, callable $comparator = null*/): array
 {
     $copy = $arrays;
-    $comparator = array_pop($arrays);
+    $comparator = \array_pop($arrays);
 
     if (!\is_callable($comparator)) {
         $arrays = $copy;

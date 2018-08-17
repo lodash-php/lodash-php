@@ -16,7 +16,9 @@ class ReduceTest extends TestCase
 {
     public function testReduce()
     {
-        $this->assertSame(3, reduce([1, 2], function ($sum, $n) { return $sum + $n; }, 0));
+        $this->assertSame(3, reduce([1, 2], function ($sum, $n) {
+            return $sum + $n;
+        }, 0));
         $this->assertSame(['1' => ['a', 'c'], '2' => ['b']], reduce(['a' => 1, 'b' => 2, 'c' => 1], function ($result, $value, $key) {
             if (!isset($result[$value])) {
                 $result[$value] = [];

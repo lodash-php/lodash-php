@@ -17,7 +17,9 @@ class MaxByTest extends TestCase
     public function testMax()
     {
         $objects = [['n' => 1], ['n' => 2]];
-        $this->assertSame(['n' => 2], maxBy($objects, function ($o) { return $o['n']; }));
+        $this->assertSame(['n' => 2], maxBy($objects, function ($o) {
+            return $o['n'];
+        }));
         $this->assertSame(['n' => 2], maxBy($objects, 'n'));
     }
 }

@@ -16,7 +16,9 @@ class EveryTest extends TestCase
 {
     public function testEvery()
     {
-        $this->assertFalse(every([true, 1, null, 'yes'], function ($value) { return is_bool($value); }));
+        $this->assertFalse(every([true, 1, null, 'yes'], function ($value) {
+            return is_bool($value);
+        }));
 
         $users = [
             ['user' => 'barney', 'age' => 36, 'active' => false],

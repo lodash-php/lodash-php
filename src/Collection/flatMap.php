@@ -35,7 +35,7 @@ use function _\internal\baseFlatten;
  * // => [1, 1, 2, 2]
  * </code>
  */
-function flatMap(iterable $collection, callable $iteratee = null): array
+function flatMap(iterable $collection, callable $iteratee): array
 {
     return baseFlatten(map($collection, $iteratee), 1);
 }

@@ -23,7 +23,7 @@ use function _\internal\baseFlatten;
  *
  * @category Array
  *
- * @param array    $array      The array to inspect.
+ * @param array<int, mixed>    $array      The array to inspect.
  * @param array    ...$values  The values to exclude.
  * @param callable $comparator The comparator invoked per element.
  *
@@ -39,7 +39,7 @@ use function _\internal\baseFlatten;
  * // => [[ 'x' => 2, 'y' => 1 ]]
  * </code>
  */
-function differenceWith(array $array, array ...$values): array
+function differenceWith(array $array, ...$values): array
 {
     if (!$array) {
         return [];
@@ -51,10 +51,6 @@ function differenceWith(array $array, array ...$values): array
 
     /** @var callable $comparator */
     $comparator = \array_pop($values);
-
-    if (!\is_callable($comparator)) {
-        throw new \InvalidArgumentException(__FUNCTION__.' expects the last value passed to be callable');
-    }
 
     $values = baseFlatten($values, 1, 'is_array', true, null);
 

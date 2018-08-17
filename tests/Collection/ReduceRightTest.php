@@ -17,6 +17,8 @@ class ReduceRightTest extends TestCase
     public function testReduceRight()
     {
         $array = [[0, 1], [2, 3], [4, 5]];
-        $this->assertSame([4, 5, 2, 3, 0, 1], reduceRight($array, function ($flattened, $other) { return \array_merge($flattened, $other); }, []));
+        $this->assertSame([4, 5, 2, 3, 0, 1], reduceRight($array, function ($flattened, $other) {
+            return \array_merge($flattened, $other);
+        }, []));
     }
 }

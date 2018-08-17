@@ -21,7 +21,9 @@ class KeyByTest extends TestCase
             ['direction' => 'right', 'code' => 100],
         ];
 
-        $this->assertSame(['a' => ['direction' => 'left', 'code' => 97], 'd' => ['direction' => 'right', 'code' => 100]], keyBy($array, function ($o) { return \chr($o['code']); }));
+        $this->assertSame(['a' => ['direction' => 'left', 'code' => 97], 'd' => ['direction' => 'right', 'code' => 100]], keyBy($array, function ($o) {
+            return \chr($o['code']);
+        }));
         $this->assertSame(['left' => ['direction' => 'left', 'code' => 97], 'right' => ['direction' => 'right', 'code' => 100]], keyBy($array, 'direction'));
     }
 }

@@ -30,12 +30,13 @@ namespace _;
  * // => ['a', 'b']
  * </code>
  */
-function split(string $string, string $separator, int $limit = null): array
+function split(string $string, string $separator, int $limit = 0): array
 {
     if (\preg_match(reRegExpChar, $separator)) {
         return \preg_split($separator, $string, $limit ?? -1, PREG_SPLIT_DELIM_CAPTURE) ?: [];
     }
 
+    /** @var array $result */
     $result = \explode($separator, $string);
 
     if ($limit > 0) {

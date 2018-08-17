@@ -2,6 +2,7 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->in('src')
+    ->in('tests')
     ->notName('compiled.php');
 
 return PhpCsFixer\Config::create()

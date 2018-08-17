@@ -23,7 +23,7 @@ use function _\internal\baseIteratee;
  *
  * @category Array
  *
- * @param array  ...$arrays
+ * @param array<int, mixed>  ...$arrays
  * @param callable $iteratee The iteratee invoked per element.
  *
  * @return array the new array of intersecting values.
@@ -37,7 +37,7 @@ use function _\internal\baseIteratee;
  * // => [[ 'x' => 1 ]]
  * </code>
  */
-function intersectionBy(array ...$arrays/*, callable $iteratee*/): array
+function intersectionBy(...$arrays/*, callable $iteratee*/): array
 {
     $iteratee = \array_pop($arrays);
 

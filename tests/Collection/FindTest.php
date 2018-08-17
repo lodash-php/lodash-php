@@ -22,7 +22,9 @@ class FindTest extends TestCase
             ['user' => 'pebbles', 'age' => 1, 'active' => true],
         ];
 
-        $this->assertSame(['user' => 'barney', 'age' => 36, 'active' => true], find($users, function ($o) { return $o['age'] < 40; }));
+        $this->assertSame(['user' => 'barney', 'age' => 36, 'active' => true], find($users, function ($o) {
+            return $o['age'] < 40;
+        }));
 
         // The `matches` iteratee shorthand.
         $this->assertSame(['user' => 'pebbles', 'age' => 1, 'active' => true], find($users, ['age' => 1, 'active' => true]));

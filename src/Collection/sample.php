@@ -28,5 +28,8 @@ namespace _;
  */
 function sample(array $array)
 {
-    return $array[\array_rand($array, 1)];
+    /** @var string|int $key */
+    $key = \array_rand($array, 1);
+
+    return $array[$key];
 }

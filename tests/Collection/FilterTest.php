@@ -21,7 +21,9 @@ class FilterTest extends TestCase
             ['user' => 'fred', 'age' => 40, 'active' => false],
         ];
 
-        $this->assertSame([['user' => 'fred', 'age' => 40, 'active' => false]], filter($users, function ($o) { return !$o['active']; }));
+        $this->assertSame([['user' => 'fred', 'age' => 40, 'active' => false]], filter($users, function ($o) {
+            return !$o['active'];
+        }));
 
         // The `matches` iteratee shorthand.
         $this->assertSame([['user' => 'barney', 'age' => 36, 'active' => true]], filter($users, ['age' => 36, 'active' => true]));

@@ -24,20 +24,19 @@ use function _\internal\baseFlatten;
  *
  * @category Array
  *
- * @param array    $array     The array to inspect.
- * @param array    ...$values The values to exclude.
- * @param callable $iteratee  The iteratee invoked per element.
+ * @param array    $array    The array to inspect.
+ * @param array<int, mixed> ...$values  The values to exclude.
+ * @param callable $iteratee The iteratee invoked per element.
  *
  * @return array Returns the new array of filtered values.
  *
- * @throws \InvalidArgumentException
  * @example
  * <code>
  * differenceBy([2.1, 1.2], [2.3, 3.4], 'floor')
  * // => [1.2]
  * </code>
  */
-function differenceBy(array $array, array ...$values): array
+function differenceBy(array $array, ...$values): array
 {
     if (!$array) {
         return [];
@@ -49,10 +48,6 @@ function differenceBy(array $array, array ...$values): array
 
     /** @var callable $iteratee */
     $iteratee = \array_pop($values);
-
-    if (!\is_callable($iteratee)) {
-        throw new \InvalidArgumentException(__FUNCTION__.' expects the last value passed to be callable');
-    }
 
     $values = \array_map($iteratee, baseFlatten($values, 1, 'is_array', true, null));
 

@@ -22,7 +22,7 @@ use function _\internal\baseUniq;
  *
  * @category Array
  *
- * @param array    ...$arrays  The arrays to inspect.
+ * @param array<int, mixed>    ...$arrays  The arrays to inspect.
  * @param callable $comparator The comparator invoked per element.
  *
  * @return array the new array of combined values.
@@ -38,7 +38,7 @@ use function _\internal\baseUniq;
  * // => [['x' => 1, 'y' => 2], ['x' => 2, 'y' => 1], ['x' => 1, 'y' => 1]]
  * </code>
  */
-function unionWith(array ... $arrays): array
+function unionWith(... $arrays): array
 {
     /** @var callable $comparator */
     $comparator = \array_pop($arrays);
