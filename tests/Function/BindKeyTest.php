@@ -16,11 +16,10 @@ class BindKeyTest extends TestCase
 {
     public function testBindKey()
     {
-        $object = new class
-        {
+        $object = new class {
             private $user = 'fred';
 
-            function greet($greeting, $punctuation)
+            public function greet($greeting, $punctuation)
             {
                 return $greeting.' '.$this->user.$punctuation;
             }
