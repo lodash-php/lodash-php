@@ -16,8 +16,7 @@ class BindTest extends TestCase
 {
     public function testBind()
     {
-        $object = new class
-        {
+        $object = new class {
             public $user = 'fred';
 
             private $age = 54;
