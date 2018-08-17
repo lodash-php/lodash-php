@@ -24,5 +24,5 @@ function baseGet($object, $path)
         $object = property(toKey($path[$index++]))($object);
     }
 
-    return ($index && $index === $length) ? $object : null;
+    return ($index > 0 && $index === $length) ? $object : null;
 }

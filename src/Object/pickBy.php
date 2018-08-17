@@ -21,8 +21,8 @@ use function _\internal\basePickBy;
  *
  * @category Object
  *
- * @param object   $object    The source object.
- * @param callable $predicate The function invoked per property.
+ * @param object|null $object    The source object.
+ * @param callable    $predicate The function invoked per property.
  *
  * @return \stdClass Returns the new object.
  * @example
