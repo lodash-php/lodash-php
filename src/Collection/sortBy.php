@@ -47,7 +47,7 @@ function sortBy($collection, $iteratees): array
         return [];
     };
 
-    if (\is_callable($iteratees)) {
+    if (\is_callable($iteratees) || !\is_iterable($iteratees)) {
         $iteratees = [$iteratees];
     }
 

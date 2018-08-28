@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 final class _
 {
+    public $__chain__ = false;
+
     public const reInterpolate = '<%=([\s\S]+?)%>';
     public const reEvaluate = "<%([\s\S]+?)%>";
     public const reEscape = "<%-([\s\S]+?)%>";
@@ -44,6 +46,13 @@ final class _
         ],
     ];
 
+    private $value;
+
+    public function __construct($value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * @param string $method
      * @param array  $args
@@ -59,4 +68,27 @@ final class _
 
         return ("_\\$method")(...$args);
     }
+
+    public function __call($method, $arguments)
+    {
+        $this->value = self::__callStatic($method, \array_merge([$this->value], $arguments));
+
+        return $this;
+    }
+
+    public function value()
+    {
+        return $this->value;
+    }
+}
+
+// We can't use "_" as a function name, since it collides with the "_" function in the gettext extension
+function __($value): _
+{
+    return new _($value);
+}
+
+function lodash($value): _
+{
+    return new _($value);
 }
