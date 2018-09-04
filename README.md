@@ -134,10 +134,10 @@ Example:
 $array = [1];
 $other = concat($array, 2, [3], [[4]]);
 
-var_dump(other)
+var_dump($other)
 // => [1, 2, 3, [4]]
 
-var_dump(array)
+var_dump($array)
 // => [1]
 
 ```
