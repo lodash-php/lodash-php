@@ -27,7 +27,7 @@ use function _\internal\castSlice;
  * @since    3.2.0
  * @category Function
  *
- * @param callable func The function to spread arguments over.
+ * @param callable $func The function to spread arguments over.
  * @param int $start The start position of the spread.
  *
  * @return callable Returns the new function.
@@ -43,7 +43,7 @@ use function _\internal\castSlice;
  */
 function spread(callable $func, ?int $start = null)
 {
-    $start = null === $start ? 0 : max((int) $start, 0);
+    $start = null === $start ? 0 : \max($start, 0);
 
     return baseRest(function (...$args) use ($start, $func) {
         $array = $args[$start];
