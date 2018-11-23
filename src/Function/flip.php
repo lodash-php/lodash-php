@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace _;
 
+use function _\internal\baseRest;
+use function _\internal\castSlice;
+
 /**
  * Creates a function that invokes `func` with arguments reversed.
  *
@@ -32,7 +35,7 @@ namespace _;
  */
 function flip(callable $func): callable
 {
-    return function (...$values) use($func) {
+    return function (...$values) use ($func) {
         return \array_reverse($func(...$values), false);
     };
 }
