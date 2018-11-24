@@ -45,7 +45,7 @@ function spread(callable $func, ?int $start = null)
 {
     $start = null === $start ? 0 : \max($start, 0);
 
-    return baseRest(function (...$args) use ($start, $func) {
+    return baseRest(function ($args) use ($start, $func) {
         $array = $args[$start];
         $otherArgs = castSlice($args, 0, $start);
 
