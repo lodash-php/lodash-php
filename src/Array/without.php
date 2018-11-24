@@ -34,5 +34,5 @@ use function _\internal\baseRest;
  */
 function without(array $array, ...$values): array
 {
-    return baseRest('\_\difference')($array, $values);
+    return baseRest('\_\difference')($array, ...$values);
 }

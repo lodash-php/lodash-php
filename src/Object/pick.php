@@ -32,7 +32,7 @@ use function _\internal\flatRest;
  */
 function pick($object, $paths): \stdClass
 {
-    return flatRest(function ($object, ...$paths) {
+    return flatRest(function ($object, $paths) {
         return basePick($object, $paths);
     })($object, $paths);
 }

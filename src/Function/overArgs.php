@@ -58,7 +58,7 @@ function overArgs(callable $func, array $transforms): callable
 
         $funcsLength = \count($transforms);
 
-        return baseRest(function (...$args) use ($funcsLength, $transforms, $func) {
+        return baseRest(function ($args) use ($funcsLength, $transforms, $func) {
             $index = -1;
             $length = \min(\count($args), $funcsLength);
 

@@ -13,7 +13,8 @@ namespace _\internal;
 
 function overRest(callable $func, $start, callable $transform): callable
 {
-    $start = max($start ?? -1, 0);
+    $parameters = (new \ReflectionFunction($func))->getNumberOfParameters();
+    $start = max($start ?? $parameters - 1, 0);
 
     return function () use ($func, $start, $transform) {
         $args = \func_get_args();
@@ -31,6 +32,6 @@ function overRest(callable $func, $start, callable $transform): callable
         }
         $otherArgs[$start] = $transform($array);
 
-        return $func(...$otherArgs[$start]);
+        return $func(...$otherArgs);
     };
 }

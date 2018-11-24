@@ -47,5 +47,5 @@ function invokeMap(iterable $collection, $path, array $args = []): array
         });
 
         return $result;
-    })($collection, $path, $args);
+    })($collection, $path, ...$args);
 }
