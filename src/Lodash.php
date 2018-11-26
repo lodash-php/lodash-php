@@ -92,3 +92,5 @@ function lodash($value): _
 {
     return new _($value);
 }
+
+define('_', _::class);
