@@ -1,10 +1,17 @@
 #!/usr/bin/env php
 <?php
 
+use PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocChildNode;
+use PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTextNode;
+use PHPStan\PhpDocParser\Lexer\Lexer;
+use PHPStan\PhpDocParser\Parser\TokenIterator;
+
 require_once dirname(__DIR__).'/vendor/autoload.php';
 
 $sources = dirname(__DIR__).'/src';
 $factory = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
+
+$parser = new PHPStan\PhpDocParser\Parser\PhpDocParser(new \PHPStan\PhpDocParser\Parser\TypeParser(), new \PHPStan\PhpDocParser\Parser\ConstExprParser());
 
 $readme = [];
 
@@ -27,40 +34,44 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($sources, 
         continue;
     }
 
-    $reflection = new ReflectionFunction("_\\$function");
+    $reflection = new \ReflectionFunction("_\\$function");
 
-    $docblock = $factory->create($reflection->getDocComment());
+    $docblock = $parser->parse(new TokenIterator((new Lexer())->tokenize($reflection->getDocComment())));
 
-    $category = (string) $docblock->getTagsByName('category')[0];
+    $category = (string) current($docblock->getTagsByName('@category'))->value;
 
     $readme[$category][$function] = '';
 
     $readme[$category][$function] .= "### $function\n\n";
-    $readme[$category][$function] .= $docblock->getSummary().PHP_EOL.PHP_EOL;
-    $readme[$category][$function] .= $docblock->getDescription().PHP_EOL.PHP_EOL;
+
+    foreach (array_filter($docblock->children, function (PhpDocChildNode $child): bool {
+        return $child instanceof PhpDocTextNode;
+    }) as $text) {
+        $readme[$category][$function] .= (string) $text.PHP_EOL;
+    }
 
     $readme[$category][$function] .= "**Arguments:**\n\n";
 
-    foreach ($docblock->getTagsByName('param') as $param) {
-        $readme[$category][$function] .= $param->render().PHP_EOL.PHP_EOL;
+    foreach ($docblock->getTagsByName('@param') as $param) {
+        $readme[$category][$function] .= (string) $param.PHP_EOL.PHP_EOL;
     }
 
     $readme[$category][$function] .= PHP_EOL.PHP_EOL;
 
     $readme[$category][$function] .= "**Return:**\n\n";
 
-    $readme[$category][$function] .= $docblock->getTagsByName('return')[0]->render();
+    $readme[$category][$function] .= (string) current($docblock->getTagsByName('@return'));
 
     $readme[$category][$function] .= PHP_EOL.PHP_EOL;
 
-    if ($docblock->hasTag('example')) {
+    if (\preg_match('#<code>((.|\n)*?)</code>#', $readme[$category][$function], $matches)) {
 
-        $example = str_replace(['<code>', '</code>'], '', $docblock->getTagsByName('example')[0] ?? '');
+        $readme[$category][$function] = str_replace($matches[0], '', $readme[$category][$function]);
 
-        if ($example) {
-            $readme[$category][$function] .= "Example:\n```php\n<?php\n use function _\\$function;\n";
-            $readme[$category][$function] .= "$example\n```\n";
-        }
+        $example = $matches[1];
+
+        $readme[$category][$function] .= "Example:\n```php\n<?php\n use function _\\$function;\n";
+        $readme[$category][$function] .= "$example\n```\n";
     }
 }
 
