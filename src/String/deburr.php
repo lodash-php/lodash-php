@@ -96,9 +96,10 @@ const rsCombo = '#['.rsComboRange.']#u';
  * @return string Returns the deburred string.
  *
  * @example
- *
+ * <code>
  * deburr('déjà vu')
  * // => 'deja vu'
+ * </code>
  */
 function deburr(string $string): string
 {

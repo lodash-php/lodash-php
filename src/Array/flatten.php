@@ -22,9 +22,10 @@ use function _\internal\baseFlatten;
  *
  * @return array the new flattened array.
  * @example
- *
+ * <code>
  * flatten([1, [2, [3, [4]], 5]])
  * // => [1, 2, [3, [4]], 5]
+ * </code>
  */
 function flatten(array $array = null): array
 {

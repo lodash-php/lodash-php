@@ -26,7 +26,7 @@ use function _\internal\createAggregator;
  *
  * @return array the array of grouped elements.
  * @example
- *
+ * <code>
  * $users = [
  *   ['user' => 'barney',  'age' => 36, 'active' => false],
  *   ['user' => 'fred',    'age' => 40, 'active' => true],
@@ -35,6 +35,7 @@ use function _\internal\createAggregator;
  *
  * partition($users, function($user) { return $user['active']; })
  * // => objects for [['fred'], ['barney', 'pebbles']]
+ * </code>
  */
 function partition(iterable $collection, $predicate = null): array
 {

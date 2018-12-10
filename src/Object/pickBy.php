@@ -26,11 +26,12 @@ use function _\internal\basePickBy;
  *
  * @return \stdClass Returns the new object.
  * @example
- *
+ * <code>
  * $object = (object) ['a' => 1, 'b' => 'abc', 'c' => 3];
  *
  * pickBy(object, 'is_numeric');
  * // => (object) ['a' => 1, 'c' => 3]
+ * </code>
  */
 function pickBy($object, callable $predicate): \stdClass
 {

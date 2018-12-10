@@ -28,6 +28,7 @@ namespace _;
  *
  * filter([1, 2, 3, 4, 5, 6], negate($isEven));
  * // => [1, 3, 5]
+ * </code>
  */
 
 function negate(callable $predicate): callable

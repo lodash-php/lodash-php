@@ -30,6 +30,7 @@ namespace _;
  *
  * $p('fred, barney, & pebbles');
  * // => '<p>fred, barney, &amp; pebbles</p>'
+ * </code>
  */
 function wrap($value, callable $wrapper = null): callable
 {

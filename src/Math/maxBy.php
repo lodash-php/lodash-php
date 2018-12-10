@@ -34,6 +34,7 @@ use function _\internal\baseIteratee;
  * // The `property` iteratee shorthand.
  * maxBy($objects, 'n');
  * // => ['n' => 2]
+ * </code>
  */
 function maxBy(?array $array, $iteratee)
 {

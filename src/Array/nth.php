@@ -22,7 +22,7 @@ namespace _;
  *
  * @return mixed Returns the nth element of `array`.
  * @example
- *
+ * <code>
  * $array = ['a', 'b', 'c', 'd']
  *
  * nth($array, 1)
@@ -30,6 +30,7 @@ namespace _;
  *
  * nth($array, -2)
  * // => 'c'
+ * </code>
  */
 function nth(array $array, int $n)
 {

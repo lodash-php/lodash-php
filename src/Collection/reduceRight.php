@@ -32,6 +32,7 @@ use function _\internal\baseReduce;
  *
  * reduceRight(array, (flattened, other) => flattened.concat(other), [])
  * // => [4, 5, 2, 3, 0, 1]
+ * </code>
  */
 function reduceRight(iterable $collection, $iteratee, $accumulator = null)
 {

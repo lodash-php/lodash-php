@@ -19,7 +19,7 @@ namespace _;
  * @param string $string The string to convert.
  * @return string Returns the snake cased string.
  * @example
- *
+ * <code>
  * snakeCase('Foo Bar')
  * // => 'foo_bar'
  *
@@ -28,6 +28,7 @@ namespace _;
  *
  * snakeCase('--FOO-BAR--')
  * // => 'foo_bar'
+ * </code>
  */
 function snakeCase(string $string): string
 {

@@ -29,6 +29,7 @@ namespace _;
  *
  * toUpper('__foo_bar__')
  * // => '__FOO_BAR__'
+ * </code>
  */
 function toUpper(string $string): string
 {

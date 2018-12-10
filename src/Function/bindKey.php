@@ -26,7 +26,7 @@ namespace _;
  *
  * @return callable Returns the new bound function.
  * @example
- *
+ * <code>
  * $object = new class {
  *     private $user = 'fred';
  *     function greet($greeting, $punctuation) {
@@ -37,6 +37,7 @@ namespace _;
  * $bound = bindKey($object, 'greet', 'hi');
  * $bound('!');
  * // => 'hi fred!'
+ * </code>
  */
 function bindKey($object, string $function, ...$partials): callable
 {

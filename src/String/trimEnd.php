@@ -21,12 +21,13 @@ namespace _;
  *
  * @return string Returns the trimmed string.
  * @example
- *
+ * <code>
  * trimEnd('  abc  ')
  * // => '  abc'
  *
  * trimEnd('-_-abc-_-', '_-')
  * // => '-_-abc'
+ * </code>
  */
 function trimEnd(string $string, string $chars = ' '): string
 {

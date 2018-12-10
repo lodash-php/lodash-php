@@ -26,7 +26,7 @@ namespace _;
  * @return int|float Returns the random number.
  *
  * @example
- *
+ * <code>
  * random(0, 5)
  * // => an integer between 0 and 5
  *
@@ -38,6 +38,7 @@ namespace _;
  *
  * random(1.2, 5.2)
  * // => a floating-point number between 1.2 and 5.2
+ * </code>
  */
 function random($lower = null, $upper = null, $floating = null)
 {

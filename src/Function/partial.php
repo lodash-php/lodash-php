@@ -26,7 +26,7 @@ use function _\internal\shortOut;
  * @return callable Returns the new partially applied function.
  *
  * @example
- *
+ * <code>
  * function greet($greeting, $name) {
  *   return $greeting . ' ' . $name;
  * }
@@ -34,6 +34,7 @@ use function _\internal\shortOut;
  * $sayHelloTo = partial('greet', 'hello');
  * $sayHelloTo('fred');
  * // => 'hello fred'
+ * </code>
  */
 function partial(callable $func, ...$partials): callable
 {

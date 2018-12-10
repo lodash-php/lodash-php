@@ -33,13 +33,14 @@ use function _\internal\castSlice;
  * @return callable Returns the new function.
  *
  * @example
- *
+ * <code>
  * $say = spread(function($who, $what) {
  *   return $who . ' says ' . $what;
  * });
  *
  * $say(['fred', 'hello']);
  * // => 'fred says hello'
+ * </code>
  */
 function spread(callable $func, ?int $start = null)
 {

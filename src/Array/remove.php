@@ -26,7 +26,7 @@ namespace _;
  *
  * @return array the new array of removed elements.
  * @example
- *
+ * <code>
  * $array = [1, 2, 3, 4]
  * $evens = remove($array, function ($n) { return $n % 2 === 0; })
  *
@@ -35,6 +35,7 @@ namespace _;
  *
  * var_dump($evens)
  * // => [2, 4]
+ * </code>
  */
 function remove(array &$array, callable $predicate): array
 {

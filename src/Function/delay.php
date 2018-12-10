@@ -23,12 +23,12 @@ namespace _;
  *
  * @return int the timer id.
  * @example
- * <pre>
+ * <code>
  * delay(function($text) {
  *   echo $text;
  * }, 1000, 'later');
  * // => Echo 'later' after one second.
- * </pre>
+ * </code>
  */
 function delay(callable $func, int $wait = 1, ...$args): int
 {

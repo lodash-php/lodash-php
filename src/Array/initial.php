@@ -20,9 +20,10 @@ namespace _;
  *
  * @return array the slice of `array`.
  * @example
- *
+ * <code>
  * initial([1, 2, 3])
  * // => [1, 2]
+ * </code>
  */
 function initial(array $array): array
 {

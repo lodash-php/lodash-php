@@ -27,6 +27,7 @@ namespace _;
  *
  * isError(\Exception::Class)
  * // => false
+ * </code>
  */
 function isError($value): bool
 {

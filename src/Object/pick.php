@@ -24,11 +24,12 @@ use function _\internal\flatRest;
  *
  * @return \stdClass Returns the new object.
  * @example
- *
+ * <code>
  * $object = (object) ['a' => 1, 'b' => '2', 'c' => 3];
  *
  * pick($object, ['a', 'c']);
  * // => (object) ['a' => 1, 'c' => 3]
+ * </code>
  */
 function pick($object, $paths): \stdClass
 {

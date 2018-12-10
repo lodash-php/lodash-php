@@ -21,7 +21,7 @@ namespace _;
  *
  * @return int Returns the collection size.
  * @example
- *
+ * <code>
  * size([1, 2, 3]);
  * // => 3
  *
@@ -30,6 +30,7 @@ namespace _;
  *
  * size('pebbles');
  * // => 7
+ * </code>
  */
 function size($collection): int
 {

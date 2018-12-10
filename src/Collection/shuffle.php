@@ -20,9 +20,10 @@ namespace _;
  *
  * @return array the new shuffled array.
  * @example
- *
+ * <code>
  * shuffle([1, 2, 3, 4])
  * // => [4, 1, 3, 2]
+ * </code>
  */
 function shuffle(array $array = []): array
 {

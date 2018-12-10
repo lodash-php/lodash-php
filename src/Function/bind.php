@@ -23,7 +23,7 @@ namespace _;
  *
  * @return callable Returns the new bound function.
  * @example
- *
+ * <code>
  * function greet($greeting, $punctuation) {
  *   return $greeting . ' ' . $this->user . $punctuation;
  * }
@@ -35,6 +35,7 @@ namespace _;
  * $bound = bind('greet', $object, 'hi');
  * $bound('!');
  * // => 'hi fred!'
+ * </code>
  */
 function bind(callable $function, $object, ...$partials): callable
 {

@@ -29,12 +29,13 @@ use function _\internal\basePullAll;
  *
  * @return array `array`.
  * @example
- *
+ * <code>
  * $array = [[ 'x' => 1 ], [ 'x' => 2 ], [ 'x' => 3 ], [ 'x' => 1 ]]
  *
  * pullAllBy($array, [[ 'x' => 1 ], [ 'x' => 3 ]], 'x')
  * var_dump($array)
  * // => [[ 'x' => 2 ]]
+ * </code>
  */
 function pullAllBy(array &$array, array $values, $iteratee): array
 {

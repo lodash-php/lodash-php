@@ -29,7 +29,7 @@ use function _\internal\baseIteratee;
  * <code>
  * findLast([1, 2, 3, 4], function ($n) { return $n % 2 == 1; })
  * // => 3
- * </cdoe>
+ * </code>
  */
 function findLast(iterable $collection, $predicate = null, int $fromIndex = 0)
 {

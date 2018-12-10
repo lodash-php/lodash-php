@@ -22,12 +22,13 @@ namespace _;
  *
  * @return array the random elements.
  * @example
- *
+ * <code>
  * sampleSize([1, 2, 3], 2)
  * // => [3, 1]
  *
  * sampleSize([1, 2, 3], 4)
  * // => [2, 3, 1]
+ * </code>
  */
 function sampleSize(array $array, int $n = 1): array
 {
