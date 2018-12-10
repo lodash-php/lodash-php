@@ -71,7 +71,9 @@ function curry(callable $func, ?int $arity = null)
                 $arguments = \array_merge($arguments, $args);
             }
 
-            if ($arity <= \count(\array_filter($arguments, function ($value) { return _ !== $value; }))) {
+            if ($arity <= \count(\array_filter($arguments, function ($value) {
+                return _ !== $value;
+            }))) {
                 return $func(...$arguments);
             }
 

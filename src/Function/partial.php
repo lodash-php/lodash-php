@@ -59,4 +59,3 @@ function partial(callable $func, ...$partials): callable
         return shortOut($wrapper);
     })($func, ...$partials);
 }
-
