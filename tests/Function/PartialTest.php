@@ -16,12 +16,11 @@ class PartialTest extends TestCase
 {
     public function testPartial()
     {
-        function greet($greeting, $name)
-        {
+        $greet = function ($greeting, $name) {
             return $greeting.' '.$name;
-        }
+        };
 
-        $sayHelloTo = partial('greet', 'hello');
+        $sayHelloTo = partial($greet, 'hello');
         $this->assertSame('hello fred', $sayHelloTo('fred'));
     }
 }

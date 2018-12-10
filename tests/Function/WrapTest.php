@@ -16,7 +16,7 @@ class WrapTest extends TestCase
 {
     public function testWrap()
     {
-        $p = wrap('_\escape', function($func, $text) {
+        $p = wrap('_\escape', function ($func, $text) {
             return '<p>' . $func($text) . '</p>';
         });
 

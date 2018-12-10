@@ -18,7 +18,7 @@ class DelayTest extends TestCase
     {
         $a = 1;
         $time = microtime(true);
-        delay(function ($increment) use(&$a) {
+        delay(function ($increment) use (&$a) {
             $a += $increment;
         }, 20, 2);
 

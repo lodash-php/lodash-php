@@ -22,12 +22,11 @@ class BindTest extends TestCase
             private $age = 54;
         };
 
-        function greet($greeting, $punctuation)
-        {
+        $greet = function ($greeting, $punctuation) {
             return $greeting.' '.$this->user.$punctuation;
-        }
+        };
 
-        $bound = bind('greet', $object, 'hi');
+        $bound = bind($greet, $object, 'hi');
 
         $this->assertSame('hi fred!', $bound('!'));
 
