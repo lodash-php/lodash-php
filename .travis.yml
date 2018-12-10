@@ -18,7 +18,7 @@ matrix:
       env:
         - COMPOSER_OPTIONS="--prefer-stable"
     - php: 7.2
-    # - php: 7.3 # https://github.com/travis-ci/travis-ci/issues/9717
+    - php: 7.3
     - php: nightly
   allow_failures:
     - php: nightly
