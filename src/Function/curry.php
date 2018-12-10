@@ -26,7 +26,7 @@ namespace _;
  * @category Function
  *
  * @param callable $func  The function to curry.
- * @param int      $arity The arity of `func`.
+ * @param int|null $arity The arity of `func`.
  *
  * @return callable Returns the new curried function.
  * @example
