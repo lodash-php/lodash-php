@@ -18,7 +18,7 @@ namespace _;
  *
  * @category Function
  *
- * @param mixed value The value to wrap.
+ * @param mixed    $value   The value to wrap.
  * @param callable $wrapper The wrapper function.
  *
  * @return callable the new function.

@@ -17,9 +17,9 @@ namespace _;
  *
  * @category Function
  *
- * @param callable $func The function to delay.
- * @param int      $wait The number of milliseconds to delay invocation.
- * @param mixed[]  $args
+ * @param callable          $func The function to delay.
+ * @param int               $wait The number of milliseconds to delay invocation.
+ * @param array<int, mixed> $args
  *
  * @return int the timer id.
  * @example

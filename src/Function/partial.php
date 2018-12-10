@@ -20,8 +20,8 @@ use function _\internal\shortOut;
  *
  * @category Function
  *
- * @param callable $func     The function to partially apply arguments to.
- * @param mixed[]  $partials The arguments to be partially applied.
+ * @param callable          $func     The function to partially apply arguments to.
+ * @param array<int, mixed> $partials The arguments to be partially applied.
  *
  * @return callable Returns the new partially applied function.
  *
