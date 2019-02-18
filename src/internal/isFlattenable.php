@@ -22,5 +22,5 @@ namespace _\internal;
  */
 function isFlattenable($value): bool
 {
-    return \is_array($value) && \range(0, \count($value) - 1) === \array_keys($value);
+    return \is_array($value) && ([] === $value || \range(0, \count($value) - 1) === \array_keys($value));
 }

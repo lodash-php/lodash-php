@@ -17,5 +17,7 @@ class FlattenTest extends TestCase
     public function testFlatten()
     {
         $this->assertSame([1, 2, [3, [4]], 5], flatten([1, [2, [3, [4]], 5]]));
+
+        $this->assertSame([1, 2, 3, 4, 5, 6], flatten([[1, 2, 3], [], [4, 5, 6]]));
     }
 }
