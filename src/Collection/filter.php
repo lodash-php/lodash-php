@@ -62,7 +62,5 @@ function filter(iterable $array, $predicate = null): array
         \ARRAY_FILTER_USE_BOTH
     );
 
-    \sort($result);
-
-    return $result;
+    return \array_values($result);
 }
