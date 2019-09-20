@@ -21,8 +21,6 @@ matrix:
       script: vendor/bin/phpunit
     - php: 7.4snapshot
       script: vendor/bin/phpunit
-  allow_failures:
-    - php: 7.4snapshotg
 
 cache:
   directories:
