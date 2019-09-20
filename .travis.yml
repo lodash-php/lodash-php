@@ -3,10 +3,7 @@ language: php
 sudo: false
 
 env:
-    - COMPOSER_OPTIONS="
-
-php:
-    - 7.1
+    - COMPOSER_OPTIONS=""
 
 matrix:
   fast_finish: true
@@ -14,21 +11,20 @@ matrix:
     - php: 7.1
       env:
         - COMPOSER_OPTIONS="--prefer-lowest"
+      script: vendor/bin/phpunit
     - php: 7.1
       env:
         - COMPOSER_OPTIONS="--prefer-stable"
     - php: 7.2
+      script: vendor/bin/phpunit
     - php: 7.3
-    - php: nightly
-  allow_failures:
-    - php: nightly
+      script: vendor/bin/phpunit
+    - php: 7.4snapshot
+      script: vendor/bin/phpunit
 
 cache:
   directories:
     - $HOME/.composer/cache/files
-
-before_install:
-  - composer self-update
 
 install:
   - composer update -n "$COMPOSER_OPTIONS"
