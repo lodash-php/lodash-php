@@ -20,9 +20,9 @@ function baseGet($object, $path)
     $index = 0;
     $length = \count($path);
 
-    while ($object !== null && $index < $length) {
+    while ($object !== null && !is_scalar($object) && $index < $length) {
         $object = property(toKey($path[$index++]))($object);
     }
 
-    return ($index > 0 && $index === $length) ? $object : null;
+    return ($index > 0  && $index === $length) ? $object : null;
 }

@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace _;
 
+use Symfony\Component\PropertyAccess\Exception\NoSuchIndexException;
+use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 /**
@@ -60,6 +62,10 @@ function property($path): callable
             }
         }
 
-        return $propertyAccess->getValue($value, $path);
+        try {
+            return $propertyAccess->getValue($value, $path);
+        } catch (NoSuchPropertyException | NoSuchIndexException $e) {
+            return null;
+        }
     };
 }
