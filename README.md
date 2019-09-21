@@ -3707,6 +3707,45 @@ random(1.2, 5.2)
 ```
 ## Object
 
+### get
+
+Gets the value at path of object. If the resolved value is null the defaultValue is returned in its place.
+
+
+
+
+
+
+**Arguments:**
+
+@param mixed $object The associative array or object to fetch value from
+
+@param (array | string) $path Dot separated or array of string
+
+@param mixed $defaultValue (optional)The value returned for unresolved or null values.
+
+
+
+**Return:**
+
+@return mixed Returns the resolved value.
+
+Example:
+```php
+<?php
+ use function _\get;
+
+$sampleArray = ["key1" => ["key2" => ["key3" => "val1", "key4" => ""]]];
+get($sampleArray, 'key1.key2.key3');
+// => "val1"
+
+get($sampleArray, 'key1.key2.key5', "default");
+// => "default"
+
+get($sampleArray, 'key1.key2.key4', "default");
+// => ""
+
+```
 ### pick
 
 Creates an object composed of the picked `object` properties.
@@ -4884,6 +4923,44 @@ new \PDO(null);
 if (isError($elements)) {
 $elements = [];
 }
+
+```
+### defaultTo
+
+Checks value to determine whether a default value should be returned in its place.
+The defaultValue is returned if value is NaN or null.
+
+
+
+
+
+
+**Arguments:**
+
+@param mixed $value Any value.
+
+@param mixed $defaultValue Value to return when $value is null or NAN
+
+
+
+**Return:**
+
+@return mixed Returns `value`.
+
+Example:
+```php
+<?php
+ use function _\defaultTo;
+
+$a = null;
+
+defaultTo($a, "default");
+// => "default"
+
+$a = "x";
+
+defaultTo($a, "default");
+// => "x"
 
 ```
 ### identity
