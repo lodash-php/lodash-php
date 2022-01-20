@@ -1,5 +1,10 @@
 {
     "require": {
         "phpstan/phpstan": "^0.10.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
