@@ -45,7 +45,7 @@ function indexOf(array $array, $value, int $fromIndex = null): int
             $array = \array_reverse($array, false);
             $inc = false;
         }
-    };
+    }
 
     foreach ($array as $v) {
         if (isEqual($value, $v)) {

@@ -6,7 +6,7 @@ declare(strict_types=1);
  * This file is part of the SolidWorx Lodash-PHP project.
  *
  * @author     Pierre du Plessis <open-source@solidworx.co>
- * @copyright  Copyright (c) 2018
+ * @copyright  Copyright (c) 2017
  */
 
 namespace _;
@@ -55,7 +55,6 @@ namespace _;
 function memoize(callable $func, callable $resolver = null)
 {
     $memoized = new class($func, $resolver ?? null) {
-
         /**
          * @var CacheInterface
          */
@@ -94,7 +93,7 @@ function memoize(callable $func, callable $resolver = null)
         }
     };
 
-    $memoized->cache = new MapCache;
+    $memoized->cache = new MapCache();
 
     return $memoized;
 }

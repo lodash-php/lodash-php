@@ -38,7 +38,7 @@ use function _\internal\createAggregator;
 function countBy(iterable $collection, callable $iteratee): array
 {
     return createAggregator(function ($result, $key, $value) {
-        if (!isset($result[$value])) {
+        if (! isset($result[$value])) {
             $result[$value] = 0;
         }
 

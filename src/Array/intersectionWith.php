@@ -22,7 +22,6 @@ use function _\internal\baseIntersection;
  * @category Array
  *
  * @param array    ...$arrays
- * @param callable $comparator The comparator invoked per element.
  *
  * @return array the new array of intersecting values.
  *
@@ -40,7 +39,7 @@ function intersectionWith(...$arrays /*, callable $comparator = null*/): array
     $copy = $arrays;
     $comparator = \array_pop($arrays);
 
-    if (!\is_callable($comparator)) {
+    if (! \is_callable($comparator)) {
         $arrays = $copy;
         $comparator = null;
     }

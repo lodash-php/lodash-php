@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace _\internal;
 
 /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
-const reHasUnicode = '['.rsZWJ.rsAstralRange.rsComboRange.rsVarRange.']';
+const reHasUnicode = '[' . rsZWJ . rsAstralRange . rsComboRange . rsVarRange . ']';
 
 /**
  * Checks if `string` contains Unicode symbols.
@@ -25,5 +25,5 @@ const reHasUnicode = '['.rsZWJ.rsAstralRange.rsComboRange.rsVarRange.']';
  */
 function hasUnicode(string $string): bool
 {
-    return \preg_match('#'.reHasUnicode.'#u', $string) > 0;
+    return \preg_match('#' . reHasUnicode . '#u', $string) > 0;
 }

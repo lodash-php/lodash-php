@@ -36,7 +36,7 @@ use function _\internal\basePickBy;
 function pickBy($object, callable $predicate): \stdClass
 {
     if (null === $object) {
-        return new \stdClass;
+        return new \stdClass();
     }
 
     $props = arrayMap(\array_keys(\get_object_vars($object)), function ($prop) {

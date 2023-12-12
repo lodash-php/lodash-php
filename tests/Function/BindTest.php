@@ -16,14 +16,14 @@ class BindTest extends TestCase
 {
     public function testBind()
     {
-        $object = new class {
+        $object = new class() {
             public $user = 'fred';
 
             private $age = 54;
         };
 
         $greet = function ($greeting, $punctuation) {
-            return $greeting.' '.$this->user.$punctuation;
+            return $greeting . ' ' . $this->user . $punctuation;
         };
 
         $bound = bind($greet, $object, 'hi');
@@ -31,7 +31,7 @@ class BindTest extends TestCase
         $this->assertSame('hi fred!', $bound('!'));
 
         $bound = bind(function ($prefix, $suffix) {
-            return $prefix.' '.$this->age.' '.$suffix;
+            return $prefix . ' ' . $this->age . ' ' . $suffix;
         }, $object, 'I\'m');
 
         $this->assertSame('I\'m 54 years', $bound('years'));

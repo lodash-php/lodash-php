@@ -36,12 +36,12 @@ use function _\internal\arrayMap;
  */
 function unzipWith(array $array, ?callable $iteratee = null): array
 {
-    if (!\count($array)) {
+    if (! \count($array)) {
         return [];
     }
 
     $result = unzip($array);
-    if (!is_callable($iteratee)) {
+    if (! is_callable($iteratee)) {
         return $result;
     }
 

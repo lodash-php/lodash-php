@@ -58,7 +58,7 @@ function property($path): callable
             }
 
             if (\is_string($path) && $path[0] !== '[' && $path[-1] !== ']') {
-                $path = "[$path]";
+                $path = "[{$path}]";
             }
         }
 

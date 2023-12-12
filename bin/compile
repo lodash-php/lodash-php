@@ -5,8 +5,6 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
-
 function getCode(SplFileInfo $file): string
 {
     $code = php_strip_whitespace($file->getRealPath());

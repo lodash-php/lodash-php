@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace _;
 
-use function _\internal\baseRest;
-use function _\internal\castSlice;
-
 /**
  * Creates a function that invokes `func` with arguments reversed.
  *

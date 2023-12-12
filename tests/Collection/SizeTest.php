@@ -17,7 +17,7 @@ class SizeTest extends TestCase
     public function testSize()
     {
         $this->assertSame(3, size([1, 2, 3]));
-        $this->assertSame(2, size(new class {
+        $this->assertSame(2, size(new class() {
             public $a = 1;
 
             public $b = 2;
@@ -25,7 +25,7 @@ class SizeTest extends TestCase
             private $c = 3;
         }));
 
-        $this->assertSame(12, size(new class implements \Countable {
+        $this->assertSame(12, size(new class() implements \Countable {
             #[\ReturnTypeWillChange]
             public function count()
             {

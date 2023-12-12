@@ -22,13 +22,13 @@ function baseIntersection($arrays, ?callable $iteratee, $comparator = null)
     $result = [];
 
     while ($othIndex--) {
-        $array =& $arrays[$othIndex];
+        $array = &$arrays[$othIndex];
         if ($othIndex && $iteratee) {
             $array = \array_map($iteratee, $array);
         }
 
         $maxLength = \min(\count($array), $maxLength);
-        $caches[$othIndex] = !$comparator && $iteratee ? [] : null;
+        $caches[$othIndex] = ! $comparator && $iteratee ? [] : null;
     }
 
     $array = $arrays[0];
@@ -41,11 +41,11 @@ function baseIntersection($arrays, ?callable $iteratee, $comparator = null)
         $computed = $iteratee ? $iteratee($value) : $value;
 
         $value = ($comparator ?: $value !== 0) ? $value : 0;
-        if (!($seen ? \is_scalar($computed) && isset($seen[$computed]) : $includes($result, $computed, $comparator))) {
+        if (! ($seen ? \is_scalar($computed) && isset($seen[$computed]) : $includes($result, $computed, $comparator))) {
             $othIndex = $othLength;
             while (--$othIndex) {
                 $cache = $caches[$othIndex];
-                if (!(!empty($cache) ? isset($cache[$computed]) : $includes($arrays[$othIndex], $computed, $comparator))) {
+                if (! (! empty($cache) ? isset($cache[$computed]) : $includes($arrays[$othIndex], $computed, $comparator))) {
                     continue 2;
                 }
             }

@@ -14,7 +14,9 @@ final class _
     public $__chain__ = false;
 
     public const reInterpolate = '<%=([\s\S]+?)%>';
+
     public const reEvaluate = "<%([\s\S]+?)%>";
+
     public const reEscape = "<%-([\s\S]+?)%>";
 
     public static $templateSettings = [
@@ -54,19 +56,16 @@ final class _
     }
 
     /**
-     * @param string $method
-     * @param array  $args
-     *
      * @return mixed
      * @throws Exception
      */
     public static function __callStatic(string $method, array $args)
     {
-        if (!\is_callable("_\\$method")) {
-            throw new \InvalidArgumentException("Function _::$method is not valid");
+        if (! \is_callable("_\\{$method}")) {
+            throw new \InvalidArgumentException("Function _::{$method} is not valid");
         }
 
-        return ("_\\$method")(...$args);
+        return ("_\\{$method}")(...$args);
     }
 
     public function __call($method, $arguments)
@@ -89,13 +88,13 @@ function lodash($value): _
 
 // We can't use "_" as a function name, since it collides with the "_" function in the gettext extension
 // Laravel uses a function __, so only register the alias if the function name is not in use
-if (!function_exists('__')) {
+if (! function_exists('__')) {
     function __($value): _
     {
         return new _($value);
     }
 }
 
-if (!defined('_')) {
+if (! defined('_')) {
     define('_', _::class);
 }

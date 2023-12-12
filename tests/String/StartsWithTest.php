@@ -9,8 +9,8 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
-use function _\startsWith;
 use PHPUnit\Framework\TestCase;
+use function _\startsWith;
 
 class StartsWithTest extends TestCase
 {

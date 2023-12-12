@@ -18,9 +18,9 @@ namespace _;
  * @category Function
  *
  * @param int      $n    The number of calls before `func` is invoked.
- * @param Callable $func The function to restrict.
+ * @param callable $func The function to restrict.
  *
- * @return Callable Returns the new restricted function.
+ * @return callable Returns the new restricted function.
  *
  * @example
  * <code>

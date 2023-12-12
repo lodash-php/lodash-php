@@ -47,7 +47,7 @@ function remove(array &$array, callable $predicate): array
             $resultArray[] = $val;
         }
 
-        return !$result;
+        return ! $result;
     }, \ARRAY_FILTER_USE_BOTH);
 
     $array = \array_values($array); // Re-index array

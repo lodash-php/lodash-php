@@ -45,7 +45,7 @@ use SebastianBergmann\Comparator\Factory;
  */
 function isEqual($value, $other): bool
 {
-    $factory = new Factory;
+    $factory = new Factory();
     $comparator = $factory->getComparatorFor($value, $other);
 
     try {

@@ -42,7 +42,7 @@ function baseFlatten(?array $array, int $depth, callable $predicate = null, bool
             } else {
                 arrayPush($result, $value);
             }
-        } elseif (!$isStrict) {
+        } elseif (! $isStrict) {
             $result[\count($result)] = $value;
         }
     }

@@ -9,8 +9,8 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
-use function _\unzipWith;
 use PHPUnit\Framework\TestCase;
+use function _\unzipWith;
 
 class UnzipWithTest extends TestCase
 {

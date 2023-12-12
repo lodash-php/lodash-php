@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
-use function _\sortBy;
 use PHPUnit\Framework\TestCase;
 use function _\map;
 use function _\property;
+use function _\sortBy;
 
 class PropertyTest extends TestCase
 {

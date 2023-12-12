@@ -24,8 +24,6 @@ namespace _;
  * @param array $array The array to modify.
  * @param array<int, string> $values The values to remove.
  *
- * @return array
- *
  * @example
  * <code>
  * $array = ['a', 'b', 'c', 'a', 'b', 'c']
@@ -38,7 +36,7 @@ namespace _;
 function pull(array &$array, ...$values): array
 {
     $array = \array_filter($array, function ($val) use ($values) {
-        return !\in_array($val, $values, true);
+        return ! \in_array($val, $values, true);
     });
 
     $array = \array_values($array); // Re-index array

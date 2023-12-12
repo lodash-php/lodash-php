@@ -35,6 +35,6 @@ namespace _;
 function camelCase(string $string): string
 {
     return \lcfirst(\array_reduce(words(\preg_replace("/['\\x{2019}]/u", '', $string)), function ($result, $word) {
-        return $result.capitalize(\strtolower($word));
+        return $result . capitalize(\strtolower($word));
     }, ''));
 }

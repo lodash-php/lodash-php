@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
+use PHPUnit\Framework\TestCase;
 use function _\ary;
 use function _\map;
-use PHPUnit\Framework\TestCase;
 
 class AryTest extends TestCase
 {

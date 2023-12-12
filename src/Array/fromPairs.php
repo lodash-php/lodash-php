@@ -32,7 +32,7 @@ namespace _;
  */
 function fromPairs(array $pairs): \stdClass
 {
-    if (!\count($pairs)) {
+    if (! \count($pairs)) {
         return new \stdClass();
     }
 

@@ -31,7 +31,7 @@ namespace _;
  */
 function isError($value): bool
 {
-    if (!\is_object($value)) {
+    if (! \is_object($value)) {
         return false;
     }
 

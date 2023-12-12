@@ -34,7 +34,7 @@ namespace _;
 function replace(string $string, string $pattern, $replacement = null): string
 {
     $callback = function (array $matches) use ($replacement): ?string {
-        if (!\array_filter($matches)) {
+        if (! \array_filter($matches)) {
             return null;
         }
 
@@ -42,7 +42,7 @@ function replace(string $string, string $pattern, $replacement = null): string
     };
 
     if (\preg_match(reRegExpChar, $pattern)) {
-        if (!\is_callable($replacement)) {
+        if (! \is_callable($replacement)) {
             return \preg_replace($pattern, \is_string($replacement) || \is_array($replacement) ? $replacement : '', $string);
         }
 

@@ -20,7 +20,7 @@ namespace _;
  * @param callable $func The function to cap arguments for.
  * @param int      $n    The arity cap.
  *
- * @return Callable Returns the new capped function.
+ * @return callable Returns the new capped function.
  *
  * @example
  * <code>

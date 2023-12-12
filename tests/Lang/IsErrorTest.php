@@ -22,7 +22,7 @@ class IsErrorTest extends TestCase
         $this->assertTrue(isError(new \Exception()));
         $this->assertTrue(isError(new \InvalidArgumentException()));
         $this->assertTrue(isError(new \RuntimeException()));
-        $this->assertTrue(isError(new \SoapFault("Server", '')));
+        $this->assertTrue(isError(new \SoapFault('Server', '')));
         $this->assertTrue(isError(new \ParseError()));
         $this->assertTrue(isError(new \ParseError()));
         $this->assertTrue(isError(new \PDOException()));

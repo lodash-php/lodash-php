@@ -22,16 +22,16 @@ namespace _\internal;
  */
 function unicodeWords(string $string): array
 {
-    $regex = '#'.\implode('|', [
-            rsUpper.'?'.rsLower.'+'.rsOptContrLower.'(?='.\implode('|', [rsBreak, rsUpper, '$']).')',
-            rsMiscUpper.'+'.rsOptContrUpper.'(?='.\implode('|', [rsBreak, rsUpper.rsMiscLower, '$']).')',
-            rsUpper.'?'.rsMiscLower.'+'.rsOptContrLower,
-            rsUpper.'+'.rsOptContrUpper,
+    $regex = '#' . \implode('|', [
+            rsUpper . '?' . rsLower . '+' . rsOptContrLower . '(?=' . \implode('|', [rsBreak, rsUpper, '$']) . ')',
+            rsMiscUpper . '+' . rsOptContrUpper . '(?=' . \implode('|', [rsBreak, rsUpper . rsMiscLower, '$']) . ')',
+            rsUpper . '?' . rsMiscLower . '+' . rsOptContrLower,
+            rsUpper . '+' . rsOptContrUpper,
             rsOrdUpper,
             rsOrdLower,
             rsDigits,
             rsEmoji,
-        ]).'#u';
+        ]) . '#u';
 
     if (\preg_match_all($regex, $string, $matches) > 0) {
         return $matches[0];

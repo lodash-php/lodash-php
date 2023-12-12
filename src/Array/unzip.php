@@ -36,7 +36,7 @@ use function _\internal\baseTimes;
  */
 function unzip(array $array): array
 {
-    if (!\count($array)) {
+    if (! \count($array)) {
         return [];
     }
 

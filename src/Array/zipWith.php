@@ -19,7 +19,6 @@ namespace _;
  * @category Array
  *
  * @param array<int, array|callable>  ...$arrays   The arrays to process.
- * @param callable $iteratee The function to combine grouped values.
  *
  * @return array the new array of grouped elements.
  *

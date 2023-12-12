@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
+use PHPUnit\Framework\TestCase;
 use function _\before;
 use function _\map;
 use function _\uniqBy;
-use PHPUnit\Framework\TestCase;
 
 class BeforeTest extends TestCase
 {
@@ -42,6 +42,6 @@ class BeforeTest extends TestCase
             ];
         })), 'id');
 
-        $this->assertSame([['id' => 1],['id' => 2],['id' => 3],['id' => 4]], $result);
+        $this->assertSame([['id' => 1], ['id' => 2], ['id' => 3], ['id' => 4]], $result);
     }
 }

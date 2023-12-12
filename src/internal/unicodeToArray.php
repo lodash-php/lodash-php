@@ -22,7 +22,7 @@ namespace _\internal;
  */
 function unicodeToArray(string $string): array
 {
-    if (\preg_match_all('#'.reUnicode.'#u', $string, $matches)) {
+    if (\preg_match_all('#' . reUnicode . '#u', $string, $matches)) {
         return $matches[0];
     }
 
