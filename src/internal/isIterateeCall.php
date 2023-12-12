@@ -24,7 +24,7 @@ use function _\property;
  */
 function isIterateeCall($value, $index = null, $object = null)
 {
-    if (!\is_object($object) || !\is_array($object)) {
+    if (! \is_object($object) || ! \is_array($object)) {
         return false;
     }
 

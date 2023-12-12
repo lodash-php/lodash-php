@@ -47,7 +47,7 @@ function pullAt(array &$array, $indexes): array
             $pulled[] = $val;
         }
 
-        return !$inArray;
+        return ! $inArray;
     }, \ARRAY_FILTER_USE_BOTH);
 
     $array = \array_values($array);

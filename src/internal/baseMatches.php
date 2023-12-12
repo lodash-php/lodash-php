@@ -23,7 +23,7 @@ function baseMatches($source): callable
 
         if (\is_iterable($source)) {
             foreach ($source as $k => $v) {
-                if (!isEqual(property($k)($value, $index, $collection), $v)) {
+                if (! isEqual(property($k)($value, $index, $collection), $v)) {
                     return false;
                 }
             }

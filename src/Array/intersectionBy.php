@@ -24,7 +24,6 @@ use function _\internal\baseIteratee;
  * @category Array
  *
  * @param array<int, mixed>  ...$arrays
- * @param callable $iteratee The iteratee invoked per element.
  *
  * @return array the new array of intersecting values.
  * @example

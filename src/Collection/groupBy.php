@@ -38,7 +38,7 @@ use function _\internal\createAggregator;
 function groupBy(iterable $collection, $iteratee): array
 {
     return createAggregator(function ($result, $value, $key) {
-        if (!isset($result[$key])) {
+        if (! isset($result[$key])) {
             $result[$key] = [];
         }
 

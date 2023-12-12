@@ -15,7 +15,6 @@ namespace _;
  * Converts the characters "&", "<", ">", '"', and "'" in `string` to their
  * corresponding HTML entities.
  *
- *
  * Though the ">" character is escaped for symmetry, characters like
  * ">" and "/" don't need escaping in HTML and have no special meaning
  * unless they're part of a tag or unquoted attribute value. See

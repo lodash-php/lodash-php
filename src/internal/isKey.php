@@ -33,5 +33,5 @@ function isKey($value, $object = []): bool
         return true;
     }
 
-    return \preg_match(reIsPlainProp, $value) || !\preg_match(reIsDeepProp, $value) || (null !== $object && isset(((object) $object)->$value));
+    return \preg_match(reIsPlainProp, $value) || ! \preg_match(reIsDeepProp, $value) || (null !== $object && isset(((object) $object)->{$value}));
 }

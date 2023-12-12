@@ -50,7 +50,7 @@ use function _\internal\baseIteratee;
 function findIndex(array $array, $predicate, int $fromIndex = null): int
 {
     $length = \count($array);
-    if (!$length) {
+    if (! $length) {
         return -1;
     }
 

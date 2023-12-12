@@ -58,7 +58,7 @@ function every(iterable $collection, $predicate): bool
     $iteratee = baseIteratee($predicate);
 
     foreach ($collection as $key => $value) {
-        if (!$iteratee($value, $key, $collection)) {
+        if (! $iteratee($value, $key, $collection)) {
             return false;
         }
     }

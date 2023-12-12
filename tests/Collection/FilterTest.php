@@ -22,7 +22,7 @@ class FilterTest extends TestCase
         ];
 
         $this->assertSame([['user' => 'fred', 'age' => 40, 'active' => false]], filter($users, function ($o) {
-            return !$o['active'];
+            return ! $o['active'];
         }));
 
         // The `matches` iteratee shorthand.

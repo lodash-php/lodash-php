@@ -17,7 +17,7 @@ class SpreadTest extends TestCase
     public function testSpread()
     {
         $say = spread(function ($who, $what) {
-            return $who.' says '.$what;
+            return $who . ' says ' . $what;
         });
 
         $this->assertSame('fred says hello', $say(['fred', 'hello']));

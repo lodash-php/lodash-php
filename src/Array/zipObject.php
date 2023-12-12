@@ -34,7 +34,7 @@ namespace _;
  */
 function zipObject(array $props = [], array $values = [])
 {
-    $result = new \stdClass;
+    $result = new \stdClass();
     $index = -1;
     $length = \count($props);
     $props = \array_values($props);

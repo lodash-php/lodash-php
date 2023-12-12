@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
+use PHPUnit\Framework\TestCase;
 use function _\map;
 use function _\unary;
-use PHPUnit\Framework\TestCase;
 
 class UnaryTest extends TestCase
 {

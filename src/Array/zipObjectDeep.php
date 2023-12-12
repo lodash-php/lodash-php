@@ -44,7 +44,7 @@ use function _\internal\baseSet;
  */
 function zipObjectDeep(array $props = [], array $values = []): \stdClass
 {
-    $result = new \stdClass;
+    $result = new \stdClass();
     $index = -1;
     $length = \count($props);
     $props = \array_values($props);

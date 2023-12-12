@@ -20,8 +20,8 @@ class RestTest extends TestCase
     public function testRest()
     {
         $say = rest(function ($what, $names) {
-            return $what.' '.implode(', ', initial($names)).
-                (size($names) > 1 ? ', & ' : '').last($names);
+            return $what . ' ' . implode(', ', initial($names)) .
+                (size($names) > 1 ? ', & ' : '') . last($names);
         });
 
         $this->assertSame('hello fred, barney, & pebbles', $say('hello', 'fred', 'barney', 'pebbles'));

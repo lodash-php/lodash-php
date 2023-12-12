@@ -9,8 +9,8 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
-use function _\kebabCase;
 use PHPUnit\Framework\TestCase;
+use function _\kebabCase;
 
 class KebabCaseTest extends TestCase
 {

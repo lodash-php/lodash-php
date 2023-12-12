@@ -19,8 +19,6 @@ namespace _;
  *
  * @category Array
  *
- * @param array ...$arrays
- *
  * @return array the new array of intersecting values.
  *
  * @example

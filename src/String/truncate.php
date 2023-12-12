@@ -84,7 +84,7 @@ function truncate($string, array $options = [])
         : \substr($string, 0, $end);
 
     if (null === $separator) {
-        return $result.$omission;
+        return $result . $omission;
     }
 
     if ($strSymbols) {
@@ -110,5 +110,5 @@ function truncate($string, array $options = [])
         }
     }
 
-    return $result.$omission;
+    return $result . $omission;
 }

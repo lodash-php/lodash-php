@@ -9,8 +9,8 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
-use function _\flatten;
 use PHPUnit\Framework\TestCase;
+use function _\flatten;
 
 class FlattenTest extends TestCase
 {

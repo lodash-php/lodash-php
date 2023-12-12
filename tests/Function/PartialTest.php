@@ -17,7 +17,7 @@ class PartialTest extends TestCase
     public function testPartial()
     {
         $greet = function ($greeting, $name) {
-            return $greeting.' '.$name;
+            return $greeting . ' ' . $name;
         };
 
         $sayHelloTo = partial($greet, 'hello');

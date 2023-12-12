@@ -26,7 +26,6 @@ use function _\internal\baseFlatten;
  *
  * @param array    $array    The array to inspect.
  * @param array<int, mixed> ...$values  The values to exclude.
- * @param callable $iteratee The iteratee invoked per element.
  *
  * @return array Returns the new array of filtered values.
  *
@@ -38,11 +37,11 @@ use function _\internal\baseFlatten;
  */
 function differenceBy(array $array, ...$values): array
 {
-    if (!$array) {
+    if (! $array) {
         return [];
     }
 
-    if (!\is_callable(\end($values))) {
+    if (! \is_callable(\end($values))) {
         return difference($array, ...$values);
     }
 

@@ -20,7 +20,7 @@ class ReduceTest extends TestCase
             return $sum + $n;
         }, 0));
         $this->assertSame(['1' => ['a', 'c'], '2' => ['b']], reduce(['a' => 1, 'b' => 2, 'c' => 1], function ($result, $value, $key) {
-            if (!isset($result[$value])) {
+            if (! isset($result[$value])) {
                 $result[$value] = [];
             }
             $result[$value][] = $key;

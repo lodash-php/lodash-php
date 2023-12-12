@@ -9,9 +9,9 @@ declare(strict_types=1);
  * @copyright  Copyright (c) 2017
  */
 
+use PHPUnit\Framework\TestCase;
 use function _\first;
 use function _\head;
-use PHPUnit\Framework\TestCase;
 
 class HeadTest extends TestCase
 {

@@ -6,14 +6,14 @@ declare(strict_types=1);
  * This file is part of the SolidWorx Lodash-PHP project.
  *
  * @author     Pierre du Plessis <open-source@solidworx.co>
- * @copyright  Copyright (c) 2018
+ * @copyright  Copyright (c) 2017
  */
 
 namespace _\internal;
 
 function baseSet($object, $path, $value, callable $customizer = null)
 {
-    if (!\is_object($object)) {
+    if (! \is_object($object)) {
         return $object;
     }
 
@@ -28,7 +28,7 @@ function baseSet($object, $path, $value, callable $customizer = null)
         $key = toKey($path[$index]);
 
         if ($index !== $lastIndex) {
-            $objValue = \is_array($nested) ? ($nested[$key] ?? null) : ($nested->$key ?? null);
+            $objValue = \is_array($nested) ? ($nested[$key] ?? null) : ($nested->{$key} ?? null);
             $newValue = $customizer ? $customizer($objValue, $key, $nested) : $objValue;
             if (null === $newValue) {
                 $newValue = \is_object($objValue) ? $objValue : (\is_numeric($path[$index + 1]) ? [] : new \stdClass());
@@ -43,7 +43,7 @@ function baseSet($object, $path, $value, callable $customizer = null)
             if (\is_array($nested)) {
                 $nested = &$nested[$key];
             } else {
-                $nested = &$nested->$key;
+                $nested = &$nested->{$key};
             }
 
             continue;

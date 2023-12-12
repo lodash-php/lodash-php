@@ -39,7 +39,7 @@ function lastIndexOf(array $array, $value, int $fromIndex = null): int
     if (null !== $fromIndex) {
         $index = $fromIndex > 0 ? $fromIndex : \count($array) - 1;
         $array = \array_slice($array, 0, -$fromIndex + 1);
-    };
+    }
 
     foreach (\array_reverse($array, false) as $v) {
         if (isEqual($value, $v)) {
