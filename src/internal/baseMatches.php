@@ -21,7 +21,7 @@ function baseMatches($source): callable
             return true;
         }
 
-        if (\is_array($source) || $source instanceof \Traversable) {
+        if (\is_iterable($source)) {
             foreach ($source as $k => $v) {
                 if (!isEqual(property($k)($value, $index, $collection), $v)) {
                     return false;
