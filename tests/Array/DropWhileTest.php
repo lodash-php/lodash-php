@@ -26,23 +26,23 @@ class DropWhileTest extends TestCase
             return $user['active'];
         }));
     }
-	
+    
     public function testDropWhile2()
     {
         $lines = [
-			'Processing report:',
-			'Processed: 1',
-			'Successful: 1',
-			'',
-			'',
+            'Processing report:',
+            'Processed: 1',
+            'Successful: 1',
+            '',
+            '',
         ];
-		
-		$lines = dropWhile($lines, static function ($x) { return trim((string) $x) !== ''; });
-		
-		self::assertEquals(['', ''], $lines);
-		
-		$lines = dropWhile($lines, static function ($x) { return trim((string) $x) === ''; });
-		
-		self::assertEmpty($lines);
+        
+        $lines = dropWhile($lines, static function ($x) { return trim((string) $x) !== ''; });
+        
+        self::assertEquals(['', ''], $lines);
+        
+        $lines = dropWhile($lines, static function ($x) { return trim((string) $x) === ''; });
+        
+        self::assertEmpty($lines);
     }
 }
