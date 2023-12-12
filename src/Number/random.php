@@ -74,5 +74,5 @@ function random($lower = null, $upper = null, $floating = null)
         return $lower + \abs($upper - $lower) * \mt_rand(0, $randMax) / $randMax;
     }
 
-    return \rand((int) $lower, (int) $upper);
+    return random_int((int) $lower, (int) $upper);
 }
