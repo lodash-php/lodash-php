@@ -26,7 +26,7 @@ class DropWhileTest extends TestCase
             return $user['active'];
         }));
     }
-    
+
     public function testDropWhile2()
     {
         $lines = [
@@ -36,13 +36,17 @@ class DropWhileTest extends TestCase
             '',
             '',
         ];
-        
-        $lines = dropWhile($lines, static function ($x) { return trim((string) $x) !== ''; });
-        
+
+        $lines = dropWhile($lines, static function ($x) {
+            return trim((string) $x) !== '';
+        });
+
         self::assertEquals(['', ''], $lines);
-        
-        $lines = dropWhile($lines, static function ($x) { return trim((string) $x) === ''; });
-        
+
+        $lines = dropWhile($lines, static function ($x) {
+            return trim((string) $x) === '';
+        });
+
         self::assertEmpty($lines);
     }
 }
