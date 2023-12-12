@@ -40,11 +40,13 @@ function dropWhile(array $array, callable $predicate): array
     $count = \count($array);
     $length = 0;
     $index = \key($array);
-    while ($length <= $count && $predicate($array[$index], $index, $array)) {
+	$value = \current($array);
+    while ($length <= $count && $predicate($value, $index, $array)) {
         array_shift($array);
         \reset($array);
         $length++;
         $index = \key($array);
+		$value = \current($array);
     }
 
     return $array;
