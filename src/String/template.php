@@ -120,17 +120,17 @@ function template(string $string, array $options = []): callable
 
         if ($escapeValue) {
             $escapeValue = \trim($escapeValue);
-            $source .= "<?=__e(\$${escapeValue});?>";
+            $source .= "<?=__e(\${$escapeValue});?>";
         }
 
         if ($evaluateValue) {
-            $source .= "<?php \n${evaluateValue} ?>";
+            $source .= "<?php \n{$evaluateValue} ?>";
         }
 
         if ($interpolateValue) {
             $interpolateValue = \trim($interpolateValue ?? $esTemplateValue);
             $interpolateValue = \preg_replace('#^([\p{L}\p{N}_]+)$#u', '$$1', $interpolateValue);
-            $source .= "<?=${interpolateValue};?>";
+            $source .= "<?={$interpolateValue};?>";
         }
 
         return $source;
