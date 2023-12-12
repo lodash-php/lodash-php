@@ -1,5 +1,6 @@
 parameters:
     bootstrap: %rootDir%/../../../src/bootstrap.php
+    level: 5
     excludes_analyse:
         - %rootDir%/../../../src/compiled.php
         - %rootDir%/../../../src/Lodash.php
