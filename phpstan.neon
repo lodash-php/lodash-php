@@ -1,12 +1,14 @@
+includes:
+    - phpstan-baseline.neon
+
 parameters:
+    paths:
+        - src
     bootstrap: %rootDir%/../../../src/bootstrap.php
     level: 5
     excludes_analyse:
-        - %rootDir%/../../../src/compiled.php
-        - %rootDir%/../../../src/Lodash.php
-        - %rootDir%/../../../src/internal/memoizeCapped.php # Exclude internal function due to dynamic class usage
+        - src/compiled.php
+        - src/Lodash.php
+        - src/internal/memoizeCapped.php # Exclude internal function due to dynamic class usage
     ignoreErrors:
-        - '#PHPDoc tag \@param references unknown parameter \$(comparator|iteratee)#'
         - "#Callable '.*internal.*' invoked with \\d+ parameters, [\\d-]+ required.#"
-        - "#Parameter \\#\\d+ \\$callable of static method Closure::fromCallable\\(\\) expects callable, array\\(object, string\\) given.#"
-        - "#Parameter \\#1 \\$name of class ReflectionFunction constructor expects Closure\\|string, callable given#"
