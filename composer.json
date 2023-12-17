@@ -31,7 +31,7 @@
         "phpdocumentor/reflection-docblock": "*",
         "phpstan/phpdoc-parser": "*",
         "phpunit/phpunit": "^7.3 || ^8.4",
-        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan": "^1.10",
         "friendsofphp/php-cs-fixer": "^2.12"
     }
 }
