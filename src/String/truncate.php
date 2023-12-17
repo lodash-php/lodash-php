@@ -105,7 +105,7 @@ function truncate($string, array $options = [])
         }
     } elseif (\strpos($string, $separator) !== $end) {
         $index = \strrpos($result, $separator);
-        if (false !== $index && $index > -1) {
+        if (false !== $index) {
             $result = \substr($result, 0, $index);
         }
     }

@@ -107,12 +107,12 @@ function template(string $string, array $options = []): callable
     ]);
 
     $string = \preg_replace_callback('#'.$reDelimiters.'#u', function ($matches) {
-        list(,
+        [,
             $escapeValue,
             $interpolateValue,
             $esTemplateValue,
             $evaluateValue,
-            ) = \array_merge($matches, \array_fill(\count($matches), 5 - \count($matches), null));
+            ] = \array_merge($matches, \array_fill(\count($matches), 5 - \count($matches), null));
 
         $interpolateValue = $interpolateValue ?: $esTemplateValue;
 
@@ -128,7 +128,7 @@ function template(string $string, array $options = []): callable
         }
 
         if ($interpolateValue) {
-            $interpolateValue = \trim($interpolateValue ?? $esTemplateValue);
+            $interpolateValue = \trim($interpolateValue);
             $interpolateValue = \preg_replace('#^([\p{L}\p{N}_]+)$#u', '$$1', $interpolateValue);
             $source .= "<?={$interpolateValue};?>";
         }
@@ -145,8 +145,14 @@ function template(string $string, array $options = []): callable
     return new class($string, $imports) {
         public $source;
 
+        /**
+         * @var array<string, string>
+         */
         private $imports;
 
+        /**
+         * @param array<string, string> $imports
+         */
         public function __construct(string $source, array $imports)
         {
             $this->source = $source;

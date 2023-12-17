@@ -1,41 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$iteratee$#"
-			count: 1
-			path: src/Array/differenceBy.php
-
-		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$comparator$#"
-			count: 1
-			path: src/Array/differenceWith.php
-
-		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$iteratee$#"
-			count: 1
-			path: src/Array/intersectionBy.php
-
-		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$comparator$#"
-			count: 1
-			path: src/Array/intersectionWith.php
-
-		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$iteratee$#"
-			count: 1
-			path: src/Array/unionBy.php
-
-		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$comparator$#"
-			count: 1
-			path: src/Array/unionWith.php
-
-		-
-			message: "#^PHPDoc tag @param references unknown parameter\\: \\$iteratee$#"
-			count: 1
-			path: src/Array/zipWith.php
-
-		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/Collection/size.php
@@ -56,27 +21,12 @@ parameters:
 			path: src/String/startsWith.php
 
 		-
-			message: "#^Comparison operation \"\\>\" between int\\<0, max\\> and \\-1 is always true\\.$#"
+			message: "#^Offset mixed on \\*NEVER\\* in isset\\(\\) always exists and is not nullable\\.$#"
 			count: 1
-			path: src/String/truncate.php
-
-		-
-			message: "#^Call to function is_array\\(\\) with object will always evaluate to false\\.$#"
-			count: 1
-			path: src/internal/isIterateeCall.php
-
-		-
-			message: "#^Result of \\|\\| is always true\\.$#"
-			count: 1
-			path: src/internal/isIterateeCall.php
+			path: src/internal/baseIntersection.php
 
 		-
 			message: "#^Unreachable statement \\- code above always terminates\\.$#"
 			count: 1
 			path: src/internal/isIterateeCall.php
-
-		-
-			message: "#^Regex pattern is invalid\\: Delimiter must not be alphanumeric or backslash in pattern\\: \\\\x\\{e83c\\}\\[\\\\x\\{effb\\}\\-\\\\x\\{efff\\}\\]\\(\\?\\=\\\\x\\{e83c\\}\\[\\\\x\\{effb\\}\\-\\\\x\\{efff\\}\\]\\)\\|\\(\\?\\:\\[\\^\\\\x\\{e800\\}\\-\\\\x\\{efff\\}\\]\\[\\\\x\\{0300\\}\\-\\\\x\\{036f\\}\\\\x\\{fe20\\}\\-\\\\x\\{fe2f\\}\\\\x\\{20d0\\}\\-\\\\x\\{20ff\\}\\]\\?\\|\\[\\\\x\\{0300\\}\\-\\\\x\\{036f\\}\\\\x\\{fe20\\}\\-\\\\x\\{fe2f\\}\\\\x\\{20d0\\}\\-\\\\x\\{20ff\\}\\]\\|\\(\\?\\:\\\\x\\{e83c\\}\\[\\\\x\\{ede6\\}\\-\\\\x\\{edff\\}\\]\\)\\{2\\}\\|\\[\\\\x\\{e800\\}\\-\\\\x\\{ebff\\}\\]\\[\\\\x\\{ec00\\}\\-\\\\x\\{efff\\}\\]\\|\\[\\\\x\\{e800\\}\\-\\\\x\\{efff\\}\\]\\)\\[\\\\x\\{fe0e\\}\\\\x\\{fe0f\\}\\]\\?\\(\\?\\:\\[\\\\x\\{0300\\}\\-\\\\x\\{036f\\}\\\\x\\{fe20\\}\\-\\\\x\\{fe2f\\}\\\\x\\{20d0\\}\\-\\\\x\\{20ff\\}\\]\\|\\\\x\\{e83c\\}\\[\\\\x\\{effb\\}\\-\\\\x\\{efff\\}\\]\\)\\?\\(\\?\\:\\\\x\\{200d\\}\\(\\?\\:\\[\\^\\\\x\\{e800\\}\\-\\\\x\\{efff\\}\\]\\|\\(\\?\\:\\\\x\\{e83c\\}\\[\\\\x\\{ede6\\}\\-\\\\x\\{edff\\}\\]\\)\\{2\\}\\|\\[\\\\x\\{e800\\}\\-\\\\x\\{ebff\\}\\]\\[\\\\x\\{ec00\\}\\-\\\\x\\{efff\\}\\]\\)\\[\\\\x\\{fe0e\\}\\\\x\\{fe0f\\}\\]\\?\\(\\?\\:\\[\\\\x\\{0300\\}\\-\\\\x\\{036f\\}\\\\x\\{fe20\\}\\-\\\\x\\{fe2f\\}\\\\x\\{20d0\\}\\-\\\\x\\{20ff\\}\\]\\|\\\\x\\{e83c\\}\\[\\\\x\\{effb\\}\\-\\\\x\\{efff\\}\\]\\)\\?\\)\\*$#"
-			count: 1
-			path: src/internal/unicodeSize.php
 
