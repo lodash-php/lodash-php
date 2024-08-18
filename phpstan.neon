@@ -12,5 +12,4 @@ parameters:
         - src/Lodash.php
         - src/internal/memoizeCapped.php # Exclude internal function due to dynamic class usage
     ignoreErrors:
-        - "#Callable '.*internal.*' invoked with \\d+ parameters, [\\d-]+ required.#"
         - "#^PHPDoc tag \\@param references unknown parameter\\: \\$[a-zA-Z]+$#"
