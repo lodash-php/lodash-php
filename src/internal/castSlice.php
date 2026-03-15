@@ -25,7 +25,7 @@ namespace _\internal;
 function castSlice(array $array, int $start, ?int $end = null): array
 {
     $length = \count($array);
-    $end = null === $end ? $length : $end;
+    $end = $end ?? $length;
 
     return (!$start && $end >= $length) ? $array : \array_slice($array, $start, $end);
 }

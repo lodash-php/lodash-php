@@ -4,3 +4,4 @@
 /.php_cs.cache
 /src/compiled.php
 .idea
+.phpunit.result.cache

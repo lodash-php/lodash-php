@@ -1,0 +1,32 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: src/Collection/size.php
+
+		-
+			message: "#^Right side of \\|\\| is always false\\.$#"
+			count: 2
+			path: src/Number/random.php
+
+		-
+			message: "#^Call to function is_array\\(\\) with null will always evaluate to false\\.$#"
+			count: 1
+			path: src/String/replace.php
+
+		-
+			message: "#^Comparison operation \"\\>\\=\" between int\\<0, max\\> and 0 is always true\\.$#"
+			count: 1
+			path: src/String/startsWith.php
+
+		-
+			message: "#^Offset mixed on \\*NEVER\\* in isset\\(\\) always exists and is not nullable\\.$#"
+			count: 1
+			path: src/internal/baseIntersection.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: src/internal/isIterateeCall.php
+

@@ -101,11 +101,11 @@ function truncate($string, array $options = [])
                 $newEnd = \end($match[0])[1];
             }
 
-            $result = \substr($result, 0, null === $newEnd ? $end : $newEnd);
+            $result = \substr($result, 0, $newEnd ?? $end);
         }
     } elseif (\strpos($string, $separator) !== $end) {
         $index = \strrpos($result, $separator);
-        if (false !== $index && $index > -1) {
+        if (false !== $index) {
             $result = \substr($result, 0, $index);
         }
     }

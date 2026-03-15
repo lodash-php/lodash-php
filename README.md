@@ -4,6 +4,10 @@ Lodash-PHP is a port of the [Lodash JS library](https://lodash.com/) to PHP. It 
 
 Lodash-PHP tries to mimick lodash.js as close as possible
 
+# Requirements
+
+Lodash-PHP requires minimum PHP 7.2+, but the latest version of PHP is always recommended.
+
 # Installation
 
 Install Lodash-PHP through composer:

@@ -33,7 +33,7 @@ namespace _;
 function split(string $string, string $separator, int $limit = 0): array
 {
     if (\preg_match(reRegExpChar, $separator)) {
-        return \preg_split($separator, $string, $limit ?? -1, PREG_SPLIT_DELIM_CAPTURE) ?: [];
+        return \preg_split($separator, $string, $limit ?: -1, PREG_SPLIT_DELIM_CAPTURE) ?: [];
     }
 
     /** @var array $result */

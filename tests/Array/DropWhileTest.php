@@ -25,5 +25,25 @@ class DropWhileTest extends TestCase
         $this->assertSame([['user' => 'pebbles', 'active' => false]], dropWhile($users, function ($user) {
             return $user['active'];
         }));
+    
+        $lines = [
+            'Processing report:',
+            'Processed: 1',
+            'Successful: 1',
+            '',
+            '',
+        ];
+
+        $lines = dropWhile($lines, static function ($x) {
+            return trim((string) $x) !== '';
+        });
+
+        self::assertEquals(['', ''], $lines);
+
+        $lines = dropWhile($lines, static function ($x) {
+            return trim((string) $x) === '';
+        });
+
+        self::assertEmpty($lines);
     }
 }

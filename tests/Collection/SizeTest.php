@@ -26,6 +26,7 @@ class SizeTest extends TestCase
         }));
 
         $this->assertSame(12, size(new class implements \Countable {
+            #[\ReturnTypeWillChange]
             public function count()
             {
                 return 12;
